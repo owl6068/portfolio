@@ -1,8 +1,20 @@
 
+export interface IPageId {
+  id:string  
+}
 export interface IHeaderNav {
   id:string,
   name:string,
-  show:boolean,
+  img?:string,
+}
+export interface IMyInfoTag {
+  id:string,
+  name:string,
+}
+export interface IMySkill {
+  name:string,
+  img:string,
+  adept:number
 }
 export interface IPortFolioNav {
   id:string,
