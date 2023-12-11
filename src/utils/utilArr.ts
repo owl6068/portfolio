@@ -1,4 +1,4 @@
-import { IHeaderNav, IMyInfoTag, IMySkill, IPortFolioNav } from "./interface";
+import { IHeaderNav, IMyInfoTag, IMySkill, IPTInfo} from "./interface/PFinterface";
 
 // ======== header ========
 export const headerNav : IHeaderNav[] = [
@@ -20,12 +20,12 @@ export const headerBtn : IHeaderNav[]= [
   {
     id:'rb1',
     name:'연락처',
-    img:'/img/phone.svg',
+    img:'portfolio/img/phone.svg',
   },
   {
     id:'rb2',
     name:'메뉴',
-    img:'/img/bar.svg',
+    img:'portfolio/img/bar.svg',
   }
 ];
 
@@ -68,84 +68,254 @@ export const myInfoTag : IMyInfoTag[] = [
 export const mySkill : IMySkill[]= [
   {
     name:'html',
-    img:'/img/logo/html.svg',
+    img:'portfolio/img/logo/html.svg',
     adept:95,
   },
   {
     name:'css',
-    img:'/img/logo/css.svg',
+    img:'portfolio/img/logo/css.svg',
     adept:95,
   },
   {
     name:'javascript',
-    img:'/img/logo/js.svg',
+    img:'portfolio/img/logo/js.svg',
     adept:70,
   },
   {
     name:'jQuery',
-    img:'/img/logo/jquery.svg',
+    img:'portfolio/img/logo/jquery.svg',
     adept:60,
   },
   {
     name:'react',
-    img:'/img/logo/react.svg',
+    img:'portfolio/img/logo/react.svg',
     adept:40,
   },
   {
     name:'vue',
-    img:'/img/logo/vue.svg',
+    img:'portfolio/img/logo/vue.svg',
     adept:40,
   },
   {
     name:'typescript',
-    img:'/img/logo/ts.svg',
-    adept:40,
+    img:'portfolio/img/logo/ts.svg',
+    adept:30,
   },
   {
     name:'styled-component',
-    img:'/img/logo/styled.svg',
+    img:'portfolio/img/logo/styled.svg',
     adept:60,
   },
   {
     name:'vuetify',
-    img:'/img/logo/vuetify.svg',
+    img:'portfolio/img/logo/vuetify.svg',
     adept:60,
   },
   {
     name:'bootstrap',
-    img:'/img/logo/boot.svg',
+    img:'portfolio/img/logo/boot.svg',
     adept:70,
   },
   {
     name:'sass',
-    img:'/img/logo/sass.svg',
+    img:'portfolio/img/logo/sass.svg',
     adept:70,
+  },
+  {
+    name:'realGrid',
+    img:'portfolio/img/logo/grid.svg',
+    adept:20,
   },
 ]
 // ======== portfolio ========
-export const PortFolioNav : IPortFolioNav[] = [
+export const PortFolioBtn : IMyInfoTag[] = [
   {
-    id:'coin',
-    title:'Coin List',
-    simply:'코인api를 가지고와서 보여주는 간단 모듈',
-    desc:'코인API를 가지고와 정보 표출,코인API를 가지고와 정보 표출',
-    date:'2023.11 ~ 2023.12',
-    order:'react',
-    css:'styled-component',
-    hook:'react-hook-form( register, handleSubmit, formstate, setError ),useForm,useForm,useForm,useForm',
-    api:'paprica.api',
-    link:'aaa'
+    id:'tt1',
+    name:'All'
   },
   {
-    id:'coin',
-    title:'Coin List',
-    simply:'코인api를 가지고와서 보여주는 간단 모듈',
-    desc:'코인API를 가지고와 정보 표출,코인API를 가지고와 정보 표출',
-    date:'2023.11 ~ 2023.12',
-    order:'react',
-    css:'styled-component',
-    hook:'react-hook-form( register, handleSubmit, formstate, setError ),useForm,useForm,useForm,useForm',
-    api:'paprica.api',
-    link:'aaa'
+    id:'tt2',
+    name:'Career'
+  },
+  {
+    id:'tt3',
+    name:'React'
+  },
+  {
+    id:'tt4',
+    name:'Vue'
   },
 ]
+
+export const PortFolioList:IPTInfo = {
+  react:[
+    {
+      id:'re1',
+      career:false,
+      bgImg:'msPF',
+      logoImg:'React',
+      title:'PortFolio',
+      simply:'react로 작업한 포트폴리오',
+      desc:'"recoil(상태관리)"로 data를 전역(atom)에서 사용할수 있도록 등록하고, selector에서 가공하여 바인딩을 하는 형식으로 작업하였습니다.\n"typeScript(interface)"를 등록하여, 형을 정의하고 매개변수값을 이용하여 error생기는 부분을 빠르게 찾아 수정할수 있었습니다.\n"styled-component"를 이용하여 상황별 style이 변경되도록 변수전달방식이 편하고,\n똑같은 태그 보다 지정이름으로 한눈에 보기 편한 방식때문에 사용하였다.\n그리고 다양한 animation를 구현 할수 있는 "framer motion"을 이용하여 자연스루업 디자인을 추가할수 있었습니다.',
+      date:'2023. 12',
+      css:'styled-component',
+      skill:'useRecoli, framer-motion, typeScript(interface), useState, useEffect',
+    },
+    
+  ],
+  career:[
+    {
+      id:'ca1',
+      bgImg:'skt',
+      logoImg:'Vue',
+      career:true,
+      title:'SK 우주T',
+      simply:'SK 우주T admin의 Swing메뉴',
+      desc:'우주T admin 리뉴얼건에 "Swing"새로운 메뉴 작업으로 퍼블리싱 프리랜서 단기로 입사를 하였습니다.\nvue, vuetify를 사용하며 기존에 만들어놓은 모듈을 사용하거나, 없으면 vuetify로 ui를 만들어 페이지를 작업하였습니다.\nadmin 페이지라 다양한 디자인의 table이 많았는데, "RealGrid"로 많은 custom를 보며 많은 도움이 되었습니다.',
+      display:'적응형(PC)',
+      date:'2023.08 ~ 2023.09',
+      skill:'vue / vuefify / realgrid / git / scss / html',
+      tool:
+        {
+          design:'Figma',
+          schedule:'Jira',
+          collabo:'confluence',
+        }
+    },
+    {
+      id:'ca2',
+      bgImg:'allraai',
+      logoImg:'allra',
+      career:true,
+      title:'allra Ai장부',
+      simply:'쇼핑몰 선정산 서비스와 연동된 장부',
+      desc:'판매현황, 정산받을수 있는 금액들을 장부를 통해 확인이 가능하며 전체 분포해 있는 쇼핑몰들의 금액을 한번에 확인할수 있는 장부사이트로 전페이지 javascript로 웹퍼블리싱 작업하였습니다.',
+      display:'적응형(PC)',
+      date:'2023.04 ~ 2023.05',
+      skill:'javascript / scss / html',
+      tool:
+       {
+          design:'Figma',
+          schedule:'flow',
+          collabo:'flow',
+       },
+       link:'https://ai.allra.co.kr/'
+    },
+    {
+      id:'ca3',
+      bgImg:'allra',
+      logoImg:'Vue',
+      career:true,
+      title:'allra',
+      simply:'쇼핑몰 선정산 핀테크 서비스',
+      desc:'Vue로 제작된 사이트이며, 간단한 바인딩, ui유지보수, 새로페이지 작업을 하였습니다.',
+      display:'반응형',
+      date:'2022.10 ~ 2023.05',
+      skill:'vue / scss / gitlab / html',
+      tool:
+       {
+          design:'Figma',
+          schedule:'Flow',
+          collabo:'Flow',
+       },
+       link:'https://www.allra.co.kr/'
+    },
+    {
+      id:'ca4',
+      bgImg:'kace',
+      logoImg:'kacelab',
+      career:true,
+      title:'Kacelab',
+      simply:'스타트업 에이전시',
+      desc:'Vue로 제작된 사이트이며, 주로 페이지 리뉴얼 되는 부분을 vue로 작업된 파일에서 scss로 직접 수정 및 추가 작업하였습니다.',
+      date:'2022.01 ~ 2022.06',
+      skill:'javascript / jQuery / scss / css / html',
+      tool:
+       {
+          design:'Figma , Zeplin',
+          schedule:'Jira',
+          collabo:'Slack',
+       },
+       site:[
+        {
+          name:'듀오백',
+          display:'반응형웹',
+          desc:'유지보수 및 as상품문의 페이지 작업하였습니다.',
+          link:'http://duoduoback.firstmall.kr/duoback'
+        },
+        {
+          name:'코오롱',
+          display:'적응형 pc',
+          desc:'차랑렌트 admin ERP 시스템 퍼블리싱 작업하였습니다.',
+        },
+        {
+          name:'버스콜',
+          display:'웹앱',
+          desc:'버스차량 예약서비스 전페이지 퍼블리싱 작업하여, flutter로 개발되었습니다.',
+          link:'https://bus-call.kr/'
+        },
+        {
+          name:'실드',
+          display:'네이티브앱',
+          desc:'쇼핑몰 앱으로 리액트 작업전에 전페이지 퍼블리싱 요청으로 전페이지 작업하였습니다.',
+          link:'https://www.kacelab.com/work_view.php?idx=25'
+        },
+        {
+          name:'teenstudio',
+          display:'웹앱',
+          desc:'10대들의 의사소통 사이트이며, 쇼핑, 검색, 게시글 부분작업하였습니다.',
+          link:'https://teenstudio.app/teen_post'
+        },
+        {
+          name:'고고고타이골프',
+          display:'반응형웹',
+          desc:'태국에서의 골프코스 및 숙박, 차량을 예약하는 서비스 퍼블리싱 작업 하였습니다.',
+          link:'https://www.kacelab.com/work_view.php?idx=24'
+        },
+       ],
+       link:'https://www.kecelab.co.kr/'
+    },
+    {
+      id:'ca5',
+      bgImg:'dibi',
+      logoImg:'dbdb',
+      career:true,
+      title:'디비디비',
+      simply:'오픈마켓 쇼핑몰 사이트',
+      desc:'계약직으로 입사하여 사이트 전 페이지 리뉴얼 및 선물하기, 스토어탐색, 추천상품 영역 새로구축하였습니다.',
+      display:'반응형 웹',
+      date:'2020.11 ~ 2021.10',
+      skill:'jQuery / scss / css / html',
+      tool:
+       {
+          design:'Photoshop',
+          schedule:'Jira',
+          collabo:'Slack',
+       },
+       link:'https://www.dibidibi.com/'
+    },
+    {
+      id:'ca6',
+      bgImg:'hak',
+      logoImg:'hdm',
+      career:true,
+      title:'학생독립만세',
+      simply:'소득공유(ISA) 후불제',
+      desc:'인턴3개월로 근무하며 처음으로 페이지를 만들었습니다.\n청년금융쪽의 페이지를 작업하였고, 자동결제 시스템 페이지 작업하고, 소득공유에 대한 소개페이지, 유지보수등등 여러가지를 시도해본 회사입니다.',
+      display:'반응형 웹',
+      date:'2020.08 ~ 2020.10',
+      skill:'jQuery  / css / html',
+      tool:
+       {
+          design:'Zeplin',
+          schedule:'Jira',
+          collabo:'Slack',
+       },
+       link:'https://www.dibidibi.com/'
+    },
+  ],
+  
+  vue:[
+
+  ]
+}

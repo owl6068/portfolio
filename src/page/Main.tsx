@@ -1,4 +1,5 @@
 import {
+  MainSection,
   MainInner,
   Name,
   NameBox,
@@ -10,13 +11,12 @@ import {
   aniUpDwon,
   Triangle,
   aniDwonUp,
-} from "../css/Main";
-import { Section } from "../css/common";
-import { IPageId } from "../utils/interface";
+} from "../css/page/mainStyle";
+import { IPageId } from "../utils/interface/PFinterface";
 
 function Main({ id }: IPageId) {
   return (
-    <Section id={id}>
+    <MainSection id={id}>
       <MainInner>
         <NameBox>
           <Name
@@ -40,7 +40,7 @@ function Main({ id }: IPageId) {
         </NameBox>
         <Triangle variants={aniDwonUp} initial="hidden" animate="visible" />
       </MainInner>
-    </Section>
+    </MainSection>
   );
 }
 

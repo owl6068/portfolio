@@ -1,16 +1,14 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { DFlex, Inner, Section } from "./common";
+import { DFlex, Inner, Section } from "../common";
 
 
 export const AboutSection = styled(Section)`
-  position: relative;
   padding: 80px 0;
- 
 `
 export const AboutInner = styled(Inner)`
   position: relative;
-  max-width: 1440px;
+  max-width: ${props=>props.theme.width.width_l};
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -23,27 +21,33 @@ export const AboutInner = styled(Inner)`
     gap: 80px;
     width: 100%;
     transition: all .3s;
-    @media screen and (max-width:1240px) {
+    @media screen and (max-width: ${props=>props.theme.width.width_l}) {
       gap: calc(10vw - 20px);
     }
-    @media screen and (max-width:850px) {
+    @media screen and (max-width: ${props=>props.theme.width.width_m}) {
       flex-direction: column;
       gap: 0;
     }
   }
 `
+
 export const MyInfo = styled(motion.div)`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 300px;
   max-width: 400px;
+  height: 100%;
   transform-origin: right bottom ;
   transition: width .3s;
-  > div {
-    margin: 20px 0;
+  > div{
+    height: 100%;
     padding: 20px;
     border: 4px solid #111;
   }
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: ${props=>props.theme.width.width_m}) {
+    margin-top: 40px;
     max-width: 540px;
   }
 `
@@ -57,6 +61,10 @@ export const TitleBox = styled(DFlex)`
   transition: all 0.3s;
   > *:not(img){
     padding: 0 20px;
+  }
+  @media screen and (max-width: ${props=>props.theme.width.width_m}) {
+    height: auto;
+    padding: 0 0 20px;
   }
 `
 export const TagBox = styled.div`
@@ -72,6 +80,9 @@ export const Tag = styled.span`
   font-size: ${props=>props.theme.font.size_ms};
   font-weight: 900;
   border: 1px solid ${props=>props.theme.colors.DARK};
+  @media screen and (max-width: ${props=>props.theme.width.width_m}) {
+    font-size: ${props=>props.theme.font.size_s};
+  }
 `
 export const MyOneWord = styled.p`
   padding: 20px 0;
@@ -88,7 +99,7 @@ export const MyAnotherInfo = styled.ul`
     display: block;
     line-height: 1.3;
     font-weight: 900;
-    font-size: ${props=>props.theme.font.size_m};
+    font-size: ${props=>props.theme.font.size_ms};
   }
 `
 export const MsImg = styled(motion.div)`
@@ -98,7 +109,7 @@ export const MsImg = styled(motion.div)`
   transform: translate(-50%,-50%);
   z-index: -1;
   transition: opacity .5s;
-  @media screen and (max-width: 1240px) {
+  @media screen and (max-width: ${props=>props.theme.width.width_l}) {
     opacity: .1;
   }
 `
@@ -118,15 +129,20 @@ export const MsImgFix = styled(motion.div)`
 `
 export const MySkill = styled(motion.div)`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 300px;
   max-width: 400px;
+  height: 100%;
   transform-origin: left bottom ;
-  > div {
-    margin: 20px 0;
+  > div{
+    height: 100%;
     padding: 20px;
     border: 4px solid #111;
   }
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: ${props=>props.theme.width.width_m}) {
+    margin-top: 40px;
     max-width: 540px;
   }
 `
@@ -137,6 +153,9 @@ export const SkillInfoBox = styled(DFlex)`
   gap: 16px;
   padding: 20px 0;
   img{height:60px}
+  @media screen and  (max-width: ${props=>props.theme.width.width_m}){
+    img{height:40px}
+  }
 `
 export const SkillStep = styled.div<{width:number}>`
   position: relative;
@@ -173,6 +192,10 @@ export const SkillStep = styled.div<{width:number}>`
       transparent 80% 
     );
     z-index: 2;
+  }
+  @media screen and  (max-width: ${props=>props.theme.width.width_m}){
+    margin: 10px 0;
+    width: 64px;
   }
 `
 

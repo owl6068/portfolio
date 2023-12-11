@@ -1,6 +1,5 @@
 import Title from "../component/Title";
 import {
-  AboutSection,
   AboutInner,
   TitleBox,
   MyInfo,
@@ -16,13 +15,18 @@ import {
   rightBox,
   cardVariants,
   MsImgMo,
-} from "../css/about";
+} from "../css/page/aboutStyle";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { myInfoTag, mySkill } from "../utils/utilArr";
 import { useRecoilValue } from "recoil";
-import { moWid, windowHeightAtom, windowWidthAtom } from "../utils/atom";
-import { IPageId } from "../utils/interface";
+import {
+  moWid,
+  windowHeightAtom,
+  windowWidthAtom,
+} from "../utils/atom/commonAtom";
+import { IPageId } from "../utils/interface/PFinterface";
 import { useEffect, useState } from "react";
+import { Section } from "../css/common";
 
 function About({ id }: IPageId) {
   const moWidth = useRecoilValue(moWid);
@@ -33,7 +37,7 @@ function About({ id }: IPageId) {
   const y = useTransform(
     scrollY,
     [windowHeigh, windowHeigh * 2],
-    [0, windowHeigh]
+    [0, windowHeigh * 2 - 200]
   );
   useEffect(() => {
     if (windowWidth > moWidth) {
@@ -42,8 +46,9 @@ function About({ id }: IPageId) {
       setDelay(0);
     }
   }, [windowWidth, moWidth]);
+
   return (
-    <AboutSection id={id}>
+    <Section id={id}>
       <AboutInner>
         <div>
           <MyInfo
@@ -89,14 +94,14 @@ function About({ id }: IPageId) {
               viewport={{ once: true, amount: 0.2 }}
             >
               <motion.img
-                src="/img/smile.svg"
+                src="portfolio/img/smile.svg"
                 alt="ms"
                 variants={cardVariants}
               />
             </MsImg>
           ) : (
             <MsImgMo style={{ y, x: 0 }}>
-              <motion.img src="/img/smile.svg" alt="ms" />
+              <motion.img src="portfolio/img/smile.svg" alt="ms" />
             </MsImgMo>
           )}
           <MySkill
@@ -120,7 +125,7 @@ function About({ id }: IPageId) {
           </MySkill>
         </div>
       </AboutInner>
-    </AboutSection>
+    </Section>
   );
 }
 

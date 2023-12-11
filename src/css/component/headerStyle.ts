@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Inner } from "./common";
+import { Inner } from "../common";
 
 export const Head = styled(motion.header)`
   position: fixed;

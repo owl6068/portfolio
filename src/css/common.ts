@@ -19,17 +19,22 @@ export const DFlexBtw = styled(DFlex)`
 // ========= section common ==========
 export const Wrap = styled.div`
   overflow: hidden;
-  `
+`
+
 export const Section = styled.section`
   display: flex;
+  align-items: stretch;
+  padding: 80px 0;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  align-items: stretch;
+  @media screen and (max-width: ${props=>props.theme.width.width_s}){
+    padding: 40px 0;
+  }
 `
 export const Inner = styled.div`
+  padding: 100px 30px;
   width: 100%;
-  padding: 0 30px;
   @media screen and (max-width:850px){
     padding: 15px 20px;
   }

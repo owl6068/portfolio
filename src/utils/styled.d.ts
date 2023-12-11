@@ -11,11 +11,6 @@ declare module 'styled-components' {
       LIGHT:string;
       DARK:string;
     };
-    title:{
-      size_l:string;
-      size_m:string;
-      size_s:string;
-    }
     font:{
       size_l:string;
       size_m:string;
@@ -23,5 +18,13 @@ declare module 'styled-components' {
       size_s:string;
       size_ss:string;
     }
+    width:{
+      width_lx:string,
+      width_l:string,
+      width_m:string,
+      width_s:string,
+      width_ss:string,
+    }
+    boxShadow:string,
   }
 }

@@ -1,23 +1,46 @@
 import styled from "styled-components";
 
-export const Tit = styled.h1<{ size: string }>`
+export const Tit = styled.h1<{ color: string }>`
   white-space: pre-wrap;
-  font-size: ${(props) =>
-    props.size === "l"
-      ? props.theme.title.size_l
-      : props.size === "m"
-      ? props.theme.title.size_m
-      : props.theme.title.size_s};
   font-weight: 900;
+  transition: font 0.3s;
+  color: ${(props) => props.color};
+  &.title__size-l {
+    font-size: 50px;
+  }
+  &.title__size-m {
+    font-size: 40px;
+  }
+  &.title__size-s {
+    font-size: 30px;
+  }
+  &.title__size-ss {
+    font-size: 22px;
+  }
+  @media screen and (max-width: 850px) {
+    &.title__size-l {
+      font-size: 32px;
+    }
+    &.title__size-m {
+      font-size: 26px;
+    }
+    &.title__size-s {
+      font-size: 22px;
+    }
+    &.title__size-ss {
+      font-size: 18px;
+    }
+  }
 `;
 interface ITitle {
-  as: string;
+  as?: string;
   text: string;
   size: string;
+  color?: string;
 }
-function Title({ as = "h1", text, size }: ITitle) {
+function Title({ as = "h1", text, size, color = "#222" }: ITitle) {
   return (
-    <Tit as={as} size={size}>
+    <Tit as={as} className={`title__size-${size}`} color={color}>
       {text}
     </Tit>
   );

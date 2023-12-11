@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Inner } from "./common";
+import { Inner, Section } from "../common";
 
+export const MainSection = styled(Section)`
+  padding: 0;
+`
 export const MainInner = styled(Inner)`
   position: relative;
   display: flex;
@@ -44,7 +47,7 @@ export const NameText = styled(motion.span)`
 export const NameDesc = styled(motion.h1)`
   padding: 16px 0;
   text-align: justify;
-  font-size: ${props=>props.theme.title.size_m};
+  font-size: 40px;
   font-family: 'Archivo Black', sans-serif;
   white-space: nowrap;
   transition: font .3s;

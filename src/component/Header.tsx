@@ -8,11 +8,11 @@ import {
   NavMenu,
   Tooltip,
   aniHeadHoverBtn,
-} from "../css/header";
+} from "../css/component/headerStyle";
 import { headerBtn, headerNav } from "../utils/utilArr";
 import { motion } from "framer-motion";
-import { aniUpDwon } from "../css/Main";
-import { useState } from "react";
+import { aniUpDwon } from "../css/page/mainStyle";
+import { useEffect, useState } from "react";
 
 function Header() {
   const [tooltip, setTooltip] = useState(false);
@@ -22,7 +22,17 @@ function Header() {
     if (name === "연락처") {
       setTooltip((prev) => !prev);
     } else {
-      setNav((prev) => !prev);
+      moHamberger();
+    }
+  };
+
+  const moHamberger = () => {
+    if (nav === false) {
+      document.body.style.overflow = "hidden";
+      setNav(true);
+    } else {
+      document.body.style.overflow = "unset";
+      setNav(false);
     }
   };
 
@@ -35,22 +45,19 @@ function Header() {
       target.scrollIntoView({ behavior: "smooth" });
     }
   };
-
   return (
     <Head variants={aniUpDwon} initial="hidden" animate="visible">
       <InnerBtw>
         <Logo initial={false} whileHover={{ scale: 1.2 }}>
           <Link to="/">
-            <img src="/img/smile.svg" alt="" />
+            <img src="portfolio/img/smile.svg" alt="" />
           </Link>
         </Logo>
-        <NavMenu
-          className={nav ? "openMenu" : ""}
-          onClick={() => setNav(false)}
-        >
+        <NavMenu className={nav ? "openMenu" : ""} onClick={moHamberger}>
           {headerNav.map((menu) => (
             <Menu
               href={`#${menu.name}`}
+              // href={`/${menu.name}`}
               key={menu.id}
               onClick={(e) => onPress(e)}
               data-to-scrollspy-id={menu.name}

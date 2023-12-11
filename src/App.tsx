@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import Layout from "./Layout";
 import { Wrap } from "./css/common";
 import { GlobalStyle } from "./css/reset";
 import { useSetRecoilState } from "recoil";
-import { windowHeightAtom, windowWidthAtom } from "./utils/atom";
+import { windowHeightAtom, windowWidthAtom } from "./utils/atom/commonAtom";
+import { Outlet } from "react-router-dom";
+import Header from "./component/Header";
 
 function App() {
   const setWindowWidthRecoil = useSetRecoilState(windowWidthAtom); //window width
@@ -34,7 +35,9 @@ function App() {
   return (
     <Wrap className="App">
       <GlobalStyle />
-      <Layout />
+      {/* <Layout /> */}
+      <Header />
+      <Outlet />
     </Wrap>
   );
 }

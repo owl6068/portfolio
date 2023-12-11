@@ -38,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	a{
 		text-decoration: none;
+		cursor: pointer;
 	}
 	button{
 		background-color: transparent;
@@ -48,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
 		border: 0;
 		width: 100%;
 	}
-	address{
+	address, em{
 		font-style:normal
 	}
 `

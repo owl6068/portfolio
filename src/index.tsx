@@ -5,14 +5,18 @@ import { myTheme } from "./css/theme";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Router";
 import { RecoilRoot } from "recoil";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+const queryClient = new QueryClient();
 root.render(
   <ThemeProvider theme={myTheme}>
     <RecoilRoot>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </RecoilRoot>
   </ThemeProvider>
 );
