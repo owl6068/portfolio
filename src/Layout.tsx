@@ -6,11 +6,11 @@ import { windowHeightAtom } from "./utils/atom/commonAtom";
 
 function Layout() {
   const wheight = useRecoilValue(windowHeightAtom);
-  document.body.style.position = "fixed";
-  document.body.style.overflowY = "scroll";
-  document.body.style.width = "100%";
+  // document.body.style.position = "fixed";
+  document.body.style.overflowY = "hidden";
+  // document.body.style.width = "100%";
   setTimeout(() => {
-    document.body.style.position = "static";
+    // document.body.style.position = "static";
     document.body.style.overflow = "unset";
   }, 4500);
 
