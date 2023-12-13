@@ -22,7 +22,7 @@ export const TabBoxUl = styled(motion.ul)`
   height:100%;
   grid-template-columns: repeat(2, 1fr);
   gap: 100px 40px;
-  @media screen and (max-width: ${props=>props.theme.width.width_s}){
+  @media screen and (max-width: ${props=>props.theme.width.width_m}){
     grid-template-columns: repeat(1, 1fr);
     gap: 40px;
   }
@@ -86,6 +86,7 @@ export const TabBoxLi = styled(motion.li)`
   width: 100%;
   height: 400px;
   background-color: #fff;
+  margin: 0 auto;
   gap: 20px;
   > button {
     position: relative;
@@ -102,6 +103,13 @@ export const TabBoxLi = styled(motion.li)`
         }
       }
     }
+  }
+  @media screen and (max-width: ${props=>props.theme.width.width_m}){
+    max-width: 540px;
+    height: 300px;
+  }
+  @media screen and (max-width: ${props=>props.theme.width.width_ss}){
+    height: 250px;
   }
 `
 export const TabBoxIn = styled.span`
@@ -192,26 +200,54 @@ export const BtnFrontInfo = styled(motion.span)`
       word-break: keep-all;
     }
   }
-  @media screen and (max-width: ${props=>props.theme.width.width_m}){
-    .btn__info__Box {
-      > div {display:none}
-   }
-  }
   @media screen and (max-width: ${props=>props.theme.width.width_s}){
     .btn__info__Box {
       flex:2;
-      > div {display:flex; justify-content:flex-start; gap:20px;}
+      align-self: stretch;
+      height: auto;
+      > div {display:flex; gap:20px;}
    }
   }
-  @media screen and (max-width: ${props=>props.theme.width.width_ss}){
+  @media screen and (max-width: 550px){
      .btn__info__Box {
-      > div {display:none;}
+      > span:not(.btn__info) {display:none;}
    }
   }
-  @media screen and (max-width: 400px){
-    .btn__title__box {width: 100%;}
+  @media screen and (max-width:  ${props=>props.theme.width.width_ss}){
+    flex-direction: column;
+    .btn__title__box {
+      width: 100%;
+      > em{
+        padding: 2px 0 8px;
+      }
+    }
     .btn__info__Box {
-      display: none;
+      padding-left: 0;
+      border-left: 0;
+      .btn__info{
+        display: flex;
+        align-items: center;
+        padding: 8px 0 4px;
+        margin-bottom:0;
+        border-top: 1px solid #ccc;
+        /* background-color: ${props=>props.theme.colors.PRIMARY}; */
+        strong{
+          flex-shrink: 0;
+          padding-right: 10px;
+          color:#111;
+          text-transform:uppercase;
+          font-weight: 700;
+          &:after{
+            content: " -";
+          }
+        }
+        > span em{
+          padding: 0;
+          margin: 0;
+          font-size:12px;
+          font-weight: 700;
+        }
+      }
     }
   }
 `

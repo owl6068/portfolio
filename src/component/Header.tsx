@@ -12,21 +12,18 @@ import {
 import { headerBtn, headerNav } from "../utils/utilArr";
 import { motion } from "framer-motion";
 import { aniUpDwon } from "../css/page/mainStyle";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRecoilValue } from "recoil";
+import { moWid, windowWidthAtom } from "../utils/atom/commonAtom";
 
 function Header() {
+  const wWdith = useRecoilValue(windowWidthAtom);
+  const moWidth = useRecoilValue(moWid);
   const [tooltip, setTooltip] = useState(false);
   const [nav, setNav] = useState(false);
 
-  const onclick = (name: string) => {
-    if (name === "연락처") {
-      setTooltip((prev) => !prev);
-    } else {
-      moHamberger();
-    }
-  };
-
   const moHamberger = () => {
+    // 모바일 배경 클릭시 닫힘
     if (nav === false) {
       document.body.style.overflow = "hidden";
       setNav(true);
@@ -36,8 +33,15 @@ function Header() {
     }
   };
 
+  const onContact = () => {
+    setTooltip((prev) => !prev);
+  };
+
   const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
+    if (wWdith < moWidth) {
+      moHamberger();
+    }
     const target = window.document.getElementById(
       e.currentTarget.href.split("#")[1]
     );
@@ -45,15 +49,27 @@ function Header() {
       target.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const modalRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+        onContact();
+      }
+    };
+    window.addEventListener("mousedown", handleClick);
+    return () => window.removeEventListener("mousedown", handleClick);
+  }, [modalRef]);
+
   return (
     <Head variants={aniUpDwon} initial="hidden" animate="visible">
       <InnerBtw>
         <Logo initial={false} whileHover={{ scale: 1.2 }}>
           <Link to="/">
-            <img src="img/smile.svg" alt="" />
+            <img src="portfolio/img/smile.svg" alt="" />
           </Link>
         </Logo>
-        <NavMenu className={nav ? "openMenu" : ""} onClick={moHamberger}>
+        <NavMenu className={nav ? "openMenu" : ""}>
           {headerNav.map((menu) => (
             <Menu
               href={`#${menu.name}`}
@@ -71,7 +87,7 @@ function Header() {
             <button
               className={"hmenu" + i}
               key={btn.id}
-              onClick={() => onclick(btn.name)}
+              onClick={btn.name === "연락처" ? onContact : moHamberger}
             >
               <svg>
                 <motion.path
@@ -90,7 +106,7 @@ function Header() {
             </button>
           ))}
           {tooltip && (
-            <Tooltip>
+            <Tooltip ref={modalRef}>
               <a href="tel:010-3386-7068">010.3386.7068</a>
             </Tooltip>
           )}

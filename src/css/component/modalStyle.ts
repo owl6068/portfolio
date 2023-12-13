@@ -124,7 +124,7 @@ export const ModalInfoUl = styled.ul`
        border: 1px solid #aaa;
        padding: 30px 20px 10px;
        margin: 30px 0;
-        > p {
+        > p , a {
           display: flex;
           align-items: flex-start;
           > span{
@@ -133,11 +133,6 @@ export const ModalInfoUl = styled.ul`
           }
         }
       }
-      /* &__tit{
-        > span{
-          &:last-of-type{color:${props=>props.theme.colors.ACTIVE}}
-        }
-      } */
       &__tit{
         position: absolute;
         left: 10px;

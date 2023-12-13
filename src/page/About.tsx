@@ -94,7 +94,7 @@ function About({ id }: IPageId) {
               viewport={{ once: true, amount: 0.2 }}
             >
               <motion.img
-                src="img/smile.svg"
+                src="portfolio/img/smile.svg"
                 alt="ms"
                 variants={cardVariants}
               />

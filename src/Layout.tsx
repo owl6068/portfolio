@@ -1,9 +1,12 @@
+import { useRecoilValue } from "recoil";
 import About from "./page/About";
 import Main from "./page/Main";
 import PortFolio from "./page/PortFolio";
 import ScrollSpy from "react-ui-scrollspy";
+import { windowHeightAtom } from "./utils/atom/commonAtom";
 
 function Layout() {
+  const wheight = useRecoilValue(windowHeightAtom);
   document.body.style.position = "fixed";
   document.body.style.overflowY = "scroll";
   document.body.style.width = "100%";
@@ -17,7 +20,7 @@ function Layout() {
       <ScrollSpy
         scrollThrottle={200}
         updateHistoryStack={false}
-        offsetBottom={50}
+        offsetBottom={wheight}
         useBoxMethod
       >
         <Main id="Main" />

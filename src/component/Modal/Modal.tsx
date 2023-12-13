@@ -16,6 +16,7 @@ import {
 } from "../../utils/atom/commonAtom";
 import { IPortFolioNav } from "../../utils/interface/PFinterface";
 import About from "../../page/About";
+import { Link } from "react-router-dom";
 
 function Modal() {
   const portfolio = useRecoilValue<IPortFolioNav[]>(filterModalPFIntoSelector);
@@ -36,18 +37,18 @@ function Modal() {
             <p>{info.desc}</p>
             {info.career ? (
               info.link ? (
-                <a href={info.link} target="_blank" className="img__link link">
-                  <img src={`/img/site/${info.bgImg}.png`} alt="" />
-                </a>
+                <Link to={info.link} target="_blank" className="img__link link">
+                  <img src={`portfolio/img/site/${info.bgImg}.png`} alt="" />
+                </Link>
               ) : (
                 <span className="img__link">
-                  <img src={`/img/site/${info.bgImg}.png`} alt="" />
+                  <img src={`portfolio/img/site/${info.bgImg}.png`} alt="" />
                 </span>
               )
             ) : (
               info.title === "PortFolio" && (
                 <span className="img__link">
-                  <img src={`/img/site/${info.bgImg}.png`} alt="" />
+                  <img src={`portfolio/img/site/${info.bgImg}.png`} alt="" />
                 </span>
               )
             )}
@@ -135,9 +136,6 @@ function Modal() {
                     {info.site.map((data) => (
                       <div className="list__site__box">
                         <strong className="list__site__tit">{data.name}</strong>
-                        {/* <p className="list__site__tit">
-                              <span>Site</span> <span>{data.name}</span>
-                            </p> */}
                         <p className="list__site__dis">
                           <span>Display</span> <span>{data.display}</span>
                         </p>
@@ -145,9 +143,13 @@ function Modal() {
                           <span>Wrok</span> <span>{data.desc}</span>
                         </p>
                         {data.link && (
-                          <p className="list__site__link">
+                          <Link
+                            to={data.link}
+                            target="_blank"
+                            className="list__site__link"
+                          >
                             <span>Link</span> <span>{data.link}</span>
-                          </p>
+                          </Link>
                         )}
                       </div>
                     ))}

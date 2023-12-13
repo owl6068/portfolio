@@ -34,7 +34,7 @@ function TabContanBox() {
             <BtnFront>
               <img
                 className="btn__img__bg"
-                src={`img/site/${pp.bgImg}.png`}
+                src={`portfolio/img/site/${pp.bgImg}.png`}
                 alt={pp.title}
               />
 
@@ -51,7 +51,7 @@ function TabContanBox() {
                     </span>
                   </span>
                   {pp.tool && (
-                    <DFlexBtw>
+                    <DFlexBtw as="span">
                       <span>
                         <strong>디자인</strong>
                         <em>{pp.tool?.design}</em>
