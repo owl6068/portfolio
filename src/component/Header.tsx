@@ -13,10 +13,14 @@ import { motion } from "framer-motion";
 import { aniUpDwon } from "../css/page/mainStyle";
 import { useEffect, useRef, useState } from "react";
 import Scrollspy from "react-scrollspy";
+import { useRecoilValue } from "recoil";
+import { windowWidthAtom } from "../utils/atom/commonAtom";
 
 function Header() {
+  const windowWidth = useRecoilValue(windowWidthAtom);
   const [tooltip, setTooltip] = useState(false);
   const [nav, setNav] = useState(false);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   const moHamberger = () => {
     // 모바일 배경 클릭시 닫힘
@@ -46,19 +50,24 @@ function Header() {
     document.body.style.overflow = "unset";
   };
 
-  const tooltipRef = useRef<HTMLDivElement>(null); //외부영역 클릭시 tootip 닫히기
   useEffect(() => {
+    //외부영역 클릭시 tootip 닫히기
     const handleClick = (e: MouseEvent) => {
       if (
         tooltipRef.current &&
         !tooltipRef.current.contains(e.target as Node)
       ) {
-        onContact();
+        setTooltip(false);
       }
     };
     window.addEventListener("mousedown", handleClick);
     return () => window.removeEventListener("mousedown", handleClick);
   }, [tooltipRef]);
+
+  useEffect(() => {
+    //resize tooltop 닫기
+    setTooltip(false);
+  }, [windowWidth]);
 
   return (
     <Head variants={aniUpDwon} initial="hidden" animate="visible">

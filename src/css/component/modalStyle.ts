@@ -26,7 +26,7 @@ export const ModalInner = styled(motion.div)`
   padding: 30px 40px;
   width: 100%;
   max-width: 600px;
-  height: calc(100% - 200px);
+  height: 90vh;
   background-color: ${props=>props.theme.colors.LIGHT};
   z-index: 2;
   overflow: auto;
