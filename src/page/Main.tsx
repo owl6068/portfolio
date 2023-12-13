@@ -16,7 +16,7 @@ import { IPageId } from "../utils/interface/PFinterface";
 
 function Main({ id }: IPageId) {
   return (
-    <MainSection id={id}>
+    <MainSection id={id} data-to-scrollspy-id="Main">
       <MainInner>
         <NameBox>
           <Name

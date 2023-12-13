@@ -4,7 +4,6 @@ import {
   Head,
   InnerBtw,
   Logo,
-  Menu,
   NavMenu,
   Tooltip,
   aniHeadHoverBtn,
@@ -15,11 +14,11 @@ import { aniUpDwon } from "../css/page/mainStyle";
 import { useEffect, useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { moWid, windowWidthAtom } from "../utils/atom/commonAtom";
+import Scrollspy from "react-scrollspy";
 
 function Header() {
   const wWdith = useRecoilValue(windowWidthAtom);
   const moWidth = useRecoilValue(moWid);
-  const [menuIndex, setMenuIndex] = useState(0);
   const [tooltip, setTooltip] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -38,10 +37,8 @@ function Header() {
     setTooltip((prev) => !prev);
   };
 
-  const onPress = (
-    index: number,
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
+  const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    // 메뉴 클릭시 scroll
     e.preventDefault();
     if (wWdith < moWidth) {
       moHamberger();
@@ -50,21 +47,23 @@ function Header() {
       e.currentTarget.href.split("#")[1]
     );
     if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+      target.scrollIntoView({ behavior: "auto" });
     }
-    setMenuIndex(index);
   };
 
-  const modalRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null); //외부영역 클릭시 tootip 닫히기
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+      if (
+        tooltipRef.current &&
+        !tooltipRef.current.contains(e.target as Node)
+      ) {
         onContact();
       }
     };
     window.addEventListener("mousedown", handleClick);
     return () => window.removeEventListener("mousedown", handleClick);
-  }, [modalRef]);
+  }, [tooltipRef]);
 
   return (
     <Head variants={aniUpDwon} initial="hidden" animate="visible">
@@ -75,16 +74,22 @@ function Header() {
           </Link>
         </Logo>
         <NavMenu className={nav ? "openMenu" : ""}>
-          {headerNav.map((menu, i) => (
-            <Menu
-              href={`#${menu.name}`}
-              key={menu.id}
-              onClick={(e) => onPress(i, e)}
-              className={i === menuIndex ? "isActive" : ""}
-            >
-              {menu.name}
-            </Menu>
-          ))}
+          <Scrollspy
+            items={["Main", "About", "PortFolio"]}
+            currentClassName="isActive"
+            componentTag="div"
+          >
+            {headerNav.map((menu) => (
+              <Link
+                // href={`/${menu.name}`}
+                to={`#${menu.name}`}
+                key={menu.id}
+                onClick={(e) => onPress(e)}
+              >
+                {menu.name}
+              </Link>
+            ))}
+          </Scrollspy>
         </NavMenu>
         <HRigBox>
           {headerBtn.map((btn, i) => (
@@ -110,7 +115,7 @@ function Header() {
             </button>
           ))}
           {tooltip && (
-            <Tooltip ref={modalRef}>
+            <Tooltip ref={tooltipRef}>
               <a href="tel:010-3386-7068">010.3386.7068</a>
             </Tooltip>
           )}

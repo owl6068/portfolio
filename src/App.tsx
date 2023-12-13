@@ -13,12 +13,6 @@ function App() {
     setWindowWidthRecoil(window.innerWidth);
     setWindowHeightRecoil(window.innerHeight);
   };
-  // useEffect(() => {
-  //   //새로고침시 상단으로 이동
-  //   window.onbeforeunload = function pushRefresh() {
-  //     window.scrollTo(0, 0);
-  //   };
-  // }, []);
   useEffect(() => {
     //현재 화면 width, height 값
     setWindowWidthRecoil(window.innerWidth);
@@ -35,7 +29,6 @@ function App() {
   return (
     <Wrap className="App">
       <GlobalStyle />
-      {/* <Layout /> */}
       <Header />
       <Outlet />
     </Wrap>

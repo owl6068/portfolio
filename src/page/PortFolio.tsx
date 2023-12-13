@@ -36,7 +36,7 @@ function PortFolio({ id }: IPageId) {
     window.scrollTo(0, offset?.current?.offsetTop);
   }, [moving]);
   return (
-    <Section id={id} ref={offset}>
+    <Section id={id} ref={offset} data-to-scrollspy-id="PortFolio">
       <PortFolioInner>
         <BgTextbox
           initial="offscreen"

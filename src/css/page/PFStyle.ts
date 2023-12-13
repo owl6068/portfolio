@@ -22,6 +22,18 @@ export const BgTextbox = styled(motion.div)`
   width: 100%;
   height: 100%;
   z-index: -1;
+  transition: all 0.3s;
+  @media screen and (max-width: ${props=>props.theme.width.width_l}){
+    align-items: flex-start;
+    justify-content: flex-start;
+    writing-mode: vertical-rl;
+    padding: 160px 0;
+  }
+  @media screen and (max-width: ${props=>props.theme.width.width_ss}){
+    align-items: center;
+    padding: 160px 0;
+    h2{font-size:100vw}
+  }
 `
 export const BgText = styled(motion.h2)<{color:string}>`
   font-size: calc(40vw - 50px);

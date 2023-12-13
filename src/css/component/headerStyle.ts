@@ -31,79 +31,86 @@ export const Logo =styled(motion.div)`
   }
 `
 export const NavMenu = styled(motion.nav)`
-  display: flex;
-  align-items: center;
-  height: 100%;
-  &.openMenu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,1);
-    z-index: 12;
+  > div {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    height: 100%;
     a {
-      flex: 0;
-      padding: 5px;
-      margin: 5px;
-      color:${props=>props.theme.colors.LIGHT};
-      font-size: ${props=>props.theme.font.size_l};
-      text-align: left;
+      flex: 1;
+      display: block;
+      position: relative;
+      padding: 0 20px;
+      margin: 0 5px;
+      min-width: 140px;
+      font-size: ${props=>props.theme.font.size_m};
+      line-height: 40px;
+      font-weight: 600;
+      text-align: center;
       &:after {
-        display: none;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width:0%;
+        height: 2px;
+        background-color: ${props=>props.theme.colors.ACTIVE};
+      }
+      &:hover {
+        color: ${props=>props.theme.colors.ACTIVE};
       }
       &.isActive {
         color: ${props=>props.theme.colors.ACTIVE};
+        &:after {
+          width: 100%;
+          transition: all .3s;
+        }
       }
-      @media screen and (max-width:850px) {
-        display: block;
+      @media screen and (max-width:850px){
+        display: none;
+        width: auto;
+        &:after {
+          display: none;
+        }
+        &.isActive {
+          display: block;
+        }
+      }
+    }
+  }
+  &.openMenu {
+    > div {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,1);
+      z-index: 12;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      a {
+        flex: 0;
+        padding: 5px;
+        margin: 5px;
+        color:${props=>props.theme.colors.LIGHT};
+        font-size: ${props=>props.theme.font.size_l};
+        text-align: left;
+        &:after {
+          display: none;
+        }
+        &.isActive {
+          color: ${props=>props.theme.colors.ACTIVE};
+        }
+        @media screen and (max-width:850px) {
+          display: block;
+        }
       }
     }
   }
 `
 export const Menu = styled(motion.a)`
-  flex: 1;
-  display: block;
-  position: relative;
-  padding: 0 20px;
-  margin: 0 5px;
-  min-width: 140px;
-  font-size: ${props=>props.theme.font.size_m};
-  line-height: 40px;
-  font-weight: 600;
-  text-align: center;
-  &:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width:0%;
-    height: 2px;
-    background-color: ${props=>props.theme.colors.ACTIVE};
-  }
-  &:hover {
-    color: ${props=>props.theme.colors.ACTIVE};
-  }
-  &.isActive {
-    color: ${props=>props.theme.colors.ACTIVE};
-    &:after {
-      width: 100%;
-      transition: all .3s;
-    }
-  }
-  @media screen and (max-width:850px){
-    display: none;
-    width: auto;
-    &:after {
-      display: none;
-    }
-    &.isActive {
-      display: block;
-    }
-  }
+
 `
 export const HRigBox = styled.div`
   position: absolute;

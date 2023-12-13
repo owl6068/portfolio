@@ -57,9 +57,7 @@ function Modal() {
             {!info.career && info.title !== "PortFolio" ? (
               <>
                 <Title as="h4" text={"view."} size={"ss"} />
-                <ViewWrap>
-                  <About id="About" />
-                </ViewWrap>
+                <ViewWrap></ViewWrap>
               </>
             ) : null}
             <Title as="h4" text={"Description."} size={"ss"} />

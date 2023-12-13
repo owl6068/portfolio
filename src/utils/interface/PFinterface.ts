@@ -1,6 +1,6 @@
 
 export interface IPageId {
-  id:string  
+  id:string,
 }
 export interface IHeaderNav {
   id:string,
