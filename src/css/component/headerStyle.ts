@@ -55,7 +55,7 @@ export const NavMenu = styled(motion.nav)`
       &:after {
         display: none;
       }
-      &.active-scroll-spy {
+      &.isActive {
         color: ${props=>props.theme.colors.ACTIVE};
       }
       @media screen and (max-width:850px) {
@@ -87,7 +87,7 @@ export const Menu = styled(motion.a)`
   &:hover {
     color: ${props=>props.theme.colors.ACTIVE};
   }
-  &.active-scroll-spy {
+  &.isActive {
     color: ${props=>props.theme.colors.ACTIVE};
     &:after {
       width: 100%;
@@ -100,7 +100,7 @@ export const Menu = styled(motion.a)`
     &:after {
       display: none;
     }
-    &.active-scroll-spy {
+    &.isActive {
       display: block;
     }
   }

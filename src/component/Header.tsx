@@ -19,6 +19,7 @@ import { moWid, windowWidthAtom } from "../utils/atom/commonAtom";
 function Header() {
   const wWdith = useRecoilValue(windowWidthAtom);
   const moWidth = useRecoilValue(moWid);
+  const [menuIndex, setMenuIndex] = useState(0);
   const [tooltip, setTooltip] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -37,7 +38,10 @@ function Header() {
     setTooltip((prev) => !prev);
   };
 
-  const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const onPress = (
+    index: number,
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     e.preventDefault();
     if (wWdith < moWidth) {
       moHamberger();
@@ -48,6 +52,7 @@ function Header() {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
+    setMenuIndex(index);
   };
 
   const modalRef = useRef<HTMLDivElement>(null);
@@ -70,13 +75,12 @@ function Header() {
           </Link>
         </Logo>
         <NavMenu className={nav ? "openMenu" : ""}>
-          {headerNav.map((menu) => (
+          {headerNav.map((menu, i) => (
             <Menu
               href={`#${menu.name}`}
-              // href={`/${menu.name}`}
               key={menu.id}
-              onClick={(e) => onPress(e)}
-              data-to-scrollspy-id={menu.name}
+              onClick={(e) => onPress(i, e)}
+              className={i === menuIndex ? "isActive" : ""}
             >
               {menu.name}
             </Menu>

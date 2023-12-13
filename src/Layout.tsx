@@ -2,7 +2,6 @@ import { useRecoilValue } from "recoil";
 import About from "./page/About";
 import Main from "./page/Main";
 import PortFolio from "./page/PortFolio";
-import ScrollSpy from "react-ui-scrollspy";
 import { windowHeightAtom } from "./utils/atom/commonAtom";
 
 function Layout() {
@@ -17,16 +16,9 @@ function Layout() {
 
   return (
     <>
-      <ScrollSpy
-        scrollThrottle={200}
-        updateHistoryStack={false}
-        offsetBottom={wheight}
-        useBoxMethod
-      >
-        <Main id="Main" />
-        <About id="About" />
-        <PortFolio id="PortFolio" />
-      </ScrollSpy>
+      <Main id="Main" />
+      <About id="About" />
+      <PortFolio id="PortFolio" />
     </>
   );
 }
