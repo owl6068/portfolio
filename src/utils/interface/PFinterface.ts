@@ -27,7 +27,7 @@ export interface IPortFolioSite {
   desc:string,
   link?:string
 }
-export interface IPortFolioNav {
+export interface IPortFolioInfo {
   id:string,
   bgImg?:string,
   logoImg:string,
@@ -44,9 +44,8 @@ export interface IPortFolioNav {
   api?:string,
   link?:string
 }
-
-export interface IPTInfo {
- career:IPortFolioNav[],
- react:IPortFolioNav[],
- vue:IPortFolioNav[],
+export interface IPortFolioInfoAtom {
+ career:IPortFolioInfo[],
+ react:IPortFolioInfo[],
+ vue:IPortFolioInfo[],
 }

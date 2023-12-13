@@ -18,23 +18,26 @@ export const TabContant = styled.div`
   height:100%;
 `
 export const TabBoxUl = styled(motion.ul)`
-  display: grid;
+  display: flex;
   height:100%;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 100px 40px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px 40px ;
+  li {
+    width: calc(50% - 20px);
+  }
   @media screen and (max-width: ${props=>props.theme.width.width_m}){
-    grid-template-columns: repeat(1, 1fr);
     gap: 40px;
+    li {
+      width: 100%;
+    }
   }
 `
 
 export const TabBtnBox = styled(motion.div)`
 @keyframes pcFiexdBtn {
   0%{transform:translateY(-100%)}
-  100%{transform:translateY(0%)}
-}
-@keyframes moFiexdBtn {
-  0%{transform:translateY(100%)}
   100%{transform:translateY(0%)}
 }
   &.fiexed{
@@ -49,15 +52,14 @@ export const TabBtnBox = styled(motion.div)`
     animation: pcFiexdBtn 1 .5s both;
     animation-delay: .2s;
     @media screen and (max-width: ${props=>props.theme.width.width_s}){
-      top: unset;
-      bottom: 0;
-      animation-name: moFiexdBtn;
+      top: 70px;
+      animation:none;
     }
   }
 `
 export const TabBtn = styled.button`
   position: relative;
-  width: 80px;
+  width: 100px;
   font-size: ${props=>props.theme.font.size_m};
   line-height: 30px;
   transition: all .3s;
@@ -79,6 +81,7 @@ export const TabBtn = styled.button`
     }
   }
   @media screen and (max-width: ${props=>props.theme.width.width_s}){
+    width: 80px;
     font-size: ${props=>props.theme.font.size_ms};
   }
 `
@@ -106,10 +109,10 @@ export const TabBoxLi = styled(motion.li)`
   }
   @media screen and (max-width: ${props=>props.theme.width.width_m}){
     max-width: 540px;
-    height: 300px;
+    height: 350px;
   }
   @media screen and (max-width: ${props=>props.theme.width.width_ss}){
-    height: 250px;
+    height: 260px;
   }
 `
 export const TabBoxIn = styled.span`
@@ -120,10 +123,13 @@ export const TabBoxIn = styled.span`
   `
 
 export const BtnFront = styled(TabBoxIn)`
-  position:relative;
+  position: relative;
   display: block;
   height: 100%;
-  &::before{
+
+`
+export const BtnFrontImg = styled.div`
+    /* &::before{
     content: '';
     position: absolute;
     left: 0;
@@ -134,33 +140,45 @@ export const BtnFront = styled(TabBoxIn)`
     opacity: .5;
     transition: opacity .3s;
     z-index: 1;
-  }
-  .btn__img__bg{
-    object-fit: cover;
+  } */
+  .btn {
+    &__subject {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 0 10px;
+      color: ${props=>props.theme.colors.LIGHT};
+      line-height: 30px;
+      background-color: ${props=>props.theme.colors.DARK};
+      z-index: 2;
+    }
+    &__img__bg {
+      object-fit: cover;
+    }
   }
 `
-export const BtnFrontInfo = styled(motion.span)`
+export const BtnFrontInfo = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   align-self: stretch;
   width: 100%;
+  height: 146px;
   padding: 10px 20px;
   text-align: left;
   background-color: ${props=>props.theme.colors.LIGHT};
   box-shadow: 0 -5px 24px rgba(0,0,0,.2);
   z-index: 2;
-  .btn__title__box{
-    width:140px; 
-    flex-shrink:0;
-    strong {display:block; color:${props=>props.theme.colors.ACTIVE}; word-break:keep-all}
+  .btn__title__box {
+    display: block;
+    strong {
+      display:block; 
+      word-break:keep-all
+    }
     em {
       display: -webkit-box;
-      padding:8px 20px 10px 0; 
-      font-size:12px; 
+      padding:4px 20px 10px 0; 
+      font-size:14px; 
       color:${props=>props.theme.colors.SECONDARY}; 
       font-weight:600;
       overflow: hidden;
@@ -171,81 +189,41 @@ export const BtnFrontInfo = styled(motion.span)`
       word-break: keep-all;
     };
   }
-  .btn__info__Box{
-    flex: 1;
-    flex-shrink:1;
-    padding-left: 20px;
-    height: 90px;
-    border-left: 1px solid ${props=>props.theme.colors.SECONDARY};
-    strong {
-      display:block; 
-      font-size:12px; 
-      color:${props=>props.theme.colors.SECONDARY};
+  .btn__info__Box {
+    display: block;
+    > span {
+      flex-wrap: wrap;
     }
-    em {margin:0 8px 0 0; padding:0 3px 0; font-size:14px; font-weight:900;}
-    .btn__info {
-      display: block;
-      padding-bottom:6px;
-      margin-bottom:6px;
-      > span {display:flex;}
-    }
-    .text__overflow {
-      display: -webkit-box;
-      width: 100%;
-      overflow: hidden;
-      white-space: normal;
-      text-overflow: ellipsis;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
-      word-break: keep-all;
-    }
-  }
-  @media screen and (max-width: ${props=>props.theme.width.width_s}){
-    .btn__info__Box {
-      flex:2;
-      align-self: stretch;
-      height: auto;
-      > div {display:flex; gap:20px;}
-   }
-  }
-  @media screen and (max-width: 550px){
-     .btn__info__Box {
-      > span:not(.btn__info) {display:none;}
-   }
-  }
-  @media screen and (max-width:  ${props=>props.theme.width.width_ss}){
-    flex-direction: column;
-    .btn__title__box {
-      width: 100%;
-      > em{
-        padding: 2px 0 8px;
+    .tag {
+      display:block;
+      padding: 0 10px;
+      margin: 2px 4px 2px 0;
+      font-size: 14px;
+      line-height: 24px;
+      color: ${props=>props.theme.colors.ACTIVE};
+      border:1px solid ${props=>props.theme.colors.ACTIVE};
+      white-space: nowrap;
+      &:first-child{ 
+        color:#fff; 
+        background-color:${props=>props.theme.colors.ACTIVE};
       }
     }
-    .btn__info__Box {
-      padding-left: 0;
-      border-left: 0;
-      .btn__info{
-        display: flex;
-        align-items: center;
-        padding: 8px 0 4px;
-        margin-bottom:0;
-        border-top: 1px solid #ccc;
-        /* background-color: ${props=>props.theme.colors.PRIMARY}; */
-        strong{
-          flex-shrink: 0;
-          padding-right: 10px;
-          color:#111;
-          text-transform:uppercase;
-          font-weight: 700;
-          &:after{
-            content: " -";
-          }
-        }
-        > span em{
-          padding: 0;
-          margin: 0;
-          font-size:12px;
-          font-weight: 700;
+  }
+  @media screen and (max-width:  ${props=>props.theme.width.width_ss}){
+    height: 110px;
+    .btn__info__Box{
+      > span {
+        flex-wrap: nowrap;
+        overflow: hidden;
+      }
+      .tag {
+        padding: 0 5px;
+        margin: 2px 4px 2px 0;
+        font-size: 12px;
+        line-height: 20px;
+        &:first-child{ 
+          color:#fff; 
+          background-color:${props=>props.theme.colors.ACTIVE};
         }
       }
     }
@@ -260,29 +238,3 @@ export const BtnHover = styled(TabBoxIn)`
   gap: 20px;
   padding: 30px;
 `
-
-// 이미지 없는 디자인 start
-export const BtnHoverInfo = styled(motion.span)``
-export const TabBoxTitle = styled(TabBoxIn)`
-  flex-shrink:1;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-  img { width:auto; height: 50px}
-  span {
-    display: block;
-    padding:20px 0;
-    font-weight: 900;
-  }
-`
-export const TabBoxDesc = styled(TabBoxIn)`
-  flex-shrink:0;
-  align-items: flex-end;
-  justify-content: space-between;
-  text-align: right;
-  em, strong, span {display: block; }
-  strong {font-weight:900}
-  .tab__txt { padding:20px 0; line-height:1.3; word-break: keep-all;}
-  .tab__date { font-size:14px; font-weight:900 }
-`
-// 이미지 없는 디자인 end

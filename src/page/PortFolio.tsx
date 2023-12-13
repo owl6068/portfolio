@@ -19,18 +19,18 @@ import {
 import { TabContant, TabWrap } from "../css/component/tabStyle";
 import { useEffect, useRef, useState } from "react";
 function PortFolio({ id }: IPageId) {
-  const modalShow = useRecoilValue(modalPFAtom);
-  const tabBgText = useRecoilValue(portfolioBtnAtom);
+  const getModalShow = useRecoilValue(modalPFAtom);
+  const getTabBgText = useRecoilValue(portfolioBtnAtom);
 
-  const wWidth = useRecoilValue(windowWidthAtom);
-  const wHeight = useRecoilValue(windowHeightAtom);
+  const getWindowWidth = useRecoilValue(windowWidthAtom);
+  const getWindowHeigh = useRecoilValue(windowHeightAtom);
   const offset: any = useRef(null);
   const [offsetbox, setOffsetbox] = useState<number>(0);
   const [moving, setMoving] = useState("");
 
   useEffect(() => {
     setOffsetbox(offset?.current?.offsetTop);
-  }, [wWidth, wHeight]);
+  }, [getWindowWidth, getWindowHeigh]);
 
   useEffect(() => {
     window.scrollTo(0, offset?.current?.offsetTop);
@@ -43,8 +43,8 @@ function PortFolio({ id }: IPageId) {
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.8 }}
         >
-          <BgText variants={aniBgText} color={tabBgText}>
-            {tabBgText}
+          <BgText variants={aniBgText} color={getTabBgText}>
+            {getTabBgText}
           </BgText>
         </BgTextbox>
         <TabWrap>
@@ -54,7 +54,7 @@ function PortFolio({ id }: IPageId) {
           </TabContant>
         </TabWrap>
       </PortFolioInner>
-      {modalShow && <Modal />}
+      {getModalShow && <Modal />}
     </Section>
   );
 }

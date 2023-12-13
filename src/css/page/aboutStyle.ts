@@ -116,7 +116,7 @@ export const MsImg = styled(motion.div)`
 export const MsImgMo = styled(motion.div)`
   position: absolute;
   top:0;
-  opacity: .05;
+  opacity: .1;
   z-index: -1;
   width: 200px;
 `
@@ -200,7 +200,6 @@ export const SkillStep = styled.div<{width:number}>`
 `
 
 // =========== motion ============
-
 export const cardVariants = {
   offscreen: {
     y: "-150%",

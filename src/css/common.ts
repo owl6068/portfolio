@@ -19,7 +19,6 @@ export const DFlexBtw = styled(DFlex)`
 export const Wrap = styled.div`
   overflow: hidden;
 `
-
 export const Section = styled.section`
   display: flex;
   align-items: stretch;

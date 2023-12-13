@@ -1,4 +1,4 @@
-import { IHeaderNav, IMyInfoTag, IMySkill, IPTInfo} from "./interface/PFinterface";
+import { IHeaderNav, IMyInfoTag, IMySkill, IPortFolioInfoAtom} from "./interface/PFinterface";
 
 // ======== header ========
 export const headerNav : IHeaderNav[] = [
@@ -147,7 +147,7 @@ export const PortFolioBtn : IMyInfoTag[] = [
   },
 ]
 
-export const PortFolioList:IPTInfo = {
+export const PortFolioList:IPortFolioInfoAtom = {
   react:[
     {
       id:'re1',
@@ -159,7 +159,7 @@ export const PortFolioList:IPTInfo = {
       desc:'"recoil(상태관리)"로 data를 전역(atom)에서 사용할수 있도록 등록하고, selector에서 가공하여 바인딩을 하는 형식으로 작업하였습니다.\n"typeScript(interface)"를 등록하여, 형을 정의하고 매개변수값을 이용하여 error생기는 부분을 빠르게 찾아 수정할수 있었습니다.\n"styled-component"를 이용하여 상황별 style이 변경되도록 변수전달방식이 편하고,\n똑같은 태그 보다 지정이름으로 한눈에 보기 편한 방식때문에 사용하였다.\n그리고 다양한 animation를 구현 할수 있는 "framer motion"을 이용하여 자연스루업 디자인을 추가할수 있었습니다.',
       date:'2023. 12',
       css:'styled-component',
-      skill:'useRecoli, framer-motion, typeScript(interface), useState, useEffect',
+      skill:'react / useRecoli / framer-motion / typeScript(interface) / useState / useEffect',
     },
     
   ],
@@ -273,7 +273,7 @@ export const PortFolioList:IPTInfo = {
           link:'https://www.kacelab.com/work_view.php?idx=24'
         },
        ],
-       link:'https://www.kecelab.co.kr/'
+       link:'https://www.kacelab.com/intro.php'
     },
     {
       id:'ca5',
@@ -304,7 +304,7 @@ export const PortFolioList:IPTInfo = {
       desc:'인턴3개월로 근무하며 처음으로 페이지를 만들었습니다.\n청년금융쪽의 페이지를 작업하였고, 자동결제 시스템 페이지 작업하고, 소득공유에 대한 소개페이지, 유지보수등등 여러가지를 시도해본 회사입니다.',
       display:'반응형 웹',
       date:'2020.08 ~ 2020.10',
-      skill:'jQuery  / css / html',
+      skill:'jQuery / css / html',
       tool:
        {
           design:'Zeplin',

@@ -11,13 +11,13 @@ export const windowHeightAtom = atom<number>({
   default:0
 })
 
-export const pcWid = atom<number>({
-  key:'pcwidth',
+export const pcWidthAtom = atom<number>({
+  key:'pcWidthAtom',
   default: 1240
 })
 
-export const moWid = atom<number>({
-  key:'mowidth',
+export const moWidthAtom = atom<number>({
+  key:'moWidthAtom',
   default: 850
 })
 

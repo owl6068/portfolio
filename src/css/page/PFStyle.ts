@@ -14,26 +14,28 @@ export const PortFolioInner = styled(Inner)<{text:string}>`
 `
 export const BgTextbox = styled(motion.div)`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: absolute;
   top: 0%;
   left: 0%;
+  padding: 160px 0;
   width: 100%;
   height: 100%;
   z-index: -1;
   transition: all 0.3s;
-  @media screen and (max-width: ${props=>props.theme.width.width_l}){
-    align-items: flex-start;
-    justify-content: flex-start;
-    writing-mode: vertical-rl;
-    padding: 160px 0;
-  }
-  @media screen and (max-width: ${props=>props.theme.width.width_ss}){
-    align-items: center;
-    padding: 160px 0;
-    h2{font-size:60vw}
-  }
+    @media screen and (max-width: ${props=>props.theme.width.width_m}){
+      align-items: flex-start;
+      justify-content: flex-start;
+      writing-mode: vertical-rl;
+    }
+    @media screen and (max-width: ${props=>props.theme.width.width_s}){
+      align-items: center;
+    }
+    @media screen and (max-width: ${props=>props.theme.width.width_ss}){
+      padding: 160px 0;
+      h2{font-size:60vw}
+    }
 `
 export const BgText = styled(motion.h2)<{color:string}>`
   font-size: calc(40vw - 50px);
@@ -41,6 +43,7 @@ export const BgText = styled(motion.h2)<{color:string}>`
   color: ${props=> props.color === 'Career' ? props.theme.colors.ACTIVE : props.color === 'React' ? props.theme.colors.REACT : props.color === 'Vue' ? props.theme.colors.VUE : props.theme.colors.DARK};
   font-family: 'Archivo Black';
 `
+
 // ============== motion ==============
 export const aniBgText = {
   offscreen:{

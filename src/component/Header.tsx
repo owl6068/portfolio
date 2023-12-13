@@ -12,13 +12,9 @@ import { headerBtn, headerNav } from "../utils/utilArr";
 import { motion } from "framer-motion";
 import { aniUpDwon } from "../css/page/mainStyle";
 import { useEffect, useRef, useState } from "react";
-import { useRecoilValue } from "recoil";
-import { moWid, windowWidthAtom } from "../utils/atom/commonAtom";
 import Scrollspy from "react-scrollspy";
 
 function Header() {
-  const wWdith = useRecoilValue(windowWidthAtom);
-  const moWidth = useRecoilValue(moWid);
   const [tooltip, setTooltip] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -47,6 +43,7 @@ function Header() {
       target.scrollIntoView({ behavior: "auto" });
     }
     setNav(false);
+    document.body.style.overflow = "unset";
   };
 
   const tooltipRef = useRef<HTMLDivElement>(null); //외부영역 클릭시 tootip 닫히기

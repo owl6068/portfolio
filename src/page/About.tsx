@@ -20,7 +20,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { myInfoTag, mySkill } from "../utils/utilArr";
 import { useRecoilValue } from "recoil";
 import {
-  moWid,
+  moWidthAtom,
   windowHeightAtom,
   windowWidthAtom,
 } from "../utils/atom/commonAtom";
@@ -29,23 +29,23 @@ import { useEffect, useState } from "react";
 import { Section } from "../css/common";
 
 function About({ id }: IPageId) {
-  const moWidth = useRecoilValue(moWid);
-  const windowWidth = useRecoilValue(windowWidthAtom);
-  const windowHeigh = useRecoilValue(windowHeightAtom);
+  const getMoWidth = useRecoilValue(moWidthAtom);
+  const getWindowWidth = useRecoilValue(windowWidthAtom);
+  const getWindowHeigh = useRecoilValue(windowHeightAtom);
   const [delay, setDelay] = useState(1);
   const { scrollY } = useScroll();
   const y = useTransform(
     scrollY,
-    [windowHeigh, windowHeigh * 2],
-    [0, windowHeigh * 2 - 200]
+    [getWindowHeigh, getWindowHeigh * 2],
+    [0, getWindowHeigh * 2 - 200]
   );
   useEffect(() => {
-    if (windowWidth > moWidth) {
+    if (getWindowWidth > getMoWidth) {
       setDelay(0.5);
-    } else if (windowWidth < moWidth) {
+    } else if (getWindowWidth < getMoWidth) {
       setDelay(0);
     }
-  }, [windowWidth, moWidth]);
+  }, [getWindowWidth, getMoWidth]);
 
   return (
     <Section id={id} data-to-scrollspy-id="About">
@@ -87,7 +87,7 @@ function About({ id }: IPageId) {
               </MyAnotherInfo>
             </motion.div>
           </MyInfo>
-          {windowWidth > moWidth ? (
+          {getWindowWidth > getMoWidth ? (
             <MsImg
               initial="offscreen"
               whileInView="onscreen"

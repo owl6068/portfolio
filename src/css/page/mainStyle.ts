@@ -4,6 +4,10 @@ import { Inner, Section } from "../common";
 
 export const MainSection = styled(Section)`
   padding: 0;
+  padding-top: 80px;
+  @media screen and (max-width: ${props=>props.theme.width.width_s}){
+    padding-top: 70px;
+  }
 `
 export const MainInner = styled(Inner)`
   position: relative;
@@ -12,7 +16,12 @@ export const MainInner = styled(Inner)`
   justify-content: center; 
   overflow: hidden;
 `
-export const NameBox = styled.div``
+export const NameBox = styled.div`
+  padding-bottom: 80px;
+  @media screen and (max-width: ${props=>props.theme.width.width_s}){
+    padding-bottom: 70px;
+  }
+`
 export const Name = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -35,7 +44,7 @@ export const NameText = styled(motion.span)`
   text-align: center;
   font-family: 'Archivo Black', sans-serif;
   font-size: 120px;
-  color:  ${props=>props.theme.colors.PRIMARY};
+  color: ${props=>props.theme.colors.PRIMARY};
   transition: font .3s;
   @media screen and (max-width:850px){
     font-size: 100px;
@@ -61,14 +70,11 @@ export const NameDesc = styled(motion.h1)`
 export const Triangle = styled(motion.div)`
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: calc(20vh - 200px);
   width: 280px;
-  height:280px;
+  height: 280px;
   background: #FFC700;
   z-index: 1;
-  @media screen and (max-width:850px){
-    bottom: -10%;
-  }
 `
 
 // =========== motion ============

@@ -14,12 +14,12 @@ import {
   modalPFAtom,
   filterModalPFIntoSelector,
 } from "../../utils/atom/commonAtom";
-import { IPortFolioNav } from "../../utils/interface/PFinterface";
+import { IPortFolioInfo } from "../../utils/interface/PFinterface";
 import About from "../../page/About";
 import { Link } from "react-router-dom";
 
 function Modal() {
-  const portfolio = useRecoilValue<IPortFolioNav[]>(filterModalPFIntoSelector);
+  const portfolio = useRecoilValue<IPortFolioInfo[]>(filterModalPFIntoSelector);
   const setModalShow = useSetRecoilState(modalPFAtom);
   const modalHidden = () => {
     setModalShow(false);
@@ -31,7 +31,9 @@ function Modal() {
       <ModalDim onClick={modalHidden}></ModalDim>
       {info && (
         <ModalInner>
-          <ModalClose onClick={modalHidden}>✖</ModalClose>
+          <ModalClose>
+            <button onClick={modalHidden}>✖</button>
+          </ModalClose>
           <ModalHead style={{ backgroundImage: "" }}>
             <Title as="h2" text={info.title} size={"m"} />
             <p>{info.desc}</p>

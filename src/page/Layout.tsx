@@ -1,6 +1,6 @@
-import About from "./page/About";
-import Main from "./page/Main";
-import PortFolio from "./page/PortFolio";
+import About from "./About";
+import Main from "./Main";
+import PortFolio from "./PortFolio";
 
 function Layout() {
   document.body.style.position = "fixed";

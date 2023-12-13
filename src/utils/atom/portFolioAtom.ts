@@ -1,5 +1,5 @@
 import { atom, selector } from "recoil";
-import { IPTInfo } from "../interface/PFinterface";
+import { IPortFolioInfoAtom } from "../interface/PFinterface";
 import { PortFolioList } from "../utilArr";
 
 export const portfolioBtnAtom = atom<string>({
@@ -7,12 +7,12 @@ export const portfolioBtnAtom = atom<string>({
   default:'All'
 })
 
-export const portfolioListAtom = atom<IPTInfo>({
+export const portfolioListAtom = atom<IPortFolioInfoAtom>({
   key: 'PTList',
   default: PortFolioList,
 });
 
-export const filterPortFolioList = selector({
+export const filterPFListSelector = selector({
   key:'filterPTList',
   get:({get})=>{
     const activeBtn = get(portfolioBtnAtom)

@@ -19,7 +19,7 @@ export const InnerBtw = styled(Inner)`
     padding: 15px 20px;
   }
 `
-export const Logo =styled(motion.div)`
+export const Logo = styled(motion.div)`
   position: absolute;
   left: 30px;
   top: 20px;
@@ -187,7 +187,7 @@ export const Tooltip = styled(motion.div)`
   background-color: ${props=>props.theme.colors.ACTIVE};
   padding: 12px 24px;
   border-radius: 50em;
-  &::before{
+  &::before {
     content: "";
     position: absolute;
     right: 8px;
