@@ -40,15 +40,13 @@ function Header() {
   const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // 메뉴 클릭시 scroll
     e.preventDefault();
-    if (wWdith < moWidth) {
-      moHamberger();
-    }
     const target = window.document.getElementById(
       e.currentTarget.href.split("#")[1]
     );
     if (target) {
       target.scrollIntoView({ behavior: "auto" });
     }
+    setNav(false);
   };
 
   const tooltipRef = useRef<HTMLDivElement>(null); //외부영역 클릭시 tootip 닫히기
@@ -69,7 +67,7 @@ function Header() {
     <Head variants={aniUpDwon} initial="hidden" animate="visible">
       <InnerBtw>
         <Logo initial={false} whileHover={{ scale: 1.2 }}>
-          <Link to="/">
+          <Link to="#Main" onClick={(e) => onPress(e)}>
             <img src="img/smile.svg" alt="" />
           </Link>
         </Logo>
@@ -81,7 +79,6 @@ function Header() {
           >
             {headerNav.map((menu) => (
               <Link
-                // href={`/${menu.name}`}
                 to={`#${menu.name}`}
                 key={menu.id}
                 onClick={(e) => onPress(e)}

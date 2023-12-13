@@ -32,7 +32,7 @@ export const BgTextbox = styled(motion.div)`
   @media screen and (max-width: ${props=>props.theme.width.width_ss}){
     align-items: center;
     padding: 160px 0;
-    h2{font-size:100vw}
+    h2{font-size:60vw}
   }
 `
 export const BgText = styled(motion.h2)<{color:string}>`
