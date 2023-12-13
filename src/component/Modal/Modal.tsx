@@ -38,17 +38,17 @@ function Modal() {
             {info.career ? (
               info.link ? (
                 <Link to={info.link} target="_blank" className="img__link link">
-                  <img src={`portfolio/img/site/${info.bgImg}.png`} alt="" />
+                  <img src={`img/site/${info.bgImg}.png`} alt="" />
                 </Link>
               ) : (
                 <span className="img__link">
-                  <img src={`portfolio/img/site/${info.bgImg}.png`} alt="" />
+                  <img src={`img/site/${info.bgImg}.png`} alt="" />
                 </span>
               )
             ) : (
               info.title === "PortFolio" && (
                 <span className="img__link">
-                  <img src={`portfolio/img/site/${info.bgImg}.png`} alt="" />
+                  <img src={`img/site/${info.bgImg}.png`} alt="" />
                 </span>
               )
             )}
