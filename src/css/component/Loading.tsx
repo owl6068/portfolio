@@ -16,7 +16,7 @@ const Position = styled.div`
 function Loading() {
   return (
     <Position>
-      <img src="/portfolio/img/loading.svg" alt="" />
+      <img src="/img/loading.svg" alt="" />
     </Position>
   );
 }

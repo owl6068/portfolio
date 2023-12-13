@@ -34,7 +34,7 @@ function TabContanBox() {
             <BtnFront>
               <img
                 className="btn__img__bg"
-                src={`portfolio/img/site/${pp.bgImg}.png`}
+                src={`img/site/${pp.bgImg}.png`}
                 alt={pp.title}
               />
 

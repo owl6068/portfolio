@@ -50,7 +50,7 @@ function Header() {
       <InnerBtw>
         <Logo initial={false} whileHover={{ scale: 1.2 }}>
           <Link to="/">
-            <img src="portfolio/img/smile.svg" alt="" />
+            <img src="img/smile.svg" alt="" />
           </Link>
         </Logo>
         <NavMenu className={nav ? "openMenu" : ""} onClick={moHamberger}>

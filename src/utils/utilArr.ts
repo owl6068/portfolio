@@ -20,12 +20,12 @@ export const headerBtn : IHeaderNav[]= [
   {
     id:'rb1',
     name:'연락처',
-    img:'portfolio/img/phone.svg',
+    img:'img/phone.svg',
   },
   {
     id:'rb2',
     name:'메뉴',
-    img:'portfolio/img/bar.svg',
+    img:'img/bar.svg',
   }
 ];
 
@@ -68,62 +68,62 @@ export const myInfoTag : IMyInfoTag[] = [
 export const mySkill : IMySkill[]= [
   {
     name:'html',
-    img:'portfolio/img/logo/html.svg',
+    img:'img/logo/html.svg',
     adept:95,
   },
   {
     name:'css',
-    img:'portfolio/img/logo/css.svg',
+    img:'img/logo/css.svg',
     adept:95,
   },
   {
     name:'javascript',
-    img:'portfolio/img/logo/js.svg',
+    img:'img/logo/js.svg',
     adept:70,
   },
   {
     name:'jQuery',
-    img:'portfolio/img/logo/jquery.svg',
+    img:'img/logo/jquery.svg',
     adept:60,
   },
   {
     name:'react',
-    img:'portfolio/img/logo/react.svg',
+    img:'img/logo/react.svg',
     adept:40,
   },
   {
     name:'vue',
-    img:'portfolio/img/logo/vue.svg',
+    img:'img/logo/vue.svg',
     adept:40,
   },
   {
     name:'typescript',
-    img:'portfolio/img/logo/ts.svg',
+    img:'img/logo/ts.svg',
     adept:30,
   },
   {
     name:'styled-component',
-    img:'portfolio/img/logo/styled.svg',
+    img:'img/logo/styled.svg',
     adept:60,
   },
   {
     name:'vuetify',
-    img:'portfolio/img/logo/vuetify.svg',
+    img:'img/logo/vuetify.svg',
     adept:60,
   },
   {
     name:'bootstrap',
-    img:'portfolio/img/logo/boot.svg',
+    img:'img/logo/boot.svg',
     adept:70,
   },
   {
     name:'sass',
-    img:'portfolio/img/logo/sass.svg',
+    img:'img/logo/sass.svg',
     adept:70,
   },
   {
     name:'realGrid',
-    img:'portfolio/img/logo/grid.svg',
+    img:'img/logo/grid.svg',
     adept:20,
   },
 ]
