@@ -12,8 +12,9 @@ function HNavMenu() {
     const target = window.document.getElementById(
       e.currentTarget.href.split("#")[1]
     );
+    console.log("target", target);
     if (target) {
-      target.scrollIntoView({ behavior: "auto" });
+      window.scrollTo(0, target.offsetTop + 20);
     }
     setNavMenu(false);
     document.body.style.overflow = "unset";
