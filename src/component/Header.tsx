@@ -6,37 +6,22 @@ import {
   Logo,
   NavMenu,
   Tooltip,
-  aniHeadHoverBtn,
 } from "../css/component/headerStyle";
-import { headerBtn, headerNav } from "../utils/array/utilArr";
-import { motion } from "framer-motion";
+import { headerBtn } from "../utils/array/utilArr";
 import { aniUpDwon } from "../css/page/mainStyle";
-import { useEffect, useRef, useState } from "react";
-import Scrollspy from "react-scrollspy";
-import { useRecoilValue } from "recoil";
+import { useEffect, useRef } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { windowWidthAtom } from "../utils/atom/commonAtom";
 import { ImgUrlEtcArr } from "../utils/array/ImgUrl";
+import HRhombusBtn from "./header/HRhombusBtn";
+import { navMenuAtom, toolTipAtom } from "../utils/atom/headerAtom";
+import HNavMenu from "./header/HNavMenu";
 
 function Header() {
   const windowWidth = useRecoilValue(windowWidthAtom);
-  const [tooltip, setTooltip] = useState(false);
-  const [nav, setNav] = useState(false);
+  const [tooltip, setTooltip] = useRecoilState(toolTipAtom);
+  const [navMenu, setNavMenu] = useRecoilState(navMenuAtom);
   const tooltipRef = useRef<HTMLDivElement>(null);
-
-  const moHamberger = () => {
-    // 모바일 배경 클릭시 닫힘
-    if (nav === false) {
-      document.body.style.overflow = "hidden";
-      setNav(true);
-    } else {
-      document.body.style.overflow = "unset";
-      setNav(false);
-    }
-  };
-
-  const onContact = () => {
-    setTooltip((prev) => !prev);
-  };
 
   const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // 메뉴 클릭시 scroll
@@ -47,7 +32,7 @@ function Header() {
     if (target) {
       target.scrollIntoView({ behavior: "auto" });
     }
-    setNav(false);
+    setNavMenu(false);
     document.body.style.overflow = "unset";
   };
 
@@ -78,45 +63,12 @@ function Header() {
             <img src={ImgUrlEtcArr.smile.url} alt="" />
           </Link>
         </Logo>
-        <NavMenu className={nav ? "openMenu" : ""}>
-          <Scrollspy
-            items={["Main", "About", "PortFolio"]}
-            currentClassName="isActive"
-            componentTag="div"
-          >
-            {headerNav.map((menu) => (
-              <Link
-                to={`#${menu.name}`}
-                key={menu.id}
-                onClick={(e) => onPress(e)}
-              >
-                {menu.name}
-              </Link>
-            ))}
-          </Scrollspy>
+        <NavMenu className={navMenu ? "openMenu" : ""}>
+          <HNavMenu />
         </NavMenu>
         <HRigBox>
           {headerBtn.map((btn, i) => (
-            <button
-              className={"hmenu" + i}
-              key={btn.id}
-              onClick={btn.name === "연락처" ? onContact : moHamberger}
-            >
-              <svg>
-                <motion.path
-                  d="m 20 40 L 0 20 L 20 0 L 40 20 Z"
-                  fill="transparent"
-                  stroke="#666"
-                  strokeWidth="1"
-                  variants={aniHeadHoverBtn}
-                  initial="initial"
-                  whileHover="whileHover"
-                />
-              </svg>
-              <span>
-                <img src={btn.img} alt={btn.name} />
-              </span>
-            </button>
+            <HRhombusBtn key={btn.id} {...btn} i={i} />
           ))}
           {tooltip && (
             <Tooltip ref={tooltipRef}>

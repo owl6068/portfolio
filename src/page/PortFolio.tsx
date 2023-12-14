@@ -6,11 +6,11 @@ import {
   BgTextbox,
 } from "../css/page/PFStyle";
 import { Section } from "../css/common";
-import TabButton from "../component/PortFolio/TabButton";
+import TabButton from "../component/portfolio/TabButton";
 import { useRecoilValue } from "recoil";
 import { portfolioBtnAtom } from "../utils/atom/portFolioAtom";
-import TabContanBox from "../component/PortFolio/TabContanBox";
-import Modal from "../component/Modal/Modal";
+import TabContanBox from "../component/portfolio/TabContanBox";
+import Modal from "../component/modal/Modal";
 import {
   modalPFAtom,
   windowHeightAtom,
