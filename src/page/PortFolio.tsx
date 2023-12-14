@@ -33,14 +33,14 @@ function PortFolio({ id }: IPageId) {
   const [moving, setMoving] = useState("");
 
   useEffect(() => {
-    setOffsetbox(offset?.current?.offsetTop);
+    setOffsetbox(offset?.current?.offsetTop + 20);
   }, [getWindowWidth, getWindowHeigh]);
 
   useEffect(() => {
-    window.scrollTo(0, offset?.current?.offsetTop);
+    window.scrollTo(0, offset?.current?.offsetTop + 20);
   }, [moving]);
   return (
-    <Section id={id} ref={offset} data-to-scrollspy-id="PortFolio">
+    <Section id={id} ref={offset}>
       <PortFolioInner>
         <BgTextbox
           initial="offscreen"

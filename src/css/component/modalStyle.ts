@@ -109,8 +109,8 @@ export const ModalHead = styled.div`
     img {
       position: absolute;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+      top: 0;
+      transform: translateX(-50%);
       width:100%;
       height: auto;
     }

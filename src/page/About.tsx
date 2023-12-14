@@ -49,7 +49,7 @@ function About({ id }: IPageId) {
   }, [getWindowWidth, getMoWidth]);
 
   return (
-    <Section id={id} data-to-scrollspy-id="About">
+    <Section id={id}>
       <AboutInner>
         <div>
           <MyInfo
