@@ -153,7 +153,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
       id:'re1',
       career:false,
       bgImg:ImgUrlStieArr.msPF.url,
-      logoImg:'React',
+      lib:'React',
       title:'PortFolio',
       simply:'react로 작업한 포트폴리오',
       desc:'"recoil(상태관리)"로 data를 전역(atom)에서 사용할수 있도록 등록하고, selector에서 가공하여 바인딩을 하는 형식으로 작업하였습니다.\n"typeScript(interface)"를 등록하여, 형을 정의하고 매개변수값을 이용하여 error생기는 부분을 빠르게 찾아 수정할수 있었습니다.\n"styled-component"를 이용하여 상황별 style이 변경되도록 변수전달방식이 편하고,\n똑같은 태그 보다 지정이름으로 한눈에 보기 편한 방식때문에 사용하였다.\n그리고 다양한 animation를 구현 할수 있는 "framer motion"을 이용하여 자연스루업 디자인을 추가할수 있었습니다.',
@@ -167,7 +167,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'ca1',
       bgImg:ImgUrlStieArr.skt.url,
-      logoImg:'Vue',
+      lib:'Vue',
       career:true,
       title:'SK 우주T',
       simply:'SK 우주T admin의 Swing메뉴',
@@ -185,7 +185,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'ca2',
       bgImg:ImgUrlStieArr.allraai.url,
-      logoImg:'allra',
+      lib:'allra',
       career:true,
       title:'allra Ai장부',
       simply:'쇼핑몰 선정산 서비스와 연동된 장부',
@@ -204,7 +204,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'ca3',
       bgImg:ImgUrlStieArr.allra.url,
-      logoImg:'Vue',
+      lib:'Vue',
       career:true,
       title:'allra',
       simply:'쇼핑몰 선정산 핀테크 서비스',
@@ -223,7 +223,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'ca4',
       bgImg:ImgUrlStieArr.kace.url,
-      logoImg:'kacelab',
+      lib:'kacelab',
       career:true,
       title:'Kacelab',
       simply:'스타트업 에이전시',
@@ -278,7 +278,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'ca5',
       bgImg:ImgUrlStieArr.dbdb.url,
-      logoImg:'dbdb',
+      lib:'dbdb',
       career:true,
       title:'디비디비',
       simply:'오픈마켓 쇼핑몰 사이트',
@@ -297,7 +297,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'ca6',
       bgImg:ImgUrlStieArr.hak.url,
-      logoImg:'hdm',
+      lib:'hdm',
       career:true,
       title:'학생독립만세',
       simply:'소득공유(ISA) 후불제',

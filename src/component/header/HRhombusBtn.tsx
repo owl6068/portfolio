@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { navMenuAtom, toolTipAtom } from "../../utils/atom/headerAtom";
 import { IHeaderNav } from "../../utils/interface/PFinterface";
+import { ImgUrlEtcArr } from "../../utils/array/ImgUrl";
 
 interface IProps extends IHeaderNav {
   i: number;
@@ -42,7 +43,11 @@ function RhombusBtn({ id, name, img, i }: IProps) {
         />
       </svg>
       <span>
-        <img src={img} alt={name} />
+        {navMenu ? (
+          <img src={ImgUrlEtcArr.close.url} alt="close" />
+        ) : (
+          <img src={img} alt={name} />
+        )}
       </span>
     </button>
   );

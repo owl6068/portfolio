@@ -30,7 +30,7 @@ export interface IPortFolioSite {
 export interface IPortFolioInfo {
   id:string,
   bgImg?:string,
-  logoImg:string,
+  lib:string,
   career:boolean,
   title:string,
   simply:string,

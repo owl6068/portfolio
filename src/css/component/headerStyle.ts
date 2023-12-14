@@ -78,14 +78,13 @@ export const NavMenu = styled(motion.nav)`
     }
   }
   &.openMenu {
-    > div {
       position: fixed;
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
+    > div {
       background-color: rgba(0,0,0,1);
-      z-index: 12;
       display: flex;
       flex-direction: column;
       justify-content: center;

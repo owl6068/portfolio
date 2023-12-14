@@ -5,6 +5,7 @@ export interface IImgUrlEtcArr {
   phone:IUrl,
   bar:IUrl,
   warning:IUrl,
+  close:IUrl,
 };
 
 export interface IImgUrlSkilArr {

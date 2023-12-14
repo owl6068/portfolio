@@ -135,51 +135,52 @@ export const ModalBody = styled.div`
 `
 export const ModalInfoUl = styled.ul`
   padding: 10px 0;
-  li {
-    strong {
-      display: block;
-      padding-bottom: 8px;
-      font-size: 20px;
-      line-height:24px;
-      color: ${props=>props.theme.colors.PRIMARY};
-    }
-    p {
-      line-height:24px; 
-    }
-    .list__site {
-     &__box {
-      position: relative;
-      padding: 10px 0;
-      border: 1px solid #aaa;
-      padding: 30px 20px 10px;
-      margin: 30px 0;
-        > p , a {
-          display: flex;
-          align-items: flex-start;
-          > span {
-            &:first-of-type{ flex-shrink:0;
-              display:block;
-              padding-bottom:8px;
-              width:76px;
-              font-weight:600}
-            &:last-of-type{ flex-shrink:1;
-              display:block; 
-              word-break:break-word}
-          }
-        }
-        a:hover {
-          color: ${props=>props.theme.colors.VUE};
+`
+export const ModalInfoLi = styled.li`
+  strong {
+    display: block;
+    padding-bottom: 8px;
+    font-size: 20px;
+    line-height:24px;
+    color: ${props=>props.theme.colors.PRIMARY};
+  }
+  p {
+    line-height:24px; 
+  }
+  .list__site {
+  &__box {
+    position: relative;
+    padding: 10px 0;
+    border: 1px solid #aaa;
+    padding: 30px 20px 10px;
+    margin: 30px 0;
+      > p , a {
+        display: flex;
+        align-items: flex-start;
+        > span {
+          &:first-of-type{ flex-shrink:0;
+            display:block;
+            padding-bottom:8px;
+            width:76px;
+            font-weight:600}
+          &:last-of-type{ flex-shrink:1;
+            display:block; 
+            word-break:break-word}
         }
       }
-      &__tit {
-        position: absolute;
-        left: 10px;
-        top: -22px;
-        padding: 10px 20px;
-        font-size: 18px;
-        color: ${props=>props.theme.colors.ACTIVE};
-        background-color: ${props=>props.theme.colors.LIGHT};
+      a:hover {
+        color: ${props=>props.theme.colors.VUE};
+        span{ color: ${props=>props.theme.colors.VUE};}
       }
+    }
+    &__tit {
+      position: absolute;
+      left: 10px;
+      top: -22px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: ${props=>props.theme.colors.ACTIVE};
+      background-color: ${props=>props.theme.colors.LIGHT};
     }
   }
 `

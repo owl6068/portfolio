@@ -15,6 +15,9 @@ export const ImgUrlEtcArr : IImgUrlEtcArr = {
   },
   warning:{
     url: `${IMGURLBASIC}/warning.png`
+  },
+  close:{
+    url: `${IMGURLBASIC}/close.svg`
   }
 }
 

@@ -20,8 +20,8 @@ export const filterPFListSelector = selector({
     
     const allfilter = [...portfolio.react,...portfolio.career,...portfolio.vue];
     const creerfilter = allfilter.filter(career => career.career === true)
-    const reactfilter = allfilter.filter(react => react.logoImg === 'React')
-    const vuefilter = allfilter.filter(vue => vue.logoImg === 'Vue')
+    const reactfilter = allfilter.filter(react => react.lib === 'React')
+    const vuefilter = allfilter.filter(vue => vue.lib === 'Vue')
 
     switch(activeBtn) {
       case 'All':
