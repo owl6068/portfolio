@@ -8,13 +8,14 @@ import {
   Tooltip,
   aniHeadHoverBtn,
 } from "../css/component/headerStyle";
-import { headerBtn, headerNav } from "../utils/utilArr";
+import { headerBtn, headerNav } from "../utils/array/utilArr";
 import { motion } from "framer-motion";
 import { aniUpDwon } from "../css/page/mainStyle";
 import { useEffect, useRef, useState } from "react";
 import Scrollspy from "react-scrollspy";
 import { useRecoilValue } from "recoil";
 import { windowWidthAtom } from "../utils/atom/commonAtom";
+import { ImgUrlEtcArr } from "../utils/array/ImgUrl";
 
 function Header() {
   const windowWidth = useRecoilValue(windowWidthAtom);
@@ -74,7 +75,7 @@ function Header() {
       <InnerBtw>
         <Logo initial={false} whileHover={{ scale: 1.2 }}>
           <Link to="#Main" onClick={(e) => onPress(e)}>
-            <img src="img/smile.svg" alt="" />
+            <img src={ImgUrlEtcArr.smile.url} alt="" />
           </Link>
         </Logo>
         <NavMenu className={nav ? "openMenu" : ""}>

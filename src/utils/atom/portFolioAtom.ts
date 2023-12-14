@@ -1,6 +1,6 @@
 import { atom, selector } from "recoil";
 import { IPortFolioInfoAtom } from "../interface/PFinterface";
-import { PortFolioList } from "../utilArr";
+import { PortFolioList } from "../array/utilArr";
 
 export const portfolioBtnAtom = atom<string>({
   key:'PTBtn',

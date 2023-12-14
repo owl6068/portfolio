@@ -40,7 +40,7 @@ function Modal() {
             {info.career ? (
               info.link ? (
                 <Link to={info.link} target="_blank" className="img__link link">
-                  <img src={`img/site/${info.bgImg}.png`} alt="" />
+                  <img src={info.bgImg} alt="" />
                 </Link>
               ) : (
                 <span className="img__link">

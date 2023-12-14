@@ -1,4 +1,5 @@
-import { IHeaderNav, IMyInfoTag, IMySkill, IPortFolioInfoAtom} from "./interface/PFinterface";
+import { IHeaderNav, IMyInfoTag, IMySkill, IPortFolioInfoAtom} from "../interface/PFinterface";
+import { ImgUrlEtcArr, ImgUrlSkilArr, ImgUrlStieArr } from "./ImgUrl";
 
 // ======== header ========
 export const headerNav : IHeaderNav[] = [
@@ -20,12 +21,12 @@ export const headerBtn : IHeaderNav[]= [
   {
     id:'rb1',
     name:'연락처',
-    img:'img/phone.svg',
+    img:ImgUrlEtcArr.phone.url,
   },
   {
     id:'rb2',
     name:'메뉴',
-    img:'img/bar.svg',
+    img:ImgUrlEtcArr.bar.url,
   }
 ];
 
@@ -68,62 +69,62 @@ export const myInfoTag : IMyInfoTag[] = [
 export const mySkill : IMySkill[]= [
   {
     name:'html',
-    img:'img/logo/html.svg',
+    img:ImgUrlSkilArr.html.url,
     adept:95,
   },
   {
     name:'css',
-    img:'img/logo/css.svg',
+    img:ImgUrlSkilArr.css.url,
     adept:95,
   },
   {
     name:'javascript',
-    img:'img/logo/js.svg',
+    img:ImgUrlSkilArr.js.url,
     adept:70,
   },
   {
     name:'jQuery',
-    img:'img/logo/jquery.svg',
+    img:ImgUrlSkilArr.jquery.url,
     adept:60,
   },
   {
     name:'react',
-    img:'img/logo/react.svg',
+    img:ImgUrlSkilArr.react.url,
     adept:40,
   },
   {
     name:'vue',
-    img:'img/logo/vue.svg',
+    img:ImgUrlSkilArr.vue.url,
     adept:40,
   },
   {
     name:'typescript',
-    img:'img/logo/ts.svg',
+    img:ImgUrlSkilArr.ts.url,
     adept:30,
   },
   {
     name:'styled-component',
-    img:'img/logo/styled.svg',
+    img:ImgUrlSkilArr.styled.url,
     adept:60,
   },
   {
     name:'vuetify',
-    img:'img/logo/vuetify.svg',
+    img:ImgUrlSkilArr.vuetify.url,
     adept:60,
   },
   {
     name:'bootstrap',
-    img:'img/logo/boot.svg',
+    img:ImgUrlSkilArr.boot.url,
     adept:70,
   },
   {
     name:'sass',
-    img:'img/logo/sass.svg',
+    img:ImgUrlSkilArr.sass.url,
     adept:70,
   },
   {
     name:'realGrid',
-    img:'img/logo/grid.svg',
+    img:ImgUrlSkilArr.grid.url,
     adept:20,
   },
 ]
@@ -146,13 +147,12 @@ export const PortFolioBtn : IMyInfoTag[] = [
     name:'Vue'
   },
 ]
-
 export const PortFolioList:IPortFolioInfoAtom = {
   react:[
     {
       id:'re1',
       career:false,
-      bgImg:'msPF',
+      bgImg:ImgUrlStieArr.msPF.url,
       logoImg:'React',
       title:'PortFolio',
       simply:'react로 작업한 포트폴리오',
@@ -166,7 +166,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
   career:[
     {
       id:'ca1',
-      bgImg:'skt',
+      bgImg:ImgUrlStieArr.skt.url,
       logoImg:'Vue',
       career:true,
       title:'SK 우주T',
@@ -184,7 +184,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     },
     {
       id:'ca2',
-      bgImg:'allraai',
+      bgImg:ImgUrlStieArr.allraai.url,
       logoImg:'allra',
       career:true,
       title:'allra Ai장부',
@@ -203,7 +203,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     },
     {
       id:'ca3',
-      bgImg:'allra',
+      bgImg:ImgUrlStieArr.allra.url,
       logoImg:'Vue',
       career:true,
       title:'allra',
@@ -222,7 +222,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     },
     {
       id:'ca4',
-      bgImg:'kace',
+      bgImg:ImgUrlStieArr.kace.url,
       logoImg:'kacelab',
       career:true,
       title:'Kacelab',
@@ -277,7 +277,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     },
     {
       id:'ca5',
-      bgImg:'dibi',
+      bgImg:ImgUrlStieArr.dbdb.url,
       logoImg:'dbdb',
       career:true,
       title:'디비디비',
@@ -296,7 +296,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     },
     {
       id:'ca6',
-      bgImg:'hak',
+      bgImg:ImgUrlStieArr.hak.url,
       logoImg:'hdm',
       career:true,
       title:'학생독립만세',

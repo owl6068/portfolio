@@ -1,4 +1,4 @@
-import { PortFolioBtn } from "../../utils/utilArr";
+import { PortFolioBtn } from "../../utils/array/utilArr";
 import { useSetRecoilState } from "recoil";
 import { portfolioBtnAtom } from "../../utils/atom/portFolioAtom";
 import { TabBtn, TabBtnBox } from "../../css/component/tabStyle";

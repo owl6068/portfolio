@@ -17,7 +17,7 @@ import {
   MsImgMo,
 } from "../css/page/aboutStyle";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { myInfoTag, mySkill } from "../utils/utilArr";
+import { myInfoTag, mySkill } from "../utils/array/utilArr";
 import { useRecoilValue } from "recoil";
 import {
   moWidthAtom,
@@ -27,6 +27,7 @@ import {
 import { IPageId } from "../utils/interface/PFinterface";
 import { useEffect, useState } from "react";
 import { Section } from "../css/common";
+import { ImgUrlEtcArr } from "../utils/array/ImgUrl";
 
 function About({ id }: IPageId) {
   const getMoWidth = useRecoilValue(moWidthAtom);
@@ -94,7 +95,7 @@ function About({ id }: IPageId) {
               viewport={{ once: true, amount: 0.2 }}
             >
               <motion.img
-                src="img/smile.svg"
+                src={ImgUrlEtcArr.smile.url}
                 alt="ms"
                 variants={cardVariants}
               />

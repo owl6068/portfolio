@@ -37,11 +37,7 @@ function TabContanBox() {
                 <span className="btn__subject">
                   {pp.career ? "Career" : "PortFolio"}
                 </span>
-                <img
-                  className="btn__img__bg"
-                  src={`img/site/${pp.bgImg}.png`}
-                  alt={pp.title}
-                />
+                <img className="btn__img__bg" src={pp.bgImg} alt={pp.title} />
               </BtnFrontImg>
               <BtnFrontInfo>
                 <span className="btn__title__box">
