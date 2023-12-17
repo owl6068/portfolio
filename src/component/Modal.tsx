@@ -60,9 +60,7 @@ function Modal() {
               {info.career ? (
                 <>
                   <MyInfoBox label="근무기간" text={info.date} />
-                  <MyInfoBox label="Skill" text={info.skill} />
                   <MyInfoBox label="Tool" tool={info.tool} />
-                  <MyInfoBox label="Link" link={info.link} />
                 </>
               ) : (
                 <>
@@ -71,11 +69,13 @@ function Modal() {
                     text={info.lib}
                   />
                   <MyInfoBox label="CSS" link={info.css} />
-                  {info.lib === "React" && (
+                  {/* {info.lib === "React" && (
                     <MyInfoBox label="Skill" link={info.skill} />
-                  )}
+                  )} */}
                 </>
               )}
+              {info.skill && <MyInfoBox label="Skill" text={info.skill} />}
+              {info.link && <MyInfoBox label="Link" link={info.link} />}
             </ModalInfoUl>
             {info.site && (
               <>

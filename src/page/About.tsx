@@ -102,7 +102,7 @@ function About({ id }: IPageId) {
             </MsImg>
           ) : (
             <MsImgMo style={{ y, x: 0 }}>
-              <motion.img src="img/smile.svg" alt="ms" />
+              <motion.img src={ImgUrlEtcArr.smile.url} alt="ms" />
             </MsImgMo>
           )}
           <MySkill

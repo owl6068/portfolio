@@ -1,6 +1,6 @@
 import { IHeaderNav, IMyInfoTag, IMySkill, IPortFolioInfoAtom} from "../interface/PFinterface";
 import { ImgUrlEtcArr, ImgUrlSkilArr, ImgUrlStieArr } from "./ImgUrl";
-
+const BASICURL = `${process.env.PUBLIC_URL}`;
 // ======== header ========
 export const headerNav : IHeaderNav[] = [
   {
@@ -162,19 +162,32 @@ export const PortFolioList:IPortFolioInfoAtom = {
       skill:'react / useRecoli / framer-motion / typeScript(interface) / useState / useEffect',
     },
     {
-      id:'re1',
+      id:'re2',
       career:false,
       bgImg:ImgUrlStieArr.msPF.url,
       lib:'React',
       title:'Coins',
       simply:'coinpaprika APi정보로 만든 정보페이지',
       desc:'coin api를 가지고 정보표출과 차트연결 구현',
+      link:`${BASICURL}/coins`,
       date:'2023. 12',
       css:'styled-component',
       skill:'react / useRecoli / framer-motion / typeScript(interface) / apexcharts / useState / useEffect',
-      api:'https://api.coinpaprika.com/',
+      api:'https://www.coingecko.com/api/documentation',
     },
-    
+    {
+      id:'re3',
+      career:false,
+      bgImg:ImgUrlStieArr.msPF.url,
+      lib:'React',
+      title:'Form',
+      simply:'유의사항, 회원가입폼 작업',
+      desc:'coin api를 가지고 정보표출과 차트연결 구현',
+      link:`${BASICURL}/joinstep1`,
+      date:'2023. 12',
+      css:'styled-component',
+      skill:'react / useRecoli / framer-motion / typeScript(interface) / apexcharts / useState / useEffect',
+    },
   ],
   career:[
     {
