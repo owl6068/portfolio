@@ -18,6 +18,9 @@ export const ImgUrlEtcArr : IImgUrlEtcArr = {
   },
   close:{
     url: `${IMGURLBASIC}/close.svg`
+  },
+  loading:{
+    url: `${IMGURLBASIC}/loading.svg`
   }
 }
 

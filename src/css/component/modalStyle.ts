@@ -187,5 +187,9 @@ export const ModalInfoLi = styled.li`
 
 export const ViewWrap = styled(motion.div)`
   margin: 20px 0;
-  border: 2px solid #111
+  width: 100%;
+  height: 500px;
+  
+  border: 2px solid #111;
+  overflow: auto;
 `

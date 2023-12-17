@@ -15,10 +15,10 @@ import {
   filterModalPFIntoSelector,
 } from "../utils/atom/commonAtom";
 import { IPortFolioInfo } from "../utils/interface/PFinterface";
-import About from "../page/About";
 import { Link } from "react-router-dom";
 import MyInfoBox from "./modal/MyInfoBox";
 import MyImgBox from "./modal/MyImgBox";
+import ExampleLayout from "../example/ExampleLayout";
 
 function Modal() {
   const portfolio = useRecoilValue<IPortFolioInfo[]>(filterModalPFIntoSelector);
@@ -47,12 +47,14 @@ function Modal() {
             />
           </ModalHead>
           <ModalBody>
-            {!info.career && info.title !== "PortFolio" ? (
+            {!info.career && (
               <>
                 <Title as="h4" text={"view."} size={"ss"} />
-                <ViewWrap>make view</ViewWrap>
+                <ViewWrap>
+                  <ExampleLayout />
+                </ViewWrap>
               </>
-            ) : null}
+            )}
             <Title as="h4" text={"Description."} size={"ss"} />
             <ModalInfoUl>
               {info.career ? (

@@ -2,21 +2,46 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Layout from "./page/Layout";
 import NotFound from "./error/NotFound";
+import Coins from "./example/page/coin/Coins";
+import ExampleLayout from "./example/ExampleLayout";
+import Coin from "./example/page/coin/Coin";
+import CoinChart from "./example/component/coin/CoinChart";
+import CoinPrice from "./example/component/coin/CoinPrice";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/portfolio",
     element: <App />,
     children: [
       {
         path: "",
         element: <Layout />,
       },
-      {
-        path: "portfolio",
-        element: <Layout />,
-      },
     ],
     errorElement: <NotFound />,
+  },
+  {
+    path: "/portfolio",
+    element: <ExampleLayout />,
+    children: [
+      {
+        path: "coins",
+        element: <Coins />,
+      },
+      {
+        path: "coins/:id",
+        element: <Coin />,
+        children: [
+          {
+            path: "chart",
+            element: <CoinChart />,
+          },
+          {
+            path: "price",
+            element: <CoinPrice />,
+          },
+        ],
+      },
+    ],
   },
 ]);

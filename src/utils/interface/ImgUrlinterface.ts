@@ -6,6 +6,7 @@ export interface IImgUrlEtcArr {
   bar:IUrl,
   warning:IUrl,
   close:IUrl,
+  loading:IUrl,
 };
 
 export interface IImgUrlSkilArr {

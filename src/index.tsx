@@ -5,7 +5,8 @@ import { myTheme } from "./css/theme";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./Router";
 import { RecoilRoot } from "recoil";
-import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,6 +17,7 @@ root.render(
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
     </RecoilRoot>
   </ThemeProvider>
