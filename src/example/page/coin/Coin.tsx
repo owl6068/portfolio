@@ -1,11 +1,11 @@
 import { Link, Outlet, useParams } from "react-router-dom";
-import { ExaContainer } from "../../css/Common";
+import { ExaContainer } from "../../css/Exacommon";
 import { useQuery } from "react-query";
 import { getCoinApi, getCoinChartApi } from "../../api/coinApi";
 import ExaTitle from "../../component/ExaTitle";
 import Loading from "../../../component/Loading";
 import { ICoin } from "../../interface/coin";
-import { CoinDetail, CoinTabBtn } from "../../css/Coinstyle";
+import { CoinDetail, CoinTabBtn } from "../../css/coinstyle";
 import { DFlex } from "../../../css/common";
 
 function Coin() {

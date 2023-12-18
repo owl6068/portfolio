@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { IChart } from "../../interface/coin";
-import { CoinDetail, CoinPriceBox } from "../../css/Coinstyle";
+import { CoinDetail, CoinPriceBox } from "../../css/coinstyle";
 
 function CoinPrace() {
   const { chart } = useOutletContext<IChart>();

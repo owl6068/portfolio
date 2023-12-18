@@ -6,14 +6,11 @@ export const ExampleWrap = styled.div`
   height: 100%;
   overflow-y: auto;
 `;
-export const ExampleInner = styled.div` 
-  padding: 20px;
-  height: 100vh;
-`
+
 export const ExaContainer = styled(ExampleWrap)`
+  padding: 20px;
   max-width: 500px;
   width: 100%;
-  min-height: 100vh; // modal view에서 넘처셔 지워야함
-  /* height: 100%; */ // modal view에서 딱맞게 나옴
+  min-height: 100vh; 
   overflow-y: unset;
 `;

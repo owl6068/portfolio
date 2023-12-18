@@ -7,9 +7,9 @@ import ExampleLayout from "./example/ExampleLayout";
 import Coin from "./example/page/coin/Coin";
 import CoinChart from "./example/component/coin/CoinChart";
 import CoinPrice from "./example/component/coin/CoinPrice";
-import JoinStep1 from "./example/component/form/JoinStep1";
-import JoinStep2 from "./example/component/form/Joinstep2";
-import JoinConfirm from "./example/component/form/JoinConfirm";
+import JoinStep1 from "./example/page/form/JoinStep1";
+import JoinStep2 from "./example/page/form/Joinstep2";
+import JoinConfirm from "./example/page/form/JoinConfirm";
 
 export const router = createBrowserRouter([
   {

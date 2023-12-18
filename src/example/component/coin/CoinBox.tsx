@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CoinInfoBox, CoinListLi } from "../../css/Coinstyle";
+import { CoinInfoBox, CoinListLi } from "../../css/coinstyle";
 import ExaTitle from "../ExaTitle";
 import { ICoins } from "../../interface/coin";
 
