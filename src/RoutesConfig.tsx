@@ -30,7 +30,7 @@ function RoutesConfig() {
         <Route path="/joinstep2" element={<JoinStep2 />} />
         <Route path="/joinconfirm" element={<JoinConfirm />} />
         <Route path="/todo" element={<ToDo />} />
-        <Route path="/portfolio" element={<Layout />} />
+        <Route path="/" element={<Layout />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </>
