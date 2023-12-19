@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, redirect } from "react-router-dom";
 import App from "./App";
 import Layout from "./page/Layout";
 import NotFound from "./error/NotFound";
@@ -40,44 +40,38 @@ export const router = createBrowserRouter([
         ],
       },
       {
-        path: "exa",
-        element: <ExampleLayout />,
+        path: "coins",
+        element: <Coins />,
+      },
+      {
+        path: "coins/:id",
+        element: <Coin />,
         children: [
           {
-            path: "coins",
-            element: <Coins />,
+            path: "chart",
+            element: <CoinChart />,
           },
           {
-            path: "coins/:id",
-            element: <Coin />,
-            children: [
-              {
-                path: "chart",
-                element: <CoinChart />,
-              },
-              {
-                path: "price",
-                element: <CoinPrice />,
-              },
-            ],
-          },
-          {
-            path: "joinstep1",
-            element: <JoinStep1 />,
-          },
-          {
-            path: "joinstep2",
-            element: <JoinStep2 />,
-          },
-          {
-            path: "joinconfirm",
-            element: <JoinConfirm />,
-          },
-          {
-            path: "todo",
-            element: <ToDo />,
+            path: "price",
+            element: <CoinPrice />,
           },
         ],
+      },
+      {
+        path: "joinstep1",
+        element: <JoinStep1 />,
+      },
+      {
+        path: "joinstep2",
+        element: <JoinStep2 />,
+      },
+      {
+        path: "joinconfirm",
+        element: <JoinConfirm />,
+      },
+      {
+        path: "todo",
+        element: <ToDo />,
       },
     ],
     errorElement: <NotFound />,
