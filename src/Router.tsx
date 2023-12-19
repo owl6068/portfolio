@@ -16,65 +16,67 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <App outlet={<NotFound />} />,
     children: [
       {
+        errorElement: <App outlet={<NotFound />} />,
         children: [
           {
             path: "portfolio",
             element: <Layout />,
-          },
-          {
-            path: "coins",
-            element: <Coins />,
-          },
-          {
-            path: "coins/:id",
-            element: <Coin />,
             children: [
               {
-                path: "chart",
-                element: <CoinChart />,
+                path: "coins",
+                element: <Coins />,
               },
               {
-                path: "price",
-                element: <CoinPrice />,
+                path: "coins/:id",
+                element: <Coin />,
+                children: [
+                  {
+                    path: "chart",
+                    element: <CoinChart />,
+                  },
+                  {
+                    path: "price",
+                    element: <CoinPrice />,
+                  },
+                ],
+              },
+              {
+                path: "coins",
+                element: <Coins />,
+              },
+              {
+                path: "coins/:id",
+                element: <Coin />,
+                children: [
+                  {
+                    path: "chart",
+                    element: <CoinChart />,
+                  },
+                  {
+                    path: "price",
+                    element: <CoinPrice />,
+                  },
+                ],
+              },
+              {
+                path: "joinstep1",
+                element: <JoinStep1 />,
+              },
+              {
+                path: "joinstep2",
+                element: <JoinStep2 />,
+              },
+              {
+                path: "joinconfirm",
+                element: <JoinConfirm />,
+              },
+              {
+                path: "todo",
+                element: <ToDo />,
               },
             ],
-          },
-          {
-            path: "coins",
-            element: <Coins />,
-          },
-          {
-            path: "coins/:id",
-            element: <Coin />,
-            children: [
-              {
-                path: "chart",
-                element: <CoinChart />,
-              },
-              {
-                path: "price",
-                element: <CoinPrice />,
-              },
-            ],
-          },
-          {
-            path: "joinstep1",
-            element: <JoinStep1 />,
-          },
-          {
-            path: "joinstep2",
-            element: <JoinStep2 />,
-          },
-          {
-            path: "joinconfirm",
-            element: <JoinConfirm />,
-          },
-          {
-            path: "todo",
-            element: <ToDo />,
           },
         ],
       },
