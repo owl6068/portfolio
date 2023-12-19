@@ -33,6 +33,7 @@ function JoinStep2() {
     watch,
     setError,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<IFormList>({
     defaultValues: {
@@ -42,6 +43,7 @@ function JoinStep2() {
   const navigate = useNavigate();
   const [passWordView, setPassWordView] = useState(true);
   const [passWordView2, setPassWordView2] = useState(true);
+  const [localImg, setLocalImg] = useState("");
   const [profill, setProfill] = useState("");
   const HandlerPassWord = () => {
     setPassWordView((view) => !view);
@@ -58,6 +60,7 @@ function JoinStep2() {
 
   const avatar = watch("image");
   useEffect(() => {
+    // 프로필박스
     if (avatar && avatar.length > 0) {
       const file = avatar[0];
       setProfill(URL.createObjectURL(Object(file)));
@@ -67,6 +70,25 @@ function JoinStep2() {
       );
     }
   }, [avatar]);
+
+  useEffect(() => {
+    // 로컬 스토리지에서 가져온 값으로 각 input 필드에 값을 설정합니다.
+    const storedData: IFormList = JSON.parse(
+      localStorage.getItem("프로필") || "{}"
+    );
+    const storedImage = JSON.parse(localStorage.getItem("사진") || "{}");
+    setLocalImg(storedImage);
+    if (Object.keys(storedData).length !== 0) {
+      setValue("id", storedData.id);
+      setValue("image", storedImage.image);
+      setValue("nick", storedData.nick);
+      setValue("pw", storedData.pw);
+      setValue("pw2", storedData.pw2);
+      setValue("email", storedData.email);
+      setValue("radio", storedData.radio);
+    }
+  }, [setValue]);
+
   return (
     <JoinContainer>
       <Helmet>
@@ -91,9 +113,10 @@ function JoinStep2() {
                 <label
                   className="img__view"
                   htmlFor="picture"
-                  // style={{ backgroundImage: `url:${profill}` }}
                   style={{
-                    backgroundImage: `url(${profill})`,
+                    backgroundImage: `url(${
+                      localImg.length !== undefined ? localImg : profill
+                    })`,
                   }}
                 >
                   <span className="img__view-text">파일 추가 +</span>
@@ -167,7 +190,7 @@ function JoinStep2() {
                   placeholder="비밀번호를 입력해주세요."
                   autoComplete="new-password"
                 />
-                <button onClick={HandlerPassWord}>
+                <button type="button" onClick={HandlerPassWord}>
                   {passWordView ? "보기" : "숨기기"}
                 </button>
               </PasswordInput>
@@ -205,7 +228,7 @@ function JoinStep2() {
                   placeholder="비밀번호를 다시 입력해주세요."
                   autoComplete="new-password"
                 />
-                <button onClick={HandlerPassWord2}>
+                <button type="button" onClick={HandlerPassWord2}>
                   {passWordView2 ? "보기" : "숨기기"}
                 </button>
               </PasswordInput>

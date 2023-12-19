@@ -182,7 +182,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
       lib:'React',
       title:'Form',
       simply:'유의사항, 회원가입폼 작업',
-      desc:'FormForm recoil-persist자용하여 localhost 저장',
+      desc:'Form localstorage get,set 방식으로 저장',
       link:`${BASICURL}/joinstep1`,
       date:'2023. 12',
       css:'styled-component',
