@@ -25,6 +25,10 @@ export const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
           {
+            path: "",
+            element: <Layout />,
+          },
+          {
             path: "joinstep1",
             element: <JoinStep1 />,
           },
