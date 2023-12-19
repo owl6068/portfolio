@@ -20,14 +20,11 @@ export const router = createBrowserRouter([
   {
     path: "/portfolio",
     element: <App />,
+    errorElement: <App outlet={<NotFound />} />,
     children: [
       {
-        errorElement: <NotFound />,
+        path: "",
         children: [
-          {
-            path: "",
-            element: <Layout />,
-          },
           {
             path: "joinstep1",
             element: <JoinStep1 />,
@@ -41,6 +38,7 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
 // export const router = createBrowserRouter([
 //   {
 //     path: "/",

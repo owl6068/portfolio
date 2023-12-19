@@ -32,7 +32,7 @@ function App(props: IRootRoute) {
     <Wrap className="App">
       <GlobalStyle />
       <Header />
-      <Outlet />
+      {props.outlet ? props.outlet : <Outlet />}
     </Wrap>
   );
 }
