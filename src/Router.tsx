@@ -14,14 +14,14 @@ import ToDo from "./example/page/todo/ToDo";
 
 export const router = createBrowserRouter([
   {
-    path: "/portfolio",
+    path: "/",
     element: <App />,
     children: [
       {
         errorElement: <App outlet={<NotFound />} />,
         children: [
           {
-            path: "",
+            path: "portfolio",
             element: <Layout />,
           },
           {
