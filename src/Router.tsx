@@ -15,29 +15,32 @@ import JoinStep1 from "./example/page/form/JoinStep1";
 import JoinStep2 from "./example/page/form/Joinstep2";
 import JoinConfirm from "./example/page/form/JoinConfirm";
 import ToDo from "./example/page/todo/ToDo";
-
-export const router = createBrowserRouter([
-  {
-    path: "/portfolio",
-    element: <App />,
-    errorElement: <App outlet={<NotFound />} />,
-    children: [
-      {
-        path: "",
-        children: [
-          {
-            path: "joinstep1",
-            element: <JoinStep1 />,
-          },
-          {
-            path: "todo",
-            element: <ToDo />,
-          },
-        ],
-      },
-    ],
-  },
-]);
+const basename = process.env.PUBLIC_URL;
+console.log("basename", basename);
+export const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <App outlet={<NotFound />} />,
+      children: [
+        {
+          path: "",
+          element: <Layout />,
+        },
+        {
+          path: "joinstep1",
+          element: <JoinStep1 />,
+        },
+        {
+          path: "todo",
+          element: <ToDo />,
+        },
+      ],
+    },
+  ],
+  { basename: basename }
+);
 
 // export const router = createBrowserRouter([
 //   {
