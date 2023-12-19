@@ -17,7 +17,7 @@ function App() {
     //현재 화면 width, height 값
     setWindowWidthRecoil(window.innerWidth);
     setWindowHeightRecoil(window.innerHeight);
-  }, []);
+  }, [setWindowWidthRecoil, setWindowHeightRecoil]);
   useEffect(() => {
     //화면 창크키 변경때 width, height 값
     window.addEventListener("resize", setWindowDimensions);
