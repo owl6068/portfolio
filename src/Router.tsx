@@ -39,47 +39,47 @@ export const router = createBrowserRouter([
           },
         ],
       },
-    ],
-    errorElement: <NotFound />,
-  },
-  {
-    path: "/portfolio/exa",
-    element: <ExampleLayout />,
-    children: [
       {
-        path: "coins",
-        element: <Coins />,
-      },
-      {
-        path: "coins/:id",
-        element: <Coin />,
+        path: "exa",
+        element: <ExampleLayout />,
         children: [
           {
-            path: "chart",
-            element: <CoinChart />,
+            path: "coins",
+            element: <Coins />,
           },
           {
-            path: "price",
-            element: <CoinPrice />,
+            path: "coins/:id",
+            element: <Coin />,
+            children: [
+              {
+                path: "chart",
+                element: <CoinChart />,
+              },
+              {
+                path: "price",
+                element: <CoinPrice />,
+              },
+            ],
+          },
+          {
+            path: "joinstep1",
+            element: <JoinStep1 />,
+          },
+          {
+            path: "joinstep2",
+            element: <JoinStep2 />,
+          },
+          {
+            path: "joinconfirm",
+            element: <JoinConfirm />,
+          },
+          {
+            path: "todo",
+            element: <ToDo />,
           },
         ],
       },
-      {
-        path: "joinstep1",
-        element: <JoinStep1 />,
-      },
-      {
-        path: "joinstep2",
-        element: <JoinStep2 />,
-      },
-      {
-        path: "joinconfirm",
-        element: <JoinConfirm />,
-      },
-      {
-        path: "todo",
-        element: <ToDo />,
-      },
     ],
+    errorElement: <NotFound />,
   },
 ]);
