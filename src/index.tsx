@@ -16,7 +16,7 @@ root.render(
   <ThemeProvider theme={myTheme}>
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
           <App />
         </BrowserRouter>
         {/* <ReactQueryDevtools initialIsOpen={false} /> */}
