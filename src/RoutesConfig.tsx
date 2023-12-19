@@ -15,7 +15,7 @@ function RoutesConfig() {
       {/* <Route path="/coins/:id/chart" element={<CoinChart />} />
       <Route path="/coins/:id/price" element={<CoinPrice />} />
       <Route path="/coins/:id" element={<Coin />} /> */}
-      <Route path="/coins">
+      <Route path="/portfolio/coins">
         <Route index element={<Coins />} />
         <Route path=":id">
           <Route index element={<Coin />} />
@@ -24,12 +24,12 @@ function RoutesConfig() {
         </Route>
       </Route>
       {/* <Route path="/coins" element={<Coins />} /> */}
-      <Route path="/joinstep1" element={<JoinStep1 />} />
-      <Route path="/joinstep2" element={<JoinStep2 />} />
-      <Route path="/joinconfirm" element={<JoinConfirm />} />
-      <Route path="/todo" element={<ToDo />} />
-      <Route path="/todo" element={<ToDo />} />
-      <Route path="/" element={<Layout />} />
+      <Route path="/portfolio/joinstep1" element={<JoinStep1 />} />
+      <Route path="/portfolio/joinstep2" element={<JoinStep2 />} />
+      <Route path="/portfolio/joinconfirm" element={<JoinConfirm />} />
+      <Route path="/portfolio/todo" element={<ToDo />} />
+      <Route path="/portfolio/todo" element={<ToDo />} />
+      <Route path="/portfolio" element={<Layout />} />
       {/* <Route path="*" element={<NotFound />} /> */}
     </Routes>
   );
