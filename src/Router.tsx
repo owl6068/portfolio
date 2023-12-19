@@ -10,6 +10,7 @@ import CoinPrice from "./example/component/coin/CoinPrice";
 import JoinStep1 from "./example/page/form/JoinStep1";
 import JoinStep2 from "./example/page/form/Joinstep2";
 import JoinConfirm from "./example/page/form/JoinConfirm";
+import ToDo from "./example/page/todo/ToDo";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
       {
         path: "joinconfirm",
         element: <JoinConfirm />,
+      },
+      {
+        path: "todo",
+        element: <ToDo />,
       },
     ],
   },

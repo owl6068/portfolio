@@ -50,4 +50,26 @@ export const GlobalStyle = createGlobalStyle`
 	address, em{
 		font-style:normal
 	}
+
+	/* style */
+	/* scroll */
+	.scroll {
+    width: 100%;
+    height: 140px;
+    overflow: auto;
+  }
+  .scroll::-webkit-scrollbar {
+    width: 10px;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  .scroll::-webkit-scrollbar-track {
+    background-color: #eee;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+  }
 `

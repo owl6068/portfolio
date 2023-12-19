@@ -5,7 +5,7 @@ export const ExampleWrap = styled.div`
   max-width: 100%;
   height: 100%;
   overflow-y: auto;
-`;
+  `;
 
 export const ExaContainer = styled(ExampleWrap)`
   padding: 20px;
@@ -13,4 +13,7 @@ export const ExaContainer = styled(ExampleWrap)`
   width: 100%;
   min-height: 100vh; 
   overflow-y: unset;
-`;
+  `;
+export const Relative = styled.div`
+  position: relative;
+`
