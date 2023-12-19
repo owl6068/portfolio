@@ -78,8 +78,26 @@ export const Triangle = styled(motion.div)`
 `
 
 // =========== motion ============
+// export const aniName = {
+//   hidden: { opacity: 1, scale: 0 },
+//   visible: {
+//     opacity: 1,
+//     scale: 1,
+//     transition: {
+//       type: "spring",
+//       bounce: 0.6,
+//       delay: 0.2,
+//       duration: 1,
+//       delayChildren: 2.2,
+//       staggerChildren: 0.3,
+//     },
+//   },
+// };
 export const aniName = {
-  hidden: { opacity: 1, scale: 0 },
+  hidden:(custom:any)=>({
+    opacity: custom ? 0 : 1, 
+    scale: custom ? 0 : 1
+  }),
   visible: {
     opacity: 1,
     scale: 1,
@@ -93,8 +111,26 @@ export const aniName = {
     },
   },
 };
+// export const aniM = {
+//   hidden: { opacity: 0, x: -100, rotate: 180 },
+//   visible: {
+//     opacity: 1,
+//     x: 0,
+//     rotate: 0,
+//     transition: {
+//       type: "spring",
+//       bounce: 0.4,
+//       delay: 1.2,
+//       duration: 1,
+//     },
+//   },
+// };
 export const aniM = {
-  hidden: { opacity: 0, x: -100, rotate: 180 },
+  hidden: (custom:any)=>({
+    opacity: custom ? 0 : 1, 
+    x: custom ? -100 : 0,
+    rotate: custom ? 180 : 0
+  }),
   visible: {
     opacity: 1,
     x: 0,
@@ -107,15 +143,40 @@ export const aniM = {
     },
   },
 };
+// export const aniText = {
+//   hidden: { y: 20, opacity: 0 },
+//   visible: {
+//     y: 0,
+//     opacity: 1,
+//   },
+// };
 export const aniText = {
-  hidden: { y: 20, opacity: 0 },
+  hidden: (custom:any)=>({
+    y: custom ? 20 : 0, 
+    opacity: custom ? 0 : 1,
+  }),
   visible: {
     y: 0,
     opacity: 1,
   },
 };
+// export const aniUpDwon = {
+//   hidden: { y: -40, opacity: 0 },
+//   visible: {
+//     y: 0,
+//     opacity: 1,
+//     transition: {
+//       type: "tween",
+//       delay: 3.2,
+//       duration: 1,
+//     },
+//   },
+// };
 export const aniUpDwon = {
-  hidden: { y: -40, opacity: 0 },
+  hidden: (custom:any)=>({
+    y: custom ? -40 : 0, 
+    opacity: custom ? 0 : 1,
+  }),
   visible: {
     y: 0,
     opacity: 1,
@@ -126,8 +187,27 @@ export const aniUpDwon = {
     },
   },
 };
+// export const aniDwonUp = {
+//   hidden: { x: '-50%', y: '100%', opacity: 0, rotate: 45},
+//   visible: {
+//     x: '-50%',
+//     y: '50%',
+//     opacity: 1,
+//     rotate:45,
+//     transition: {
+//       type: "tween",
+//       delay: 3.2,
+//       duration: 1,
+//     },
+//   },
+// };
 export const aniDwonUp = {
-  hidden: { x: '-50%', y: '100%', opacity: 0, rotate: 45},
+  hidden: (custom:any)=>({
+    x:'-50%', 
+    y: custom ? '100%' : '50%', 
+    opacity: custom ? 0 : 1,
+    rotate: 45,
+  }),
   visible: {
     x: '-50%',
     y: '50%',

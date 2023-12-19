@@ -7,10 +7,9 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 
 interface Ioffset {
   offset: number;
-  moving: any;
 }
 
-function TabButton({ offset, moving }: Ioffset) {
+function TabButton({ offset }: Ioffset) {
   const setTabBgText = useSetRecoilState(portfolioBtnAtom);
   const [tabBtnIndex, setTabBtnIndex] = useState(0);
   const [tabBtnFiexd, setTabBtnFiexd] = useState(false);
@@ -20,14 +19,17 @@ function TabButton({ offset, moving }: Ioffset) {
     const bgText = PortFolioBtn.filter((data) => name === data.name);
     setTabBgText(bgText[0].name);
     setTabBtnIndex(i);
-    moving(name);
   };
   useMotionValueEvent(scrollY, "change", (latest) => {
     const fixed = Number(latest) > Number(offset) ? true : false;
     setTabBtnFiexd(fixed);
   });
   return (
-    <TabBtnBox className={tabBtnFiexd ? "fiexed" : ""}>
+    <TabBtnBox
+      className={tabBtnFiexd ? "fiexed" : ""}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
       {PortFolioBtn.map((btn, i) => (
         <TabBtn
           key={btn.id}

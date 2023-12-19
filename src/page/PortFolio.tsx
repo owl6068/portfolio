@@ -30,15 +30,11 @@ function PortFolio({ id }: IPageId) {
   const getWindowHeigh = useRecoilValue(windowHeightAtom);
   const offset: any = useRef(null);
   const [offsetbox, setOffsetbox] = useState<number>(0);
-  const [moving, setMoving] = useState("");
 
   useEffect(() => {
     setOffsetbox(offset?.current?.offsetTop + 20);
   }, [getWindowWidth, getWindowHeigh]);
 
-  useEffect(() => {
-    window.scrollTo(0, offset?.current?.offsetTop + 20);
-  }, [moving]);
   return (
     <Section id={id} ref={offset}>
       <PortFolioInner>
@@ -52,7 +48,7 @@ function PortFolio({ id }: IPageId) {
           </BgText>
         </BgTextbox>
         <TabWrap>
-          <TabButton offset={offsetbox} moving={setMoving} />
+          <TabButton offset={offsetbox} />
           <TabContant>
             <TabBoxUl
               className="container"

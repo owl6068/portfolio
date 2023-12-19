@@ -1,3 +1,4 @@
+import { useRecoilValue } from "recoil";
 import {
   MainSection,
   MainInner,
@@ -13,8 +14,10 @@ import {
   aniDwonUp,
 } from "../css/page/mainStyle";
 import { IPageId } from "../utils/interface/PFinterface";
+import { mainAniOneMovingAtom } from "../utils/atom/commonAtom";
 
 function Main({ id }: IPageId) {
+  const mainAniAtom = useRecoilValue(mainAniOneMovingAtom);
   return (
     <MainSection id={id}>
       <MainInner>
@@ -24,8 +27,14 @@ function Main({ id }: IPageId) {
             variants={aniName}
             initial="hidden"
             animate="visible"
+            custom={mainAniAtom ? true : false}
           >
-            <NameText variants={aniM} initial="hidden" animate="visible">
+            <NameText
+              variants={aniM}
+              initial="hidden"
+              animate="visible"
+              custom={mainAniAtom ? true : false}
+            >
               M
             </NameText>
             {["I", "S", "O"].map((index) => (
@@ -34,11 +43,21 @@ function Main({ id }: IPageId) {
               </NameText>
             ))}
           </Name>
-          <NameDesc variants={aniUpDwon} initial="hidden" animate="visible">
+          <NameDesc
+            variants={aniUpDwon}
+            initial="hidden"
+            animate="visible"
+            custom={mainAniAtom ? true : false}
+          >
             P o r t F o l i o
           </NameDesc>
         </NameBox>
-        <Triangle variants={aniDwonUp} initial="hidden" animate="visible" />
+        <Triangle
+          variants={aniDwonUp}
+          initial="hidden"
+          animate="visible"
+          custom={mainAniAtom ? true : false}
+        />
       </MainInner>
     </MainSection>
   );

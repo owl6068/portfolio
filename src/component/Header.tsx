@@ -11,7 +11,10 @@ import { headerBtn } from "../utils/array/utilArr";
 import { aniUpDwon } from "../css/page/mainStyle";
 import { useEffect, useRef } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { windowWidthAtom } from "../utils/atom/commonAtom";
+import {
+  mainAniOneMovingAtom,
+  windowWidthAtom,
+} from "../utils/atom/commonAtom";
 import { ImgUrlEtcArr } from "../utils/array/ImgUrl";
 import HRhombusBtn from "./header/HRhombusBtn";
 import { navMenuAtom, toolTipAtom } from "../utils/atom/headerAtom";
@@ -22,6 +25,7 @@ function Header() {
   const [tooltip, setTooltip] = useRecoilState(toolTipAtom);
   const [navMenu, setNavMenu] = useRecoilState(navMenuAtom);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const mainAniAtom = useRecoilValue(mainAniOneMovingAtom);
 
   const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // 메뉴 클릭시 scroll
@@ -30,7 +34,7 @@ function Header() {
       e.currentTarget.href.split("#")[1]
     );
     if (target) {
-      target.scrollIntoView({ behavior: "auto" });
+      // target.scrollIntoView({ behavior: "auto" });
     }
     setNavMenu(false);
     document.body.style.overflow = "unset";
@@ -56,7 +60,12 @@ function Header() {
   }, [windowWidth]);
 
   return (
-    <Head variants={aniUpDwon} initial="hidden" animate="visible">
+    <Head
+      variants={aniUpDwon}
+      initial="hidden"
+      animate="visible"
+      custom={mainAniAtom ? true : false}
+    >
       <InnerBtw>
         <Logo initial={false} whileHover={{ scale: 1.2 }}>
           <Link to="#Main" onClick={(e) => onPress(e)}>

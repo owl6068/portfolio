@@ -1,6 +1,8 @@
 import { atom, selector } from "recoil";
 import { portfolioListAtom } from "./portFolioAtom";
+import { recoilPersist } from 'recoil-persist'
 
+const { persistAtom } = recoilPersist()
 export const windowWidthAtom = atom<number>({
   key:'wWidth',
   default:0
@@ -40,4 +42,10 @@ export const filterModalPFIntoSelector = selector({
 
     return allfilter.filter(data => data.id === id)
   }
+})
+
+export const mainAniOneMovingAtom = atom({
+  key:'mainMoving',
+  default:true,
+  effects_UNSTABLE: [persistAtom]
 })
