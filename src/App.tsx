@@ -5,8 +5,10 @@ import { useSetRecoilState } from "recoil";
 import { windowHeightAtom, windowWidthAtom } from "./utils/atom/commonAtom";
 import { Outlet } from "react-router-dom";
 import Header from "./component/Header";
-
-function App() {
+interface IRootRoute {
+  outlet?: any;
+}
+function App(props: IRootRoute) {
   const setWindowWidthRecoil = useSetRecoilState(windowWidthAtom); //window width
   const setWindowHeightRecoil = useSetRecoilState(windowHeightAtom); //window width
   const setWindowDimensions = () => {
@@ -30,7 +32,7 @@ function App() {
     <Wrap className="App">
       <GlobalStyle />
       <Header />
-      <Outlet />
+      {props.outlet ? props.outlet : <Outlet />}
     </Wrap>
   );
 }
