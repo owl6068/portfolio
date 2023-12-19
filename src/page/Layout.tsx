@@ -4,6 +4,7 @@ import Main from "./Main";
 import PortFolio from "./PortFolio";
 import { useRecoilState } from "recoil";
 import { mainAniOneMovingAtom } from "../utils/atom/commonAtom";
+import { Outlet } from "react-router-dom";
 
 function Layout() {
   const [mainAniAtom, setMainAniAtom] = useRecoilState(mainAniOneMovingAtom);
@@ -24,6 +25,7 @@ function Layout() {
       <Main id="Main" />
       <About id="About" />
       <PortFolio id="PortFolio" />
+      <Outlet />
     </>
   );
 }

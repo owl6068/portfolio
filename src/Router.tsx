@@ -16,37 +16,27 @@ import JoinStep2 from "./example/page/form/Joinstep2";
 import JoinConfirm from "./example/page/form/JoinConfirm";
 import ToDo from "./example/page/todo/ToDo";
 
-export const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <App />,
-      children: [
-        {
-          path: "coin",
-          element: <Coin />,
-        },
-        {
-          path: "joinstep1",
-          element: <JoinStep1 />,
-        },
-        {
-          path: "todo",
-          element: <ToDo />,
-        },
-      ],
-    },
-    {
-      // Catchall route
-      path: "/*",
-      element: <NotFound />,
-    },
-  ],
+export const router = createBrowserRouter([
   {
-    basename: process.env.PUBLIC_URL,
-  }
-);
-
+    path: "/portfolio",
+    element: <App />,
+    children: [
+      {
+        errorElement: <NotFound />,
+        children: [
+          {
+            path: "joinstep1",
+            element: <JoinStep1 />,
+          },
+          {
+            path: "todo",
+            element: <ToDo />,
+          },
+        ],
+      },
+    ],
+  },
+]);
 // export const router = createBrowserRouter([
 //   {
 //     path: "/",
