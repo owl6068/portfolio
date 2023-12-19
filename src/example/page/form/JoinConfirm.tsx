@@ -36,7 +36,6 @@ function JoinConfirm() {
       setImg(JSON.parse(data3));
     }
   }, []);
-  console.log(step1);
   return (
     <JoinContainer>
       <Helmet>

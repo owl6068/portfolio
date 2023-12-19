@@ -3,12 +3,10 @@ import { Wrap } from "./css/common";
 import { GlobalStyle } from "./css/reset";
 import { useSetRecoilState } from "recoil";
 import { windowHeightAtom, windowWidthAtom } from "./utils/atom/commonAtom";
-import { Outlet } from "react-router-dom";
 import Header from "./component/Header";
-interface IRootRoute {
-  outlet?: any;
-}
-function App(props: IRootRoute) {
+import RoutesConfig from "./RoutesConfig";
+
+function App() {
   const setWindowWidthRecoil = useSetRecoilState(windowWidthAtom); //window width
   const setWindowHeightRecoil = useSetRecoilState(windowHeightAtom); //window width
   const setWindowDimensions = () => {
@@ -32,7 +30,7 @@ function App(props: IRootRoute) {
     <Wrap className="App">
       <GlobalStyle />
       <Header />
-      {props.outlet ? props.outlet : <Outlet />}
+      <RoutesConfig />
     </Wrap>
   );
 }

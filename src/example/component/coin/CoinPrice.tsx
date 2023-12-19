@@ -3,10 +3,10 @@ import { IChart } from "../../interface/coin";
 import { CoinDetail, CoinPriceBox } from "../../css/coinstyle";
 
 function CoinPrace() {
-  const { chart } = useOutletContext<IChart>();
+  // const { chart } = useOutletContext<IChart>();
   return (
     <CoinPriceBox>
-      {chart.map((data) => (
+      {/* {chart.map((data) => (
         <ul>
           <CoinDetail as="li">
             <strong>
@@ -32,7 +32,7 @@ function CoinPrace() {
             </p>
           </CoinDetail>
         </ul>
-      ))}
+      ))} */}
     </CoinPriceBox>
   );
 }

@@ -3,10 +3,10 @@ import ApexChart from "react-apexcharts";
 import { IChart } from "../../interface/coin";
 
 function CoinChart() {
-  const { chart } = useOutletContext<IChart>();
+  // const { chart } = useOutletContext<IChart>();
   return (
     <div id="chart">
-      <ApexChart
+      {/* <ApexChart
         type="candlestick"
         series={[
           {
@@ -64,7 +64,7 @@ function CoinChart() {
             enabled: true,
           },
         }}
-      />
+      /> */}
     </div>
   );
 }

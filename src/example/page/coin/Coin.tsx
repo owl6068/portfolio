@@ -16,12 +16,12 @@ function Coin() {
   const { data: chart, isLoading: chartLoading } = useQuery("chartOHLC", () =>
     getCoinChartApi(String(param.id))
   );
-  // const loading = coinLoading && chartLoading;
+  const loading = coinLoading && chartLoading;
   console.log("chart", chart);
 
   return (
     <ExaContainer>
-      {coinLoading ? (
+      {loading ? (
         <Loading />
       ) : (
         <>
@@ -56,8 +56,12 @@ function Coin() {
             )}
           </CoinDetail>
           <CoinTabBtn>
-            <Link to="chart">Chart</Link>
-            <Link to="price">Price</Link>
+            <Link to="chart" state={{ data: chart }}>
+              Chart
+            </Link>
+            <Link to="price" state={{ data: chart }}>
+              Price
+            </Link>
           </CoinTabBtn>
 
           <Outlet context={{ chart: chart }} />

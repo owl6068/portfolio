@@ -12,7 +12,6 @@ function HNavMenu() {
     const target = window.document.getElementById(
       e.currentTarget.href.split("#")[1]
     );
-    console.log("target", target);
     if (target) {
       window.scrollTo(0, target.offsetTop + 20);
     }
