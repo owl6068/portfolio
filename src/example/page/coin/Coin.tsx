@@ -17,8 +17,6 @@ function Coin() {
     getCoinChartApi(String(param.id))
   );
   const loading = coinLoading && chartLoading;
-  console.log("chart", chart);
-
   return (
     <ExaContainer>
       {loading ? (

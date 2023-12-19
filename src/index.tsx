@@ -11,8 +11,9 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 const queryClient = new QueryClient();
+console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
 root.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter>
     <ThemeProvider theme={myTheme}>
       <RecoilRoot>
         <QueryClientProvider client={queryClient}>
@@ -21,5 +22,5 @@ root.render(
         </QueryClientProvider>
       </RecoilRoot>
     </ThemeProvider>
-  </BrowserRouter>
+  </HashRouter>
 );

@@ -20,12 +20,12 @@ function Layout() {
       }, 4500);
     }
   }, [mainAniAtom]);
+  console.log("1번");
   return (
     <>
       <Main id="Main" />
       <About id="About" />
       <PortFolio id="PortFolio" />
-      <Outlet />
     </>
   );
 }
