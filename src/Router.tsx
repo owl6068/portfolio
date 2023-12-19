@@ -23,70 +23,30 @@ export const router = createBrowserRouter(
       element: <App />,
       children: [
         {
-          path: "portfolio",
-          element: <Layout />,
-          children: [
-            {
-              path: "coins",
-              element: <Coins />,
-            },
-            {
-              path: "coins/:id",
-              element: <Coin />,
-              children: [
-                {
-                  path: "chart",
-                  element: <CoinChart />,
-                },
-                {
-                  path: "price",
-                  element: <CoinPrice />,
-                },
-              ],
-            },
-            {
-              path: "coins",
-              element: <Coins />,
-            },
-            {
-              path: "coins/:id",
-              element: <Coin />,
-              children: [
-                {
-                  path: "chart",
-                  element: <CoinChart />,
-                },
-                {
-                  path: "price",
-                  element: <CoinPrice />,
-                },
-              ],
-            },
-            {
-              path: "joinstep1",
-              element: <JoinStep1 />,
-            },
-            {
-              path: "joinstep2",
-              element: <JoinStep2 />,
-            },
-            {
-              path: "joinconfirm",
-              element: <JoinConfirm />,
-            },
-            {
-              path: "todo",
-              element: <ToDo />,
-            },
-          ],
+          path: "coin",
+          element: <Coin />,
+        },
+        {
+          path: "joinstep1",
+          element: <JoinStep1 />,
+        },
+        {
+          path: "todo",
+          element: <ToDo />,
         },
       ],
+    },
+    {
+      // Catchall route
+      path: "/*",
+      element: <NotFound />,
     },
   ],
   {
     basename: process.env.PUBLIC_URL,
   }
 );
+
 // export const router = createBrowserRouter([
 //   {
 //     path: "/",
