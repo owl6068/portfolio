@@ -13,14 +13,14 @@ const root = ReactDOM.createRoot(
 const queryClient = new QueryClient();
 console.log("process.env.PUBLIC_URL", process.env.PUBLIC_URL);
 root.render(
-  <HashRouter>
-    <ThemeProvider theme={myTheme}>
-      <RecoilRoot>
-        <QueryClientProvider client={queryClient}>
+  <ThemeProvider theme={myTheme}>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <App />
-          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-        </QueryClientProvider>
-      </RecoilRoot>
-    </ThemeProvider>
-  </HashRouter>
+        </BrowserRouter>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      </QueryClientProvider>
+    </RecoilRoot>
+  </ThemeProvider>
 );
