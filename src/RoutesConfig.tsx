@@ -9,14 +9,19 @@ import JoinStep1 from "./example/page/form/JoinStep1";
 import JoinStep2 from "./example/page/form/Joinstep2";
 import JoinConfirm from "./example/page/form/JoinConfirm";
 import ToDo from "./example/page/todo/ToDo";
-import { Helmet } from "react-helmet";
+import Home from "./example/page/netflix/Home";
+import Search from "./example/page/netflix/Search";
+import Tv from "./example/page/netflix/Tv";
 function RoutesConfig() {
   return (
     <>
       <Routes>
-        {/* <Route path="/coins/:id/chart" element={<CoinChart />} />
-      <Route path="/coins/:id/price" element={<CoinPrice />} />
-      <Route path="/coins/:id" element={<Coin />} /> */}
+        <Route path="/netflix">
+          <Route index element={<Home />} />
+          <Route path="/netflix/home" element={<Home />} />
+          <Route path="/netflix/tv" element={<Tv />} />
+          <Route path="/netflix/search" element={<Search />} />
+        </Route>
         <Route path="/coins">
           <Route index element={<Coins />} />
           <Route path=":id">
