@@ -37,7 +37,7 @@ function JoinConfirm() {
     }
   }, []);
   return (
-    <JoinContainer>
+    <JoinContainer as="section">
       <Helmet>
         <title>가입완료 | 예제 만들기</title>
       </Helmet>

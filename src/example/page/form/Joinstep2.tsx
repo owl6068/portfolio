@@ -90,7 +90,7 @@ function JoinStep2() {
   }, [setValue]);
 
   return (
-    <JoinContainer>
+    <JoinContainer as="section">
       <Helmet>
         <title>회원가입폼 | 예제 만들기</title>
       </Helmet>

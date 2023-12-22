@@ -18,6 +18,7 @@ export const DFlexBtw = styled(DFlex)`
 // ========= section common ==========
 export const Wrap = styled.div`
   overflow: hidden;
+
 `
 export const Section = styled.section`
   display: flex;
@@ -26,8 +27,12 @@ export const Section = styled.section`
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
+  &:first-of-type{
+    height: calc(100vh - 160px);
+  }
   @media screen and (max-width: ${props=>props.theme.width.width_s}){
     padding: 40px 0;
+    height: calc(100vh - 140px);
   }
 `
 export const Inner = styled.div`

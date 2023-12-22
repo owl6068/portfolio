@@ -8,12 +8,16 @@ export const ExampleWrap = styled.div`
   `;
 
 export const ExaContainer = styled(ExampleWrap)`
-  padding: 20px;
   max-width: 500px;
   width: 100%;
-  min-height: 100vh; 
   overflow-y: unset;
-  `;
+  &:first-of-type{
+    &.height__auto{
+      height:unset; 
+      min-height: 100vh !important;
+    }
+  }
+`;
 export const Relative = styled.div`
   position: relative;
 `

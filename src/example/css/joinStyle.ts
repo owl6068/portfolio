@@ -9,10 +9,10 @@ export const JoinContainer = styled(ExaContainer)`
   h1,h2{
     position: absolute;
     left: 20px;
-    top: 40px;
+    top: 80px;
   }
 `
-export const CheckWrap = styled.section`
+export const CheckWrap = styled.div`
   padding: 40px 0;
   height: 100%;
   overflow: auto;

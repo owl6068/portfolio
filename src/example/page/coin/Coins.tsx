@@ -10,7 +10,7 @@ import CoinBox from "../../component/coin/CoinBox";
 function Coins() {
   const { data, isLoading } = useQuery<ICoins[]>("coins", getCoinsApi);
   return (
-    <ExaContainer>
+    <ExaContainer as={"section"} className="height__auto">
       {isLoading ? (
         <Loading />
       ) : data ? (

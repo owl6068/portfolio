@@ -18,10 +18,12 @@ function App() {
   };
   useEffect(() => {
     const page = [
-      "/netflix",
-      "/netflix/home",
-      "/netflix/tv",
-      "/netflix/search",
+      "netflix",
+      "todo",
+      "coins",
+      "joinstep1",
+      "joinstep2",
+      "joinconfirm",
     ];
     setNotHeaderView(page);
   }, [pathname]);
@@ -37,10 +39,12 @@ function App() {
       window.removeEventListener("resize", setWindowDimensions);
     };
   }, []);
+
+  console.log(notHeaderView?.includes(pathname.split("/")[1]));
   return (
     <Wrap className="App">
       <GlobalStyle />
-      {notHeaderView?.includes(pathname) ? null : <Header />}
+      {notHeaderView?.includes(pathname.split("/")[1]) ? null : <Header />}
       <RoutesConfig />
     </Wrap>
   );

@@ -7,9 +7,8 @@ const secondary2='#777';
 const ls='20px';
 const ms='16px';
 const ss='12px';
-  
-  
-export const TodoWrap = styled.section`
+
+export const TodoWrap = styled.div`
   @font-face {
       font-family: 'EASTARJET-Medium';
       src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2') format('woff2');
@@ -64,7 +63,7 @@ export const TodoHeader = styled.header`
   }
 `
 
-export const TodoContainer = styled.div`
+export const TodoContainer = styled.section`
   flex: 1;
   display: flex;
   flex-direction: column;
