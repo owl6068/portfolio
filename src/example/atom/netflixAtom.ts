@@ -5,7 +5,7 @@ export const htmlHidden = atom({
   default:false
 })
 export const modalAtom = atom({
-  key:'modal',
+  key:'modalExa',
   default:false
 })
 export const slderIdAtom = atom({

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-const primary='#ff899f';
+const primary='#ffae00';
 const secondary='#f2f2f2';
 const secondary2='#777';
 
@@ -24,7 +24,6 @@ export const TodoWrap = styled.div`
   margin: 0 auto;
   max-width: 500px;
   height: 100vh;
-  border-radius: 30px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0,0,0,.2);
   transform: scale(1);
@@ -32,51 +31,19 @@ export const TodoWrap = styled.div`
     border-radius: 0;
   }
 `
-
-export const TodoHeader = styled.header`
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  align-items:center;
-  justify-content: space-between;
-  padding: 0 20px;
-  width: 100%;
-  height: 60px;
-  background-color: ${primary};
-  border-radius: 30px 30px 0 0;
-  z-index: 10;
-
-  .head {
-    &__left { 
-      padding:0 10px; 
-      font-size: ${ls};
-    }
-    &__right { 
-      padding:0 10px; 
-      font-size: ${ls};
-    }
-    &__monday {
-      font-size: ${ls};
-      color: ${secondary};
-    }
-  }
-`
-
 export const TodoContainer = styled.section`
-  flex: 1;
+  /* flex: 1;
   display: flex;
   flex-direction: column;
   padding-top: 60px;
   background-color: ${primary};
-  transform: scale(1);
+  transform: scale(1); */
 `
 export const TodoContant = styled.div`
   flex-shrink: 0;
-  padding: 30px 30px 100px;
+  padding: 30px 10px 100px;
   .todo {
     &__day {
-      color: ${secondary};
       strong {
         font-size: ${ls};
       }
@@ -92,7 +59,7 @@ export const TodoContant = styled.div`
       &__box {
         padding:10px 20px;
         margin: 20px 0;
-        border: 1px solid ${secondary};
+        border: 1px solid ${primary};
         border-radius: 16px;
         > div {
           display: grid;
@@ -109,25 +76,28 @@ export const TodoContant = styled.div`
             padding-top:8px;
             font-size:${ms};
             font-weight:500;
-            color: ${secondary};
+            color: ${primary};
           }
           select { 
             padding:6px 10px;
             width:100%;
             height:36px;
             cursor: pointer;
-            border:0}
+            border:1px solid ${primary};
+          }
           input { 
             padding:0 10px;
             width:100%;
             line-height:40px;
-            border:0}
+            border:1px solid ${primary};
+          }
           textarea {
             padding:10px;
             width: 100%;
             height:100px;
             resize:none;
-            border:0}
+            border:1px solid ${primary};
+          }
         }
         @media screen and (max-width:700px) {
           > div {
@@ -143,10 +113,10 @@ export const TodoContant = styled.div`
   }
   .btn {
     &__write {
-        color:${primary}; 
+        color:${secondary}; 
         font-weight: 900;
         border-radius: 8px; 
-        background-color: #fff;
+        background-color: ${primary};
       &.add {
         padding: 16px 0; 
         width: 150px;
@@ -217,7 +187,7 @@ export const TabBtn = styled.button`
   &.isActive {
     padding-bottom: 0;
     line-height: 70px;
-    background-color: #ffdddd;
+    background-color: #FFC700;
     transform: translateY(0);
   }
   @media screen and (max-width:700px){
@@ -226,7 +196,6 @@ export const TabBtn = styled.button`
     &.isActive {
       padding-bottom: 0;
       line-height: 60px;
-      background-color: #ffdddd;
     }
   }
 `

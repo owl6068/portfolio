@@ -5,6 +5,7 @@ import PortFolio from "./PortFolio";
 import { useRecoilState } from "recoil";
 import { mainAniOneMovingAtom } from "../utils/atom/commonAtom";
 import { Outlet } from "react-router-dom";
+import Header from "../component/Header";
 
 function Layout() {
   const [mainAniAtom, setMainAniAtom] = useRecoilState(mainAniOneMovingAtom);
@@ -23,6 +24,7 @@ function Layout() {
   console.log("1번");
   return (
     <>
+      <Header />
       <Main id="Main" />
       <About id="About" />
       <PortFolio id="PortFolio" />

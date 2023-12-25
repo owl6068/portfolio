@@ -5,12 +5,13 @@ interface IMyImgBox {
   href: string;
   bgImg: string;
   alt: string;
+  aTarget: string;
 }
-function MyImgBox({ link, href, bgImg, alt }: IMyImgBox) {
+function MyImgBox({ link, href, bgImg, alt, aTarget }: IMyImgBox) {
   return (
     <>
       {link && href.length > 1 ? (
-        <Link to={href} target="_blank" className="img__link link">
+        <Link to={href} target={aTarget} className="img__link link">
           <img src={bgImg} alt={alt} />
         </Link>
       ) : (

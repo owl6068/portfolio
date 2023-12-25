@@ -210,7 +210,7 @@ export const BtnFrontInfo = styled.div`
     }
   }
   @media screen and (max-width:  ${props=>props.theme.width.width_ss}){
-    height: 110px;
+    height: auto;
     .btn__info__Box{
       > span {
         flex-wrap: nowrap;

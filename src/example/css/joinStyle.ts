@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 
 // 유의사항
 export const JoinContainer = styled(ExaContainer)`
-  position: relative;
-  padding: 160px 20px 100px;
-  h1,h2{
+  /* position: relative; */
+  /* padding: 160px 20px 100px; */
+  /* h1,h2{
     position: absolute;
     left: 20px;
     top: 80px;
-  }
+  } */
 `
 export const CheckWrap = styled.div`
   padding: 40px 0;

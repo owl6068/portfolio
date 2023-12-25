@@ -14,10 +14,10 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { Helmet } from "react-helmet";
 import { cateAtom, toDoSelector } from "../../atom/todoAtom";
 import { DFlexBtw } from "../../../css/common";
-import ToDoHead from "../../component/todo/TodoHead";
 import ToDoWrite from "../../component/todo/ToDoWrite";
 import { tabmenu } from "./toDoTabMenu";
 import ToDoList from "../../component/todo/ToDoList";
+import { ExaContainer } from "../../css/Exacommon";
 
 function ToDo() {
   const toDay = new Date().getDate();
@@ -70,8 +70,7 @@ function ToDo() {
       <Helmet>
         <title>Todo</title>
       </Helmet>
-      <ToDoHead />
-      <TodoContainer className="container">
+      <ExaContainer>
         <TodoContant className="todo__contant">
           <DFlexBtw>
             <div className="todo__day">
@@ -139,7 +138,7 @@ function ToDo() {
             </motion.div>
           </motion.div>
         </TodoListType>
-      </TodoContainer>
+      </ExaContainer>
     </TodoWrap>
   );
 }

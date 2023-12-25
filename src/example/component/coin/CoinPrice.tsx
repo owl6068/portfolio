@@ -3,11 +3,11 @@ import { IChart } from "../../interface/coin";
 import { CoinDetail, CoinPriceBox } from "../../css/coinstyle";
 
 function CoinPrace() {
-  // const { chart } = useOutletContext<IChart>();
+  const { chart } = useOutletContext<IChart>();
   return (
     <CoinPriceBox>
-      {/* {chart.map((data) => (
-        <ul>
+      {chart.map((data, i) => (
+        <ul key={"price" + i}>
           <CoinDetail as="li">
             <strong>
               {new Date(data[0]).getFullYear()}년
@@ -32,7 +32,7 @@ function CoinPrace() {
             </p>
           </CoinDetail>
         </ul>
-      ))} */}
+      ))}
     </CoinPriceBox>
   );
 }

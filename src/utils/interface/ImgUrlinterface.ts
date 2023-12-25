@@ -32,6 +32,10 @@ export interface IImgUrlStieArr{
   kace:IUrl,
   msPF:IUrl,
   skt:IUrl,
+  coin:IUrl,
+  join:IUrl,
+  todo:IUrl,
+  netflix:IUrl,
 };
 
 export interface IUrl{

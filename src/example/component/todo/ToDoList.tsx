@@ -21,7 +21,7 @@ function ToDoList({ id, cate, title, text }: IToDo) {
       if (type !== "Del") {
         return newTodoArr;
       } else {
-        if (window.confirm("정말 삭제 하실껀가요?")) {
+        if (window.confirm("삭제 하시겠습니까?")) {
           return delTodoArr;
         } else {
           return prev;

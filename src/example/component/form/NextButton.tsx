@@ -12,7 +12,7 @@ function NextButton({ text, disabled, onClick }: INextButton) {
 
   const handleNext = () => {
     onClick();
-    navigate("/portfolio/joinstep2");
+    navigate("/joinstep2");
   };
 
   return (

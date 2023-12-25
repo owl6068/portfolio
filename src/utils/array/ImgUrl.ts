@@ -87,4 +87,16 @@ export const ImgUrlStieArr : IImgUrlStieArr = {
   skt:{
     url: `${IMGURLBASIC}/site/skt.png`
   },
+  coin:{
+    url: `${IMGURLBASIC}/site/coin.png`
+  },
+  join:{
+    url: `${IMGURLBASIC}/site/join.png`
+  },
+  todo:{
+    url: `${IMGURLBASIC}/site/todo.png`
+  },
+  netflix:{
+    url: `${IMGURLBASIC}/site/netflix.png`
+  },
 }

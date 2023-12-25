@@ -12,31 +12,37 @@ import ToDo from "./example/page/todo/ToDo";
 import Home from "./example/page/netflix/Home";
 import Search from "./example/page/netflix/Search";
 import Tv from "./example/page/netflix/Tv";
+import ExaLayout from "./page/ExaLayout";
 function RoutesConfig() {
   return (
     <>
       <Routes>
-        <Route path="/netflix">
-          <Route index element={<Home />} />
-          <Route path="/netflix/home" element={<Home />} />
-          <Route path="/netflix/tv" element={<Tv />} />
-          <Route path="/netflix/search" element={<Search />} />
-        </Route>
-        <Route path="/coins">
-          <Route index element={<Coins />} />
-          <Route path=":id">
-            <Route index element={<Coin />} />
-            <Route path="chart" element={<CoinChart />} />
-            <Route path="price" element={<CoinPrice />} />
+        <Route element={<ExaLayout />}>
+          <Route path="/netflix">
+            <Route index element={<Home />} />
+            <Route path="/netflix/home" element={<Home />} />
+            <Route path="/netflix/tv" element={<Tv />} />
+            <Route path="/netflix/search" element={<Search />} />
           </Route>
+          <Route path="/coins">
+            <Route index element={<Coins />} />
+            <Route path=":id" element={<Coin />}>
+              <Route>
+                <Route path="chart" element={<CoinChart />} />
+                <Route path="price" element={<CoinPrice />} />
+              </Route>
+            </Route>
+          </Route>
+          <Route path="/joinstep1" element={<JoinStep1 />} />
+          <Route path="/joinstep2" element={<JoinStep2 />} />
+          <Route path="/joinconfirm" element={<JoinConfirm />} />
+          <Route path="/todo" element={<ToDo />} />
         </Route>
-        {/* <Route path="/coins" element={<Coins />} /> */}
-        <Route path="/joinstep1" element={<JoinStep1 />} />
-        <Route path="/joinstep2" element={<JoinStep2 />} />
-        <Route path="/joinconfirm" element={<JoinConfirm />} />
-        <Route path="/todo" element={<ToDo />} />
-        <Route path="/" element={<Layout />} />
-        <Route path="*" element={<NotFound />} />
+
+        <Route element={<Layout />}>
+          <Route path="/" element={<Layout />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </>
   );

@@ -173,7 +173,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'re2',
       career:false,
-      bgImg:ImgUrlStieArr.msPF.url,
+      bgImg:ImgUrlStieArr.coin.url,
       lib:'React',
       title:'Coins',
       simply:'coingecko api 정보페이지',
@@ -194,7 +194,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'re3',
       career:false,
-      bgImg:ImgUrlStieArr.msPF.url,
+      bgImg:ImgUrlStieArr.join.url,
       lib:'React',
       title:'Form',
       simply:'유의사항(checkbox), 회원가입폼(input) 작업',
@@ -214,7 +214,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'re4',
       career:false,
-      bgImg:ImgUrlStieArr.msPF.url,
+      bgImg:ImgUrlStieArr.todo.url,
       lib:'React',
       title:'ToDo List',
       simply:'Todo, Doing, Done 맞게 ToDo리스트 상태 변경 가능',
@@ -234,7 +234,7 @@ export const PortFolioList:IPortFolioInfoAtom = {
     {
       id:'re5',
       career:false,
-      bgImg:ImgUrlStieArr.msPF.url,
+      bgImg:ImgUrlStieArr.netflix.url,
       lib:'React',
       title:'Netflix(적응형 PC)',
       simply:'themoviedb를 이용한 netFlix 따라 만들기',

@@ -6,7 +6,6 @@ import {
   ModalHead,
   ModalBody,
   ModalInfoUl,
-  ViewWrap,
 } from "../css/component/modalStyle";
 import Title from "./Title";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -15,10 +14,8 @@ import {
   filterModalPFIntoSelector,
 } from "../utils/atom/commonAtom";
 import { IPortFolioInfo } from "../utils/interface/PFinterface";
-import { Link } from "react-router-dom";
 import MyInfoBox from "./modal/MyInfoBox";
 import MyImgBox from "./modal/MyImgBox";
-import ExampleLayout from "../example/ExampleLayout";
 
 function Modal() {
   const portfolio = useRecoilValue<IPortFolioInfo[]>(filterModalPFIntoSelector);
@@ -28,6 +25,7 @@ function Modal() {
     document.body.style.overflow = "unset";
   };
   const info = { ...portfolio[0] };
+  console.log("ionfoo", info.id);
   return (
     <ModalWrap>
       <ModalDim onClick={modalHidden}></ModalDim>
@@ -39,35 +37,28 @@ function Modal() {
           <ModalHead style={{ backgroundImage: "" }}>
             <Title as="h2" text={info.title} size={"m"} />
             {info.desc && (
-              <div className="desc__info">
+              <ul className="desc__info">
                 {info.desc.map((data, i) => (
-                  <>
+                  <li key={info.id + "mh"}>
                     <strong>
                       {i + 1}. {data.title}
                     </strong>
                     {data.text.map((text) => (
-                      <p>{text}</p>
+                      <p key={info.id + "txt"}>{text}</p>
                     ))}
-                  </>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
             <MyImgBox
-              link={info.career ? true : false}
+              link={info.link !== null ? true : false}
               href={info.link || ""}
               bgImg={info.bgImg || ""}
               alt={info.title}
+              aTarget={info.career ? "_blank" : "_self"}
             />
           </ModalHead>
           <ModalBody>
-            {!info.career && (
-              <>
-                <Title as="h4" text={"view."} size={"ss"} />
-                <ViewWrap>
-                  <ExampleLayout />
-                </ViewWrap>
-              </>
-            )}
             <Title as="h4" text={"Description."} size={"ss"} />
             <ModalInfoUl>
               {info.career ? (
@@ -81,10 +72,7 @@ function Modal() {
                     label={info.lib === "Vue" ? "Framework" : "Library"}
                     text={info.lib}
                   />
-                  <MyInfoBox label="CSS" link={info.css} />
-                  {/* {info.lib === "React" && (
-                    <MyInfoBox label="Skill" link={info.skill} />
-                  )} */}
+                  <MyInfoBox label="CSS" text={info.css} />
                 </>
               )}
               {info.skill && <MyInfoBox label="Skill" text={info.skill} />}

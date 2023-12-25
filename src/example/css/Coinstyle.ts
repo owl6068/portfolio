@@ -4,13 +4,10 @@ import { motion } from "framer-motion";
 
 export const CoinListUl = styled.ul`
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(3,1fr);
   margin-top: 30px;
   gap: 30px 30px;
   @media screen and (max-width: ${props=>props.theme.width.width_m}){
-    grid-template-columns: repeat(3,1fr);
-  }
-  @media screen and (max-width: ${props=>props.theme.width.width_s}){
     grid-template-columns: repeat(2,1fr);
   }
 `;

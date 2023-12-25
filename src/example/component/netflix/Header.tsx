@@ -49,7 +49,7 @@ function Header() {
   return (
     <Head variants={aniHeaderFix} animate={headFixed ? "fixed" : "scroll"}>
       <Col>
-        <Link to={`/netflix/home`} className="logo">
+        <Link to="/" className="logo">
           <Svg
             width="110"
             height="30"

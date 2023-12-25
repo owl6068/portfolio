@@ -7,8 +7,16 @@ interface IMyportfolioInfo {
   tool?: IPortFolioTool;
   link?: string;
   site?: [string, string, string];
+  aTarget?: string;
 }
-function MyInfoBox({ label, text, tool, link, site }: IMyportfolioInfo) {
+function MyInfoBox({
+  label,
+  text,
+  tool,
+  link,
+  site,
+  aTarget,
+}: IMyportfolioInfo) {
   return (
     <ModalInfoLi>
       <div className="list__site__box">
@@ -23,7 +31,7 @@ function MyInfoBox({ label, text, tool, link, site }: IMyportfolioInfo) {
         <p>
           {text}
           {link && (
-            <Link to={link} target="_blank" className="link">
+            <Link to={link} target={aTarget} className="link">
               {link}
             </Link>
           )}

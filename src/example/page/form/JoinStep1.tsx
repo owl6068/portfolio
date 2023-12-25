@@ -35,7 +35,7 @@ function JoinStep1() {
   };
 
   return (
-    <JoinContainer as="section" className="height__auto">
+    <JoinContainer as="section">
       <Helmet>
         <title>유의사항 | 예제 만들기</title>
       </Helmet>

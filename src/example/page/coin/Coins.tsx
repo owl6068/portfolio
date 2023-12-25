@@ -6,6 +6,7 @@ import Loading from "../../../component/Loading";
 import { CoinListUl } from "../../css/coinstyle";
 import ExaTitle from "../../component/ExaTitle";
 import CoinBox from "../../component/coin/CoinBox";
+import ExaHeader from "../../component/ExaHeader";
 
 function Coins() {
   const { data, isLoading } = useQuery<ICoins[]>("coins", getCoinsApi);
@@ -13,16 +14,15 @@ function Coins() {
     <ExaContainer as={"section"} className="height__auto">
       {isLoading ? (
         <Loading />
-      ) : data ? (
+      ) : (
         <>
-          <ExaTitle as="h1" text="Coin List" size="40px" />
           <CoinListUl>
             {data?.map((coin) => (
               <CoinBox key={coin.id} {...coin} />
             ))}
           </CoinListUl>
         </>
-      ) : null}
+      )}
     </ExaContainer>
   );
 }
