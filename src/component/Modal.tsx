@@ -38,7 +38,20 @@ function Modal() {
           </ModalClose>
           <ModalHead style={{ backgroundImage: "" }}>
             <Title as="h2" text={info.title} size={"m"} />
-            <p>{info.desc}</p>
+            {info.desc && (
+              <div className="desc__info">
+                {info.desc.map((data, i) => (
+                  <>
+                    <strong>
+                      {i + 1}. {data.title}
+                    </strong>
+                    {data.text.map((text) => (
+                      <p>{text}</p>
+                    ))}
+                  </>
+                ))}
+              </div>
+            )}
             <MyImgBox
               link={info.career ? true : false}
               href={info.link || ""}

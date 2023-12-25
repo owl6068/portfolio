@@ -32,7 +32,9 @@ export const Section = styled.section`
   }
   @media screen and (max-width: ${props=>props.theme.width.width_s}){
     padding: 40px 0;
-    height: calc(100vh - 140px);
+    &:first-of-type{
+      height: calc(100vh - 140px);
+    }
   }
 `
 export const Inner = styled.div`

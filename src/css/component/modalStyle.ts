@@ -65,12 +65,30 @@ export const ModalHead = styled.div`
   h2 {
     order:1;
   }
-  p {
+  .desc__info {
     order:3; 
-    padding-top:20px; 
+    padding:20px 0; 
     white-space: pre-wrap;
     word-break:keep-all; 
     line-height:1.4;
+    strong {
+      display: block;
+      padding:10px 0 6px;
+      &:first-of-type {
+        padding-top:0px;
+      }
+    }
+    p {
+      padding-left: 10px;
+      padding-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.3;
+      text-indent: -10px;
+      &::before {
+        content: '-';
+        padding-right: 4px;
+      }
+    }
   }
   .img__link {
     order:2;
@@ -131,7 +149,7 @@ export const ModalHead = styled.div`
   }
 `
 export const ModalBody = styled.div`
-  padding: 40px 0 0;
+  padding: 20px 0 0;
 `
 export const ModalInfoUl = styled.ul`
   padding: 10px 0;

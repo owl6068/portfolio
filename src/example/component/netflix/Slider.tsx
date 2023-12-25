@@ -46,7 +46,10 @@ function Slider(movie: IGetMovieApiresults) {
             </p>
           )}
         </SliderImg>
-        <SliderInfo className="slider__info">
+        <SliderInfo
+          className="slider__info"
+          onClick={() => modalHandler(movie.id + "")}
+        >
           <DFlexBtw>
             <DFlex className="btnBox">
               <button type="button">❤</button>
@@ -55,9 +58,7 @@ function Slider(movie: IGetMovieApiresults) {
               <button type="button">👇</button>
             </DFlex>
             <span className="btnBox">
-              <button type="button" onClick={() => modalHandler(movie.id + "")}>
-                ✔
-              </button>
+              <button type="button">✔</button>
             </span>
           </DFlexBtw>
           <DFlex>

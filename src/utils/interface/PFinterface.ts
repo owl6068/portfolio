@@ -21,11 +21,16 @@ export interface IPortFolioTool {
   schedule:string,
   collabo:string,
 }
-export interface IPortFolioSite {
+ interface IPortFolioSite {
   name:string,
   display:string,
   desc:string,
   link?:string
+}
+
+interface Idesc {
+  title:string,
+  text:string[]
 }
 export interface IPortFolioInfo {
   id:string,
@@ -34,7 +39,7 @@ export interface IPortFolioInfo {
   career:boolean,
   title:string,
   simply:string,
-  desc:string,
+  desc?:Idesc[],
   display?:string,
   date:string,
   skill:string,
