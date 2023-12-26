@@ -1,9 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   BtnNextBox,
   FormListLi,
   FormListUl,
-  JoinContainer,
   Label,
   ProfilBox,
   container,
@@ -15,11 +14,15 @@ import { IChkInfo, IFormList } from "../../interface/join";
 import { joinApi } from "../../api/joinApi";
 import { Helmet } from "react-helmet";
 import JoinInfoList from "../../component/form/JoinInfoList";
+import { ExaContainer } from "../../css/Exacommon";
+import NextButton from "../../component/form/NextButton";
 
 function JoinConfirm() {
+  const navigate = useNavigate();
   const [step1, setStep1] = useState<IChkInfo[]>();
   const [step2, setStep2] = useState<IFormList>();
   const [img, setImg] = useState<string>();
+
   useEffect(() => {
     const data1 = localStorage.getItem("유의사항");
     const data2 = localStorage.getItem("프로필");
@@ -36,8 +39,15 @@ function JoinConfirm() {
       setImg(JSON.parse(data3));
     }
   }, []);
+
+  const homeMoving = () => {
+    window.localStorage.removeItem("프로필");
+    window.localStorage.removeItem("사진");
+    window.localStorage.removeItem("유의사항");
+    navigate("/");
+  };
   return (
-    <JoinContainer as="section">
+    <ExaContainer>
       <Helmet>
         <title>가입완료 | 예제 만들기</title>
       </Helmet>
@@ -70,12 +80,10 @@ function JoinConfirm() {
           </>
         )}
       </FormListUl>
-      <BtnNextBox style={{ gap: "10px" }}>
-        <Link className="btn__next" to="/portfolio">
-          홈으로
-        </Link>
+      <BtnNextBox>
+        <NextButton text="홈으로 가기" disabled={true} onClick={homeMoving} />
       </BtnNextBox>
-    </JoinContainer>
+    </ExaContainer>
   );
 }
 

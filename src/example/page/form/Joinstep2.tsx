@@ -2,23 +2,23 @@ import { useForm } from "react-hook-form";
 import ExaTitle from "../../component/ExaTitle";
 import {
   DFlexFixAuto,
-  JoinContainer,
-  Btn,
   ErrorText,
   Label,
   ProfilBox,
   InputBox,
   PasswordInput,
   InputChk2,
-  BtnNextBox,
   container,
   item,
+  BtnNextBox,
 } from "../../css/joinStyle";
 import { useEffect, useState } from "react";
 import { IFormList } from "../../interface/join";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { ExaContainer } from "../../css/Exacommon";
+import NextButton from "../../component/form/NextButton";
 
 function JoinStep2() {
   const errorNick = [
@@ -45,15 +45,18 @@ function JoinStep2() {
   const [passWordView2, setPassWordView2] = useState(true);
   const [localImg, setLocalImg] = useState("");
   const [profill, setProfill] = useState("");
+
   const HandlerPassWord = () => {
+    //pw
     setPassWordView((view) => !view);
   };
   const HandlerPassWord2 = () => {
+    //pw2
     setPassWordView2((view) => !view);
   };
 
   const formSubmit = (data: IFormList) => {
-    navigate("/portfolio/joinconfirm");
+    navigate("/joinconfirm");
     localStorage.setItem("프로필", JSON.stringify(data));
     localStorage.setItem("사진", JSON.stringify(profill));
   };
@@ -89,8 +92,14 @@ function JoinStep2() {
     }
   }, [setValue]);
 
+  const onReset = () => {
+    window.localStorage.removeItem("프로필");
+    window.localStorage.removeItem("사진");
+    reset();
+  };
+
   return (
-    <JoinContainer as="section">
+    <ExaContainer>
       <Helmet>
         <title>회원가입폼 | 예제 만들기</title>
       </Helmet>
@@ -294,14 +303,16 @@ function JoinStep2() {
             </InputBox>
           </motion.li>
         </motion.ul>
-        <BtnNextBox style={{ gap: "10px" }}>
-          <Btn type="button" onClick={() => reset()}>
-            리셋
-          </Btn>
-          <Btn>가입하기</Btn>
+        <BtnNextBox>
+          <NextButton text="리셋" disabled={true} onClick={onReset} />
+          <NextButton
+            text="완료"
+            disabled={true}
+            onClick={handleSubmit(formSubmit)}
+          />
         </BtnNextBox>
       </form>
-    </JoinContainer>
+    </ExaContainer>
   );
 }
 

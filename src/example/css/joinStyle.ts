@@ -1,17 +1,8 @@
 import styled from "styled-components";
-import { ExaContainer } from "./Exacommon";
 import { motion } from "framer-motion";
 
 // 유의사항
-export const JoinContainer = styled(ExaContainer)`
-  /* position: relative; */
-  /* padding: 160px 20px 100px; */
-  /* h1,h2{
-    position: absolute;
-    left: 20px;
-    top: 80px;
-  } */
-`
+
 export const CheckWrap = styled.div`
   padding: 40px 0;
   height: 100%;
@@ -45,23 +36,12 @@ export const BtnNextBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   padding: 20px;
   width: 100%;
   max-width: 500px;
   text-align: center;
   background-color: #fff;
-  .btn__next {
-    display: block;
-    width: 100%;
-    line-height: 50px;
-    font-weight: 900;
-    background-color: ${props=>props.theme.colors.PRIMARY};
-    &:disabled{
-      color: #fff;
-      background-color: ${props=>props.theme.colors.SECONDARY};
-      opacity: .5;
-    }
-  }
 `
 
 // 가입폼
@@ -226,9 +206,14 @@ export const Btn = styled.button<{disabled?:boolean}>`
   overflow: hidden;
   opacity: ${props => props.disabled ? .6 : 1};
   background: ${props=>props.theme.colors.PRIMARY};
-  &:hover {
-   opacity: 1;
-  }
+    &:disabled{
+    color: #fff;
+    background-color: ${props=>props.theme.colors.SECONDARY};
+    opacity: .5;
+    }
+    &:hover {
+      opacity: 1;
+    }
 `;
 
 export const LinkBtn = styled(Btn)<{disabled:boolean}>`

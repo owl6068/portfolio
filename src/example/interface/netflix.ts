@@ -1,6 +1,3 @@
-const API = '9f3dc2e5fd2677c3149189fa44812040'
-const BASIC_URL = 'https://api.themoviedb.org/3'
-
 export interface IGetMovieApiresults {
   backdrop_path: string,
   id: number,

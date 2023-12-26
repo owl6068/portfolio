@@ -8,7 +8,7 @@ import {
 } from "../css/page/PFStyle";
 import { Section } from "../css/common";
 import TabButton from "../component/portfolio/TabButton";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 import {
   filterPFListSelector,
   portfolioBtnAtom,

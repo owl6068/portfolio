@@ -1,4 +1,3 @@
-import { useRecoilValue } from "recoil";
 import {
   MainSection,
   MainInner,

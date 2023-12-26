@@ -31,14 +31,6 @@ export const TodoWrap = styled.div`
     border-radius: 0;
   }
 `
-export const TodoContainer = styled.section`
-  /* flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding-top: 60px;
-  background-color: ${primary};
-  transform: scale(1); */
-`
 export const TodoContant = styled.div`
   flex-shrink: 0;
   padding: 30px 10px 100px;

@@ -4,9 +4,7 @@ import { getCoinsApi } from "../../api/coinApi";
 import { ExaContainer } from "../../css/Exacommon";
 import Loading from "../../../component/Loading";
 import { CoinListUl } from "../../css/coinstyle";
-import ExaTitle from "../../component/ExaTitle";
 import CoinBox from "../../component/coin/CoinBox";
-import ExaHeader from "../../component/ExaHeader";
 
 function Coins() {
   const { data, isLoading } = useQuery<ICoins[]>("coins", getCoinsApi);
