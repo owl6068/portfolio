@@ -14,10 +14,11 @@ import {
   aniDwonUp,
 } from "../css/page/mainStyle";
 import { IPageId } from "../utils/interface/PFinterface";
-import { mainAniOneMovingAtom } from "../utils/atom/commonAtom";
 
 function Main({ id }: IPageId) {
-  const mainAniAtom = useRecoilValue(mainAniOneMovingAtom);
+  const mainAniAtom = JSON.parse(
+    localStorage.getItem("hasExecutedOnce") || "false"
+  );
   return (
     <MainSection id={id}>
       <MainInner>
@@ -25,15 +26,13 @@ function Main({ id }: IPageId) {
           <Name
             className="container"
             variants={aniName}
-            initial="hidden"
+            initial={mainAniAtom ? "visible" : "hidden"}
             animate="visible"
-            custom={mainAniAtom ? true : false}
           >
             <NameText
               variants={aniM}
-              initial="hidden"
+              initial={mainAniAtom ? "visible" : "hidden"}
               animate="visible"
-              custom={mainAniAtom ? true : false}
             >
               M
             </NameText>
@@ -45,18 +44,16 @@ function Main({ id }: IPageId) {
           </Name>
           <NameDesc
             variants={aniUpDwon}
-            initial="hidden"
+            initial={mainAniAtom ? "visible" : "hidden"}
             animate="visible"
-            custom={mainAniAtom ? true : false}
           >
             P o r t F o l i o
           </NameDesc>
         </NameBox>
         <Triangle
           variants={aniDwonUp}
-          initial="hidden"
+          initial={mainAniAtom ? "visible" : "hidden"}
           animate="visible"
-          custom={mainAniAtom ? true : false}
         />
       </MainInner>
     </MainSection>

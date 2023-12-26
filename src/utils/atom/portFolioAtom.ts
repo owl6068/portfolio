@@ -18,7 +18,7 @@ export const filterPFListSelector = selector({
     const activeBtn = get(portfolioBtnAtom)
     const portfolio = get(portfolioListAtom)
     
-    const allfilter = [...portfolio.react,...portfolio.career,...portfolio.vue];
+    const allfilter = [...portfolio.career,...portfolio.react,...portfolio.vue];
     const creerfilter = allfilter.filter(career => career.career === true)
     const reactfilter = allfilter.filter(react => react.lib === 'React')
     const vuefilter = allfilter.filter(vue => vue.lib === 'Vue')

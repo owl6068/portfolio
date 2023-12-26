@@ -6,25 +6,27 @@ import { windowHeightAtom, windowWidthAtom } from "./utils/atom/commonAtom";
 import RoutesConfig from "./RoutesConfig";
 
 function App() {
-  // const setWindowWidthRecoil = useSetRecoilState(windowWidthAtom); //window width
-  // const setWindowHeightRecoil = useSetRecoilState(windowHeightAtom); //window width
-  // const setWindowDimensions = () => {
-  //   setWindowWidthRecoil(window.innerWidth);
-  //   setWindowHeightRecoil(window.innerHeight);
-  // };
+  const setWindowWidthRecoil = useSetRecoilState(windowWidthAtom); //window width
+  const setWindowHeightRecoil = useSetRecoilState(windowHeightAtom); //window width
 
-  // useEffect(() => {
-  //   //현재 화면 width, height 값
-  //   setWindowWidthRecoil(window.innerWidth);
-  //   setWindowHeightRecoil(window.innerHeight);
-  // }, [setWindowWidthRecoil, setWindowHeightRecoil]);
-  // useEffect(() => {
-  //   //화면 창크키 변경때 width, height 값
-  //   window.addEventListener("resize", setWindowDimensions);
-  //   return () => {
-  //     window.removeEventListener("resize", setWindowDimensions);
-  //   };
-  // }, []);
+  const setWindowDimensions = () => {
+    setWindowWidthRecoil(window.innerWidth);
+    setWindowHeightRecoil(window.innerHeight);
+  };
+
+  useEffect(() => {
+    //현재 화면 width, height 값
+    setWindowWidthRecoil(window.innerWidth);
+    setWindowHeightRecoil(window.innerHeight);
+  }, [setWindowWidthRecoil, setWindowHeightRecoil]);
+
+  useEffect(() => {
+    //화면 창크키 변경때 width, height 값
+    window.addEventListener("resize", setWindowDimensions);
+    return () => {
+      window.removeEventListener("resize", setWindowDimensions);
+    };
+  }, []);
 
   return (
     <Wrap className="App">

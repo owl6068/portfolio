@@ -11,10 +11,7 @@ import { headerBtn } from "../utils/array/utilArr";
 import { aniUpDwon } from "../css/page/mainStyle";
 import { useEffect, useRef } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import {
-  mainAniOneMovingAtom,
-  windowWidthAtom,
-} from "../utils/atom/commonAtom";
+import { windowWidthAtom } from "../utils/atom/commonAtom";
 import { ImgUrlEtcArr } from "../utils/array/ImgUrl";
 import HRhombusBtn from "./header/HRhombusBtn";
 import { navMenuAtom, toolTipAtom } from "../utils/atom/headerAtom";
@@ -25,7 +22,9 @@ function Header() {
   const [tooltip, setTooltip] = useRecoilState(toolTipAtom);
   const [navMenu, setNavMenu] = useRecoilState(navMenuAtom);
   const tooltipRef = useRef<HTMLDivElement>(null);
-  const mainAniAtom = useRecoilValue(mainAniOneMovingAtom);
+  const mainAniAtom = JSON.parse(
+    localStorage.getItem("hasExecutedOnce") || "false"
+  );
 
   const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     // 메뉴 클릭시 scroll
@@ -62,9 +61,8 @@ function Header() {
   return (
     <Head
       variants={aniUpDwon}
-      initial="hidden"
+      initial={mainAniAtom ? "visible" : "hidden"}
       animate="visible"
-      custom={mainAniAtom ? true : false}
     >
       <InnerBtw>
         <Logo initial={false} whileHover={{ scale: 1.2 }}>

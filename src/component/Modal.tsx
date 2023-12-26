@@ -21,7 +21,7 @@ function Modal() {
   const portfolio = useRecoilValue<IPortFolioInfo[]>(filterModalPFIntoSelector);
   const setModalShow = useSetRecoilState(modalPFAtom);
   const modalHidden = () => {
-    setModalShow(false);
+    setModalShow("false");
     document.body.style.overflow = "unset";
   };
   const info = { ...portfolio[0] };

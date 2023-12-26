@@ -23,9 +23,9 @@ export const moWidthAtom = atom<number>({
   default: 850
 })
 
-export const modalPFAtom = atom<boolean>({
+export const modalPFAtom = atom<string>({
   key:'modalPF',
-  default: false
+  default: 'false'
 })
 
 export const modalPFInfoAtom = atom<string>({
@@ -42,10 +42,4 @@ export const filterModalPFIntoSelector = selector({
 
     return allfilter.filter(data => data.id === id)
   }
-})
-
-export const mainAniOneMovingAtom = atom({
-  key:'mainMoving',
-  default:true,
-  effects_UNSTABLE: [persistAtom]
 })

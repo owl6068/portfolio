@@ -86,6 +86,8 @@ export const Tag = styled.span`
 `
 export const MyOneWord = styled.p`
   padding: 20px 0;
+  line-height: 1.4;
+  word-break: keep-all;
 `
 export const MyAnotherInfo = styled.ul`
   text-align: center;
@@ -109,6 +111,7 @@ export const MsImg = styled(motion.div)`
   transform: translate(-50%,-50%);
   z-index: -1;
   transition: opacity .5s;
+  width: 20%;
   @media screen and (max-width: ${props=>props.theme.width.width_l}) {
     opacity: .1;
   }

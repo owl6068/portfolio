@@ -2,26 +2,48 @@ import { useEffect } from "react";
 import About from "./About";
 import Main from "./Main";
 import PortFolio from "./PortFolio";
-import { useRecoilState } from "recoil";
-import { mainAniOneMovingAtom } from "../utils/atom/commonAtom";
-import { Outlet } from "react-router-dom";
 import Header from "../component/Header";
 
 function Layout() {
-  const [mainAniAtom, setMainAniAtom] = useRecoilState(mainAniOneMovingAtom);
+  const hasExecutedOnce = JSON.parse(
+    localStorage.getItem("hasExecutedOnce") || "false"
+  );
   useEffect(() => {
-    if (mainAniAtom) {
+    // localhost저장 첫 한번 실행
+    if (!hasExecutedOnce) {
       document.body.style.position = "fixed";
       document.body.style.overflowY = "hidden";
       document.body.style.width = "100%";
       setTimeout(() => {
         document.body.style.position = "static";
         document.body.style.overflow = "unset";
-        setMainAniAtom(false);
+        localStorage.setItem("hasExecutedOnce", "true");
       }, 4500);
     }
-  }, [mainAniAtom]);
-  console.log("1번");
+  }, []);
+
+  useEffect(() => {
+    // 사용자의 스크롤 위치를 기억
+    const handleScroll = () => {
+      localStorage.setItem(
+        "scrollPosition",
+        JSON.stringify({ x: window.scrollX, y: window.scrollY })
+      );
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    const savedPosition = localStorage.getItem("scrollPosition");
+    if (savedPosition) {
+      const parsedPosition = JSON.parse(savedPosition);
+      window.scrollTo(parsedPosition.x, parsedPosition.y);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <Header />

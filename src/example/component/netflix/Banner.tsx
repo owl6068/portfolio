@@ -3,7 +3,6 @@ import { BannerInfoBox, BannerSection } from "../../css/netflix";
 import { getBgimg } from "../../page/netflix/utilImg";
 
 function Banner(props: any) {
-  // console.log(props);
   const [random, setRandom] = useState<number>(0); //배너 랜덤
   useEffect(() => {
     const number = Math.floor(Math.random() * 20 + 1);

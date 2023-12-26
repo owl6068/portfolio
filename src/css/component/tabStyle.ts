@@ -129,28 +129,23 @@ export const BtnFront = styled(TabBoxIn)`
 
 `
 export const BtnFrontImg = styled.div`
-    /* &::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    opacity: .5;
-    transition: opacity .3s;
-    z-index: 1;
-  } */
+  
   .btn {
     &__subject {
       position: absolute;
       right: 0;
       top: 0;
-      padding: 0 10px;
-      color: ${props=>props.theme.colors.LIGHT};
+      padding: 10px;
+      color: ${props=>props.theme.colors.DARK};
       line-height: 30px;
-      background-color: ${props=>props.theme.colors.DARK};
+      font-weight: 900;
+      background-color: ${props=>props.theme.colors.PRIMARY};
       z-index: 2;
+      &.pf{
+        font-size: 14px;
+        color: ${props=>props.theme.colors.LIGHT};
+        background-color: ${props=>props.theme.colors.DARK};
+      }
     }
     &__img__bg {
       object-fit: cover;

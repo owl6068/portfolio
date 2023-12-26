@@ -8,7 +8,7 @@ import {
 } from "../css/page/PFStyle";
 import { Section } from "../css/common";
 import TabButton from "../component/portfolio/TabButton";
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import {
   filterPFListSelector,
   portfolioBtnAtom,
@@ -22,6 +22,7 @@ import {
 } from "../utils/atom/commonAtom";
 import { TabBoxUl, TabContant, TabWrap } from "../css/component/tabStyle";
 import { useEffect, useRef, useState } from "react";
+
 function PortFolio({ id }: IPageId) {
   const getModalShow = useRecoilValue(modalPFAtom);
   const getTabBgText = useRecoilValue(portfolioBtnAtom);
@@ -29,12 +30,11 @@ function PortFolio({ id }: IPageId) {
   const getWindowWidth = useRecoilValue(windowWidthAtom);
   const getWindowHeigh = useRecoilValue(windowHeightAtom);
   const offset: any = useRef(null);
-  const [offsetbox, setOffsetbox] = useState<number>(0);
+  const [offsetbox, setOffsetbox] = useState<number | undefined>();
 
   useEffect(() => {
     setOffsetbox(offset?.current?.offsetTop + 20);
   }, [getWindowWidth, getWindowHeigh]);
-
   return (
     <Section id={id} ref={offset}>
       <PortFolioInner>
@@ -48,7 +48,7 @@ function PortFolio({ id }: IPageId) {
           </BgText>
         </BgTextbox>
         <TabWrap>
-          <TabButton offset={offsetbox} />
+          {offsetbox && <TabButton offset={offsetbox} />}
           <TabContant>
             <TabBoxUl
               className="container"
@@ -63,7 +63,7 @@ function PortFolio({ id }: IPageId) {
           </TabContant>
         </TabWrap>
       </PortFolioInner>
-      {getModalShow && <Modal />}
+      {getModalShow === "true" ? <Modal /> : null}
     </Section>
   );
 }

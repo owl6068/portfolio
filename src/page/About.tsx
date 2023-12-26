@@ -67,13 +67,14 @@ function About({ id }: IPageId) {
                 ))}
               </TagBox>
               <MyOneWord>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut,
-                soluta nobis incidunt eaque rem dignissimos ea mollitia iste
-                deleniti corrupti nostrum officia, consequatur corporis.
-                Laborum, soluta. Deserunt minima nobis ab delectus placeat
-                tempora similique maiores ullam dignissimos dicta repellat, cum
-                et laboriosam aliquam exercitationem unde iure totam facere.
-                Delectus, commodi.
+                <b>퍼블리셔에서 프론트로</b>
+                <br />
+                React를 독학으로 공부하였으며, 회사를 다닐때 Vue를 활용한
+                퍼블리싱 작업 경험이 있습니다. SPA의 매력을 느끼고, 이를
+                공부하며 더 나은 역량을 갖추기 위해 노력했습니다.
+                <br />
+                새로운 도전을 통해 계속해서 성장하는 것을 즐기고, 기술적으로
+                발전하며 나 자신을 업그레이드해 가고 있습니다.
               </MyOneWord>
               <MyAnotherInfo>
                 <li>

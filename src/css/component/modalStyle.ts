@@ -73,13 +73,14 @@ export const ModalHead = styled.div`
     line-height:1.4;
     strong {
       display: block;
-      padding:10px 0 6px;
+      padding:10px 0 6px 20px; 
+      text-indent: -20px;
       &:first-of-type {
         padding-top:0px;
       }
     }
     p {
-      padding-left: 10px;
+      padding-left: 16px;
       padding-bottom: 8px;
       font-size: 14px;
       line-height: 1.3;

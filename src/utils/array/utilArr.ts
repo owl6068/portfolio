@@ -46,7 +46,7 @@ export const myInfoTag : IMyInfoTag[] = [
   },
   {
     id:'tag4',
-    name:'가한엄수',
+    name:'기한 엄수',
   },
   {
     id:'tag5',
@@ -54,11 +54,11 @@ export const myInfoTag : IMyInfoTag[] = [
   },
   {
     id:'tag6',
-    name:'스트레스틑 먹을꺼로',
+    name:'이미 스며들었어요',
   },
   {
     id:'tag7',
-    name:'둥글둥글 인상',
+    name:'우선해보자!',
   },
   {
     id:'ta',
@@ -161,8 +161,8 @@ export const PortFolioList:IPortFolioInfoAtom = {
         {
           title:'프로젝트 작업 시 문제 해결과 결과',
           text:[
-            '초기 디자인은 여러 번의 수정을 거쳤고, Framer Motion을 활용한 애니메이션 작업은 어려움이 있었습니다. 또한,github page router 배포 404에러, Spyscroll 라이브러리의 사용은 예상치 못한 어려움을 안겨주었습니다. 하지만 이러한 어려움을 이겨내며 성공적으로 해결했습니다!\n컴포넌트의 적절한 분리 기준을 정하는 데에 어려움을 겪었지만, 점차적으로 경험을 쌓아나가며 해결해 나갔습니다. 프로젝트 진행 중 발생한 다양한 오류들을 해결하고 그 과정에서 많은 것을 배웠습니다. 이를 통해 부족한 부분을 파악하고 지속적으로 성장하는 기회를 가졌습니다.',
-            '직접 만든 객체구조를 이용하여 데이터 바인딩 형식으로 문구와, 이미지를 불러왔습니다.'
+            '직접 만든 객체구조를 이용하여 데이터 바인딩 형식으로 문구와, 이미지를 불러와 사이트를 제작하였습니다',
+            '디자인 초기에는 반복적인 수정 과정을 거치며 Framer Motion으로 애니메이션을 구현하는 데 어려움을 겪었습니다. SPA 방식으로 작업하면서 발생한 다양한 오류를 해결하기 위해 끊임없이 실험하고 찾아보며 문제를 해결했습니다. React를 활용해 퍼블리싱 작업을 진행하면서 반복 작업을 줄이고, 컴포넌트 중심의 개발 방식으로 전환하며 성장했습니다. Atom과 localstorage를 활용하며 여러 방법을 익히고 다양한 시도를 통해 문제 해결 능력을 키웠습니다. 이러한 경험으로 문제 해결과 성장에 집중하는 저의 역량을 보여드릴 수 있습니다.',
           ]
         }
       ],
@@ -236,8 +236,8 @@ export const PortFolioList:IPortFolioInfoAtom = {
       career:false,
       bgImg:ImgUrlStieArr.netflix.url,
       lib:'React',
-      title:'Netflix(적응형 PC)',
-      simply:'themoviedb를 이용한 netFlix 따라 만들기',
+      title:'Netflix',
+      simply:'themoviedb를 이용한 netFlix 따라 만들기 (PC)',
       desc:[
         {
           title:'프로젝트 작업 시 문제 해결과 결과',

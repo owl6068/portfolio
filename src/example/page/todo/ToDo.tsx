@@ -34,7 +34,6 @@ function ToDo() {
     setAddNew(false);
   };
 
-  console.log("1번");
   const writeVariants = {
     initial: { height: 0, opacity: 0 },
     animate: {

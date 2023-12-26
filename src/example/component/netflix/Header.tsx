@@ -44,8 +44,6 @@ function Header() {
     native(`/netflix/search`, { state: `${data.keyword}` });
   };
 
-  console.log("homeMenuMatch", homeMenuMatch);
-  console.log("tvMenuMatch", tvMenuMatch);
   return (
     <Head variants={aniHeaderFix} animate={headFixed ? "fixed" : "scroll"}>
       <Col>
