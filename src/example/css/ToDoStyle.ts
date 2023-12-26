@@ -236,7 +236,6 @@ export const BtnControl = styled.button<{bgcolor?:string, color?:string}>`
   color: ${props => props.color ? props.color : '#333'}; transition: opacity .5s;
   border-radius: 8px; 
   background-color: ${props => props.bgcolor ? props.bgcolor : '#e9e9e9'};
-  opacity: .7;
   &:hover {
     opacity: 1;
   }
