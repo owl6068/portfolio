@@ -1,6 +1,6 @@
 import { IHeaderNav, IMyInfoTag, IMySkill, IPortFolioInfoAtom} from "../interface/PFinterface";
 import { ImgUrlEtcArr, ImgUrlSkilArr, ImgUrlStieArr } from "./ImgUrl";
-const BASICURL = `${process.env.PUBLIC_URL}`;
+export const BASICURL = `${process.env.PUBLIC_URL}`;
 // ======== header ========
 export const headerNav : IHeaderNav[] = [
   {

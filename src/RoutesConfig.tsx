@@ -41,8 +41,8 @@ function RoutesConfig() {
 
         <Route element={<Layout />}>
           <Route path="/" element={<Layout />} />
-          <Route path="*" element={<NotFound />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
