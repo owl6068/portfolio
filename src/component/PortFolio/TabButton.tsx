@@ -25,21 +25,23 @@ function TabButton({ offset }: Ioffset) {
     setTabBtnFiexd(fixed);
   });
   return (
-    <TabBtnBox
-      className={tabBtnFiexd ? "fiexed" : ""}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
-      {PortFolioBtn.map((btn, i) => (
-        <TabBtn
-          key={btn.id}
-          onClick={() => tabHandler(btn.name, i)}
-          className={tabBtnIndex === i ? "isActive" : ""}
-        >
-          {btn.name}
-        </TabBtn>
-      ))}
-    </TabBtnBox>
+    <div style={{ height: 30 }}>
+      <TabBtnBox
+        className={tabBtnFiexd ? "fiexed" : ""}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
+        {PortFolioBtn.map((btn, i) => (
+          <TabBtn
+            key={btn.id}
+            onClick={() => tabHandler(btn.name, i)}
+            className={tabBtnIndex === i ? "isActive" : ""}
+          >
+            {btn.name}
+          </TabBtn>
+        ))}
+      </TabBtnBox>
+    </div>
   );
 }
 

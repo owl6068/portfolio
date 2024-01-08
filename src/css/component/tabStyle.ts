@@ -53,7 +53,6 @@ export const TabBtnBox = styled(motion.div)`
     animation-delay: .2s;
     @media screen and (max-width: ${props=>props.theme.width.width_s}){
       top: 70px;
-      animation:none;
     }
   }
 `
