@@ -31,7 +31,9 @@ function PortFolio({ id }: IPageId) {
   const getWindowHeigh = useRecoilValue(windowHeightAtom);
   const offset: any = useRef(null);
   const [offsetbox, setOffsetbox] = useState<number | undefined>();
-
+  const mainAniAtom = JSON.parse(
+    sessionStorage.getItem("hasExecutedOnce") || "false"
+  );
   useEffect(() => {
     setOffsetbox(offset?.current?.offsetTop + 20);
   }, [getWindowWidth, getWindowHeigh]);
@@ -53,7 +55,7 @@ function PortFolio({ id }: IPageId) {
             <TabBoxUl
               className="container"
               variants={container}
-              initial="hidden"
+              initial={mainAniAtom ? "visible" : "hidden"}
               animate="visible"
             >
               {filterSelector.map((pf) => (

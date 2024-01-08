@@ -40,6 +40,9 @@ function About({ id }: IPageId) {
     [getWindowHeigh, getWindowHeigh * 2],
     [0, getWindowHeigh * 2 - 200]
   );
+  const mainAniAtom = JSON.parse(
+    sessionStorage.getItem("hasExecutedOnce") || "false"
+  );
   useEffect(() => {
     if (getWindowWidth > getMoWidth) {
       setDelay(0.5);
@@ -53,7 +56,7 @@ function About({ id }: IPageId) {
       <AboutInner>
         <div>
           <MyInfo
-            initial="offscreen"
+            initial={mainAniAtom ? "onscreen" : "offscreen"}
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
           >
@@ -91,7 +94,7 @@ function About({ id }: IPageId) {
           </MyInfo>
           {getWindowWidth > getMoWidth ? (
             <MsImg
-              initial="offscreen"
+              initial={mainAniAtom ? "onscreen" : "offscreen"}
               whileInView="onscreen"
               viewport={{ once: true, amount: 0.2 }}
             >
@@ -107,7 +110,7 @@ function About({ id }: IPageId) {
             </MsImgMo>
           )}
           <MySkill
-            initial="offscreen"
+            initial={mainAniAtom ? "onscreen" : "offscreen"}
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.2 }}
           >

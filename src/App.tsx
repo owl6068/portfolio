@@ -23,6 +23,10 @@ function App() {
   useEffect(() => {
     //화면 창크키 변경때 width, height 값
     window.addEventListener("resize", setWindowDimensions);
+    window.addEventListener("beforeunload", function (event) {
+      // 페이지 새로고침 시 sessionStorage 비우기
+      sessionStorage.clear();
+    });
     return () => {
       window.removeEventListener("resize", setWindowDimensions);
     };

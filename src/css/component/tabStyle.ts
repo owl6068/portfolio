@@ -36,22 +36,19 @@ export const TabBoxUl = styled(motion.ul)`
 `
 
 export const TabBtnBox = styled(motion.div)`
-@keyframes pcFiexdBtn {
-  0%{transform:translateY(-100%)}
-  100%{transform:translateY(0%)}
-}
+  position: static;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #fff;
+  z-index: 9;
   &.fiexed{
-    position: fixed;
+    position:fixed;
     left: 0;
     top: 80px;
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    background-color: #fff;
-    z-index: 9;
-    animation: pcFiexdBtn 1 .5s both;
-    animation-delay: .2s;
-    @media screen and (max-width: ${props=>props.theme.width.width_s}){
+  }
+  @media screen and (max-width: ${props=>props.theme.width.width_s}){
+    &.fiexed{
       top: 70px;
     }
   }
@@ -232,3 +229,13 @@ export const BtnHover = styled(TabBoxIn)`
   gap: 20px;
   padding: 30px;
 `
+export const tabBtnFixed = {
+  initial: {
+    opacity:0,
+    y:'-100%'
+  },
+  animate: {
+    opacity:1,
+    y:'0%'
+  },
+};

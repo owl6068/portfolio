@@ -25,7 +25,6 @@ function Modal() {
     document.body.style.overflow = "unset";
   };
   const info = { ...portfolio[0] };
-  console.log("ionfoo", info.id);
   return (
     <ModalWrap>
       <ModalDim onClick={modalHidden}></ModalDim>
