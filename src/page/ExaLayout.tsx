@@ -7,9 +7,22 @@ function ExaLayout() {
   const [notHeaderView, setNotHeaderView] = useState<string[]>(); //header 안보이게
   const [pageName, setPageName] = useState("");
   useEffect(() => {
+    const reset = [
+      "coins",
+      "joinstep1",
+      "joinstep2",
+      "joinconfirm",
+      "todo",
+      "netflix",
+    ];
     const page = ["netflix"];
     setNotHeaderView(page);
     pageNameHandler(pathname);
+    if (reset.includes(pathname.substring(1))) {
+      // body scroll
+      document.body.style.overflowY = "unset";
+      sessionStorage.removeItem("scrollPosition");
+    }
   }, [pathname]);
 
   const pageNameHandler = (page: string) => {
