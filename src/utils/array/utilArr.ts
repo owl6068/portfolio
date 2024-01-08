@@ -100,7 +100,7 @@ export const mySkill : IMySkill[]= [
   {
     name:'typescript',
     img:ImgUrlSkilArr.ts.url,
-    adept:30,
+    adept:50,
   },
   {
     name:'styled-component',
@@ -115,7 +115,7 @@ export const mySkill : IMySkill[]= [
   {
     name:'bootstrap',
     img:ImgUrlSkilArr.boot.url,
-    adept:70,
+    adept:90,
   },
   {
     name:'sass',
@@ -125,7 +125,7 @@ export const mySkill : IMySkill[]= [
   {
     name:'realGrid',
     img:ImgUrlSkilArr.grid.url,
-    adept:20,
+    adept:30,
   },
 ]
 // ======== portfolio ========

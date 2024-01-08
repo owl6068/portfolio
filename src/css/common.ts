@@ -18,7 +18,20 @@ export const DFlexBtw = styled(DFlex)`
 // ========= section common ==========
 export const Wrap = styled.div`
   overflow: hidden;
-
+  .overflow {
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: keep-all;
+    &.line2 { 
+      -webkit-line-clamp: 2;
+    }
+    &.line3 { 
+      -webkit-line-clamp: 3;
+    }
+  }
 `
 export const Section = styled.section`
   display: flex;

@@ -12,8 +12,8 @@ export const ExaHead = styled.header`
   top: 0;
   transform: translateX(-50%);
   display: flex;
-  align-items:center;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   padding: 0 20px;
   width: 100%;
   max-width: ${MAXWIDTH};
@@ -23,15 +23,16 @@ export const ExaHead = styled.header`
   background-color: #fff;
   .head {
     &__left { 
-      padding:0 10px; 
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
       font-size: 26px;
+      z-index: 1;
     }
-    &__right { 
-      padding:0 10px; 
-      font-size: 26px;
-    }
-    &__monday {
+    &__center {
       font-size: 20px;
+      padding: 0 50px;
     }
   }
 `

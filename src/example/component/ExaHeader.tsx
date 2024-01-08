@@ -18,8 +18,7 @@ function ExaHeader({ pageName }: IPageName) {
         🏠
       </button>
 
-      <h2 className="head__monday">{pageName}</h2>
-      <div className="head__right">🍔</div>
+      <h2 className="head__center overflow">{pageName}</h2>
     </ExaHead>
   );
 }
