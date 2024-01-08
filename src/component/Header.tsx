@@ -23,7 +23,7 @@ function Header() {
   const [navMenu, setNavMenu] = useRecoilState(navMenuAtom);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const mainAniAtom = JSON.parse(
-    localStorage.getItem("hasExecutedOnce") || "false"
+    sessionStorage.getItem("hasExecutedOnce") || "false"
   );
 
   const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

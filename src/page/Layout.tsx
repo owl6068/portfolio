@@ -6,7 +6,7 @@ import Header from "../component/Header";
 
 function Layout() {
   const hasExecutedOnce = JSON.parse(
-    localStorage.getItem("hasExecutedOnce") || "false"
+    sessionStorage.getItem("hasExecutedOnce") || "false"
   );
   useEffect(() => {
     // localhost저장 첫 한번 실행
@@ -17,7 +17,7 @@ function Layout() {
       setTimeout(() => {
         document.body.style.position = "static";
         document.body.style.overflow = "unset";
-        localStorage.setItem("hasExecutedOnce", "true");
+        sessionStorage.setItem("hasExecutedOnce", "true");
       }, 4500);
     }
   }, []);
@@ -25,7 +25,7 @@ function Layout() {
   useEffect(() => {
     // 사용자의 스크롤 위치를 기억
     const handleScroll = () => {
-      localStorage.setItem(
+      sessionStorage.setItem(
         "scrollPosition",
         JSON.stringify({ x: window.scrollX, y: window.scrollY })
       );
@@ -33,7 +33,7 @@ function Layout() {
 
     window.addEventListener("scroll", handleScroll);
 
-    const savedPosition = localStorage.getItem("scrollPosition");
+    const savedPosition = sessionStorage.getItem("scrollPosition");
     if (savedPosition) {
       const parsedPosition = JSON.parse(savedPosition);
       window.scrollTo(parsedPosition.x, parsedPosition.y);

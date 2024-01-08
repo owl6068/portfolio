@@ -16,7 +16,7 @@ import { IPageId } from "../utils/interface/PFinterface";
 
 function Main({ id }: IPageId) {
   const mainAniAtom = JSON.parse(
-    localStorage.getItem("hasExecutedOnce") || "false"
+    sessionStorage.getItem("hasExecutedOnce") || "false"
   );
   return (
     <MainSection id={id}>
