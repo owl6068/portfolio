@@ -24,7 +24,7 @@ function Coin() {
       ) : (
         <>
           <CoinDetail>
-            {coin && (
+            {coin ? (
               <>
                 <DFlex>
                   <img src={coin.image.small} alt={coin.name} />
@@ -51,6 +51,8 @@ function Coin() {
                   </div>
                 )}
               </>
+            ) : (
+              <div>데이터를 불러올 수 없습니다.</div>
             )}
           </CoinDetail>
           <CoinTabBtn>

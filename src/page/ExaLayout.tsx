@@ -21,7 +21,7 @@ function ExaLayout() {
     if (reset.includes(pathname.substring(1))) {
       // body scroll
       document.body.style.overflowY = "unset";
-      sessionStorage.removeItem("scrollPosition");
+      window.scrollTo(0, 0);
     }
   }, [pathname]);
 

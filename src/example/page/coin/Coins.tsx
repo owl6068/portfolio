@@ -15,9 +15,11 @@ function Coins() {
       ) : (
         <>
           <CoinListUl>
-            {data?.map((coin) => (
-              <CoinBox key={coin.id} {...coin} />
-            ))}
+            {data ? (
+              data.map((coin) => <CoinBox key={coin.id} {...coin} />)
+            ) : (
+              <li>데이터를 불러올 수 없습니다.</li>
+            )}
           </CoinListUl>
         </>
       )}
