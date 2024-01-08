@@ -21,6 +21,7 @@ function TabButton({ offset }: Ioffset) {
     const bgText = PortFolioBtn.filter((data) => name === data.name);
     setTabBgText(bgText[0].name);
     setTabBtnIndex(i);
+    window.scrollTo(0, offset + 10);
   };
   useMotionValueEvent(scrollY, "change", (latest) => {
     const fixed = Number(latest) > Number(offset) ? true : false;
